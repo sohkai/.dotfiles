@@ -27,7 +27,7 @@ export CLICOLOR=1   #ls colourful
 export GREP_OPTIONS='--color=auto'   #grep colourful
 
 # nvm settings
-export NVM_DIR="/Users/brett/.nvm"
+export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 nvm use stable
 
