@@ -1,0 +1,5 @@
+colorscheme parsec
+
+" Set tab navigation
+map <C-Tab> gt
+map <C-S-Tab> gT

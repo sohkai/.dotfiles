@@ -1,0 +1,18 @@
+[ui]
+# Name data to appear in commits
+username = Brett Sun <qisheng.brett.sun@gmail.com>
+
+[web]
+# Dummy certificate for ssl
+cacerts = /etc/hg-dummy-cert.pem
+
+# SSH compression
+ssh = ssh -C
+
+[extensions]
+# Show progress
+progress =
+
+
+[tortoisehg]
+editor = gvim
