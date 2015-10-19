@@ -29,7 +29,6 @@ export GREP_OPTIONS='--color=auto'   #grep colourful
 # nvm settings
 export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-nvm use stable
 
 # Android SDK settings
 export PATH=${PATH}:/Users/brett/Development/Android\ SDK/sdk/platform-tools:/Users/brett/Development/Android\ SDK/sdk/tools
