@@ -1,3 +1,5 @@
+# Git bash completion
+source ~/.dotfiles/.git-completion.bash
 # Aliases
 alias ..="cd .."
 alias ...="cd ../.."
