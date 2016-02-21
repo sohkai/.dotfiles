@@ -19,10 +19,34 @@ endif
 " Set leader key to ,
 let mapleader = ","
 
+" Set F1 key to ESC
+map <F1> <Esc>
+imap <F1> <Esc>
+
+" Set F2 key to NERDTree
+nnoremap <F2> :NERDTreeToggle<cr>
+
+" Set F5 key to UndoTree
+nnoremap <F5> :UndotreeToggle<cr>
+
+" Set F6 key to SyntasticErrors
+nnoremap <silent> <F6> :<C-u>call ToggleErrors()<CR>
+
 " Set tab navigation
 nmap <C-h> gT
 nmap <C-l> gt
 
+" Set split key mappings
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Set natural split opening
+set splitbelow
+set splitright
+
+" Indent settings
 set tabstop=4       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
                     " Vim will interpret it to be having
@@ -35,6 +59,9 @@ set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 
 set smarttab        " make "tab" insert indents instead of tabs at the beginning of a line
+
+" Set textwidth at 120
+set textwidth=120
 
 " Start scrolling slightly before the cursor reaches an edge
 set scrolloff=3
@@ -77,6 +104,16 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 5
+
+" Toggle SyntasticErrors
+function! ToggleErrors()
+    let old_last_winnr = winnr('$')
+    lclose
+    if old_last_winnr == winnr('$')
+        " Nothing was closed, open syntastic error location panel
+        Errors
+    endif
+endfunction
 
 " Editorconfig excludes files over git and scp
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
