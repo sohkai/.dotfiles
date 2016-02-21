@@ -1,0 +1,25 @@
+# Use Vi, not Emacs, style editing
+set editing-mode vi
+
+# Use vim keymaps in insert and command mode
+set keymap vi-insert
+set keymap vi-command
+
+# Show mode in prompt
+set show-mode-in-prompt on
+
+# Use Unicode & do NOT use the "8bit hack" to input/output non-ASCII characters
+# See http://code.google.com/p/iterm2/wiki/Keybindings
+set input-meta on
+set output-meta on
+set convert-meta off
+
+# On menu-complete, first display the common prefix, then cycle through the
+# options when hitting TAB
+menu-complete-display-prefix on
+
+# Case insensitive tab complete
+set completion-ignore-case on
+
+# Treat underscoes and hypens the same
+set completion-map-case on
