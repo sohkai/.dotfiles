@@ -38,7 +38,8 @@ alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias killps="sudo kill -9"
 
 # Git aliases
-alias gll="git log --pretty=format:'%C(yellow)%h|%Cred%ad|%Cblue%an|%Cgreen%d %Creset%s' --date=short | column -ts'|' | less -r"
+alias gll="git log --pretty=format:'%C(yellow)%h|%Cred%ad|%Cblue%an|%Cgreen%d %Creset%s' --date=short | column -ts'|' | less -rX"
+alias glg="git log --graph --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an %Cgreen%d %Creset%s' --date=short --abbrev-commit"
 alias gst="git status"
 alias gs="git stash"
 alias gsp="git stash pop"
