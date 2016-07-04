@@ -32,6 +32,8 @@ nnoremap <F5> :UndotreeToggle<cr>
 " Set F6 key to SyntasticErrors
 nnoremap <silent> <F6> :<C-u>call ToggleErrors()<CR>
 
+" Set F7 key to Git blame
+nnoremap <F7> :Gblame<cr>
 
 " Set split key mappings
 nnoremap <C-J> <C-W><C-J>
