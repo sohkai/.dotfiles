@@ -83,9 +83,6 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " Don't conceal json syntax
 let g:vim_json_syntax_conceal = 0
 
-" Use ESLint for JS syntastic
-let g:syntastic_javascript_checkers = ['eslint']
-
 " Allow JSX syntax in .js files
 let g:jsx_ext_required = 0
 
@@ -104,6 +101,12 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 5
+
+" Use ESLint for JS syntastic
+let g:syntastic_javascript_checkers = ['eslint']
+
+" Use Flake8 for Python syntastic
+let g:syntastic_python_checkers = ['flake8']
 
 " Toggle SyntasticErrors
 function! ToggleErrors()
