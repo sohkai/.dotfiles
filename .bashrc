@@ -79,6 +79,9 @@ rtfm() {
     help $@ || man $@ || open "http://www.google.com/search?q=$@";
 }
 
+# Open up tabs
+[[ -r ~/.dotfiles/bash/tab.bash ]] && . ~/.dotfiles/bash/tab.bash
+
 # Random cool things from the internet:
 #
 # Remove all files except for specified one
