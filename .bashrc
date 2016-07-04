@@ -30,8 +30,9 @@ alias mkdir="mkdir -pv"
 
 alias shist="history | grep"
 
-alias sf="find . -name "
-alias ss="grep -rni"
+alias ff="find . -iname" # Find file
+alias ss="grep -rniEI" # Search string
+alias gss="git grep -niEI" # Search string respective to git
 
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias killps="sudo kill -9"
