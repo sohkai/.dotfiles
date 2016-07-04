@@ -37,6 +37,8 @@ alias gss="git grep -niEI" # Search string respective to git
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias killps="sudo kill -9"
 
+alias chrome="open -a 'Google Chrome'" # Only on OSX
+
 # Git aliases
 alias gll="git log --pretty=format:'%C(yellow)%h|%Cred%ad|%Cblue%an|%Cgreen%d %Creset%s' --date=short | column -ts'|' | less -rX"
 alias glg="git log --graph --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an %Cgreen%d %Creset%s' --date=short --abbrev-commit"
