@@ -65,8 +65,8 @@ set expandtab       " Expand TABs to spaces
 
 set smarttab        " make "tab" insert indents instead of tabs at the beginning of a line
 
-" Set textwidth at 120
-set textwidth=120
+" Set textwidth at 100
+set textwidth=100
 
 " Start scrolling slightly before the cursor reaches an edge
 set scrolloff=3
