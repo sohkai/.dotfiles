@@ -2,7 +2,10 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-color solarized
+" Set the all important colorscheme AS SOON AS POSSIBLE
+colorscheme solarized
+set background=dark
+
 set backupcopy=yes
 
 " Show incomplete commands
