@@ -1,6 +1,14 @@
 # Terminal settings
+# If not already set, try to get 256 colors
+if [ "$TERM" == "xterm" ]; then
+    export TERM=xterm-256color
+fi
+
 export CLICOLOR=1                    # ls colourful
 export GREP_OPTIONS='--color=auto'   # grep colourful
+
+# iTerm shell integration
+[[ -r ~/.iterm2_shell_integration.bash ]] && source ~/.iterm2_shell_integration.`basename $SHELL`
 
 # Move (or Add) /usr/local/bin and /usr/local/sbin to the front of the path
 [ -d /usr/local/bin ] && export PATH=$(echo /usr/local/bin:$PATH | sed -e 's;:/usr/local/bin;;')
