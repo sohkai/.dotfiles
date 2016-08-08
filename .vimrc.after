@@ -83,6 +83,7 @@ set whichwrap=h,l,b,<,>,~,[,]
 
 " Set file types
 au BufRead,BufNewFile *.jsx set filetype=javascript
+au BufRead,BufNewFile *.jsonld set filetype=json
 au BufRead,BufNewFile *.cshtml set filetype=html
 au BufRead,BufNewFile *.cshtml_ set filetype=html
 au BufRead,BufNewFile *.scss set filetype=css
