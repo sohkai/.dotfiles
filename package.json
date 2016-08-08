@@ -17,6 +17,7 @@
     "commitizen": "^2.8.2",
     "devtool": "^2.0.3",
     "greenkeeper": "^3.1.0",
+    "jsonlint": "^1.6.2",
     "np": "^2.6.0",
     "npm-check-updates": "^2.7.0"
   }
