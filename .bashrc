@@ -14,6 +14,9 @@ export GREP_OPTIONS='--color=auto'   # grep colourful
 [ -d /usr/local/bin ] && export PATH=$(echo /usr/local/bin:$PATH | sed -e 's;:/usr/local/bin;;')
 [ -d /usr/local/sbin ] && export PATH=$(echo /usr/local/sbin:$PATH | sed -e 's;:/usr/local/sbin;;')
 
+# Python local user packages
+export PATH=/Users/Brett/Library/Python/2.7/bin:${PATH}
+
 # Git bash completion
 source ~/.dotfiles/.git-completion.bash
 
@@ -75,6 +78,12 @@ alias vim="${vim}"
 alias gvim="mvim"
 export EDITOR="${vim} -f"
 export GIT_EDITOR="${vim} -f"
+
+# Python settings
+export PYTHONDONTWRITEBYTECODE=1 # Don't save .pyc files
+
+# PIP settings
+export PIP_REQUIRE_VIRTUALENV=true # Don't allow global pip installs unless using gpip
 
 # NVM settings
 export NVM_DIR="${HOME}/.nvm"
