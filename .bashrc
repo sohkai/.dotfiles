@@ -17,6 +17,10 @@ export GREP_OPTIONS='--color=auto'   # grep colourful
 # Python local user packages
 export PATH=/Users/Brett/Library/Python/2.7/bin:${PATH}
 
+# Android SDK settings
+export PATH=${PATH}:/Users/Brett/Development/Android\ SDK/platform-tools:/Users/Brett/Development/Android\ SDK/tools
+export ANDROID_HOME=/Users/Brett/Development/Android\ SDK
+
 # Git bash completion
 source ~/.dotfiles/.git-completion.bash
 
