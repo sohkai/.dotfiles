@@ -1,0 +1,6 @@
+# Add an include path to this file in your local .gitconfig:
+# [include]
+#	path = /Users/Brett/.dotfiles/.gitconfig
+
+[alias]
+	cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
