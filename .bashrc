@@ -56,6 +56,15 @@ alias killps="sudo kill -9"
 
 alias chrome="open -a 'Google Chrome'" # Only on OSX
 
+# Alias rmtrash instead of rm
+alias rt="rmtrash"
+
+# Docker aliases
+alias dockm="docker-machine"
+alias dockc="docker-compose"
+alias dmls="docker-machine ls"
+alias dcps="docker-compose ps"
+
 # Git aliases
 alias gll="git log --pretty=format:'%C(yellow)%h|%Cred%ad|%Cblue%an|%Cgreen%d %Creset%s' --date=short | column -ts'|' | less -rX"
 alias glg="git log --graph --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an %Cgreen%d %Creset%s' --date=short --abbrev-commit"
@@ -66,9 +75,6 @@ alias gbr="git branch"
 alias gbrup="git branch -u"
 alias gch="git checkout"
 alias gchbr="git checkout -b"
-
-# Alias rmtrash instead of rm
-alias rt="rmtrash"
 
 # History settings
 export HISTCONTROL=ignoredups
@@ -97,6 +103,9 @@ export NVM_DIR="${HOME}/.nvm"
 [ -s "/usr/local/bin/virtualenvwrapper.sh" ] && . "/usr/local/bin/virtualenvwrapper.sh" # Load virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Development
+
+# Docker settings
+export MACHINE_DRIVER=virtualbox
 
 # Functions
 # Make a directory and cd into it
