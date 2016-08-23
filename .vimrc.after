@@ -22,23 +22,23 @@ endif
 " Set leader key to ,
 let mapleader = ","
 
-" Set F1 key to ESC
-map <F1> <Esc>
-imap <F1> <Esc>
+" Map F1 key to ESC
+noremap <F1> <Esc>
+inoremap <F1> <Esc>
 
-" Set F2 key to NERDTree
+" Map F2 key to NERDTree
 nnoremap <F2> :NERDTreeToggle<cr>
 
-" Set F5 key to UndoTree
+" Map F5 key to UndoTree
 nnoremap <F5> :UndotreeToggle<cr>
 
-" Set F6 key to SyntasticErrors
+" Map Set F6 key to SyntasticErrors
 nnoremap <silent> <F6> :<C-u>call ToggleErrors()<CR>
 
-" Set F7 key to Git blame
+" Map Set F7 key to Git blame
 nnoremap <F7> :Gblame<cr>
 
-" Set split key mappings
+" Map window split commands
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
