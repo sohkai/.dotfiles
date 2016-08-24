@@ -120,6 +120,11 @@ rtfm() {
     help $@ || man $@ || open "http://www.google.com/search?q=$@";
 }
 
+# Install pip packages globally
+gpip() {
+    PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+
 # Open up tabs
 [[ -r ~/.dotfiles/bash/tab.bash ]] && . ~/.dotfiles/bash/tab.bash
 
