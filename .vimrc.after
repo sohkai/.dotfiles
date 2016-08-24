@@ -102,6 +102,16 @@ augroup custom_filetypes
     au BufRead,BufNewFile *.md set filetype=markdown
 augroup END
 
+augroup py_filetype
+    au!
+    au BufRead,BufNewFile *.py set colorcolumn=80
+augroup END
+
+augroup md_filetype
+    au!
+    au BufRead,BufNewFile *.md set textwidth=100 colorcolumn=101
+augroup END
+
 " Don't conceal json syntax
 let g:vim_json_syntax_conceal = 0
 
