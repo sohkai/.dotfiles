@@ -1,3 +1,4 @@
 # Global python requirements
 #
 ipython
+restview
