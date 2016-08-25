@@ -94,22 +94,22 @@ set whichwrap=h,l,b,<,>,~,[,]
 " Set file types
 augroup custom_filetypes
     au!
-    au BufRead,BufNewFile *.jsx set filetype=javascript
-    au BufRead,BufNewFile *.jsonld set filetype=json
-    au BufRead,BufNewFile *.cshtml set filetype=html
-    au BufRead,BufNewFile *.cshtml_ set filetype=html
-    au BufRead,BufNewFile *.scss set filetype=css
-    au BufRead,BufNewFile *.md set filetype=markdown
+    au BufRead,BufNewFile *.jsx setlocal filetype=javascript
+    au BufRead,BufNewFile *.jsonld setlocal filetype=json
+    au BufRead,BufNewFile *.cshtml setlocal filetype=html
+    au BufRead,BufNewFile *.cshtml_ setlocal filetype=html
+    au BufRead,BufNewFile *.scss setlocal filetype=css
+    au BufRead,BufNewFile *.md setlocal filetype=markdown
 augroup END
 
 augroup py_filetype
     au!
-    au BufRead,BufNewFile *.py set colorcolumn=80
+    au BufRead,BufNewFile *.py setlocal colorcolumn=80
 augroup END
 
 augroup md_filetype
     au!
-    au BufRead,BufNewFile *.md set textwidth=100 colorcolumn=101
+    au BufRead,BufNewFile *.md setlocal textwidth=100 colorcolumn=101
 augroup END
 
 " Don't conceal json syntax
