@@ -91,7 +91,12 @@ set sidescroll=1    " Scroll sideways a character at a time, rather than a scree
 set backspace=indent,eol,start
 set whichwrap=h,l,b,<,>,~,[,]
 
-" Set file types
+" File types handling
+" Enable filetype detection:
+filetype on
+filetype plugin on
+filetype indent on " file type based indentation
+
 augroup custom_filetypes
     au!
     au BufRead,BufNewFile *.jsx setlocal filetype=javascript
@@ -110,6 +115,11 @@ augroup END
 augroup md_filetype
     au!
     au BufRead,BufNewFile *.md setlocal textwidth=100 colorcolumn=101
+augroup END
+
+augroup make_filetype
+    au!
+    au FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
 augroup END
 
 " Don't conceal json syntax
