@@ -5,6 +5,11 @@ if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
 fi
 
+# Set language
+if [[ -z "$LANG" ]]; then
+  export LANG='en_US.UTF-8'
+fi
+
 export CLICOLOR=1                    # ls colourful
 export GREP_OPTIONS='--color=auto'   # grep colourful
 
