@@ -95,6 +95,10 @@ alias gvim="mvim"
 export EDITOR="${vim} -f"
 export GIT_EDITOR="${vim} -f"
 
+# Pager settings
+export PAGER='less'
+export LESS='-F -g -i -M -R -S -w -X -z-4'
+
 # Python settings
 export PYTHONDONTWRITEBYTECODE=1 # Don't save .pyc files
 
