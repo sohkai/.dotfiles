@@ -104,6 +104,9 @@ export PIP_REQUIRE_VIRTUALENV=true # Don't allow global pip installs unless usin
 export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # Load NVM
 
+# RVM settings
+[ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm" # Load RVM
+
 # Virtualenv settings
 [ -s "/usr/local/bin/virtualenvwrapper.sh" ] && . "/usr/local/bin/virtualenvwrapper.sh" # Load virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
