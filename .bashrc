@@ -8,6 +8,8 @@
 # iTerm shell integration
 [[ -r ~/.iterm2_shell_integration.bash ]] && . ~/.iterm2_shell_integration.bash
 
+# Scripts
+[[ -r shell/bash/tab.bash ]] && . shell/bash/tab.bash # OSX new tab
 
 
 
@@ -21,6 +23,7 @@ bind "\C-k menu-complete-backward" # Backward cycle through completions
 
 
 ##### Completion #####
+[[ -r shell/bash/.git-completion.bash ]] && . shell/bash/.git-completion.bash # git
 
 
 ##### History #####
