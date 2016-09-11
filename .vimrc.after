@@ -109,7 +109,14 @@ augroup END
 
 augroup py_filetype
     au!
-    au BufRead,BufNewFile *.py setlocal colorcolumn=80
+    au BufRead,BufNewFile *.py setlocal textwidth=79 colorcolumn=80 foldlevel=20
+
+    " Fold and unfold using enter
+    au BufEnter *.py nnoremap <buffer> <Enter> @=(foldlevel('.')?'za':"\r")<CR>
+
+    " Sometimes necessary for SimpylFold
+    au BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+    au BufWinLeave *.py setlocal foldexpr< foldmethod<
 augroup END
 
 augroup md_filetype
@@ -130,6 +137,12 @@ let g:jsx_ext_required = 0
 
 " Signify config
 let g:signify_vcs_list= [ 'git' ]
+
+" Folding config
+" Python
+let g:SimpylFold_docstring_level = 20
+let g:SimpylFold_docstring_preview = 1
+let g:SimpylFold_fold_import = 0
 
 " Syntastic configs
 command Syncheck SyntasticCheck
