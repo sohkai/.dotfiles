@@ -11,6 +11,8 @@ zsh-mime-setup
 # iTerm shell integration
 [[ -r ~/.iterm2_shell_integration.bash ]] && . ~/.iterm2_shell_integration.bash
 
+# Note: Node, Python, and Ruby's version managers are automatically loaded from Prezto
+
 
 ##### Aliases #####
 alias zresource="source ~/.zshrc"
@@ -42,6 +44,7 @@ KEYTIMEOUT=1 # Shorten vi mode delay
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # Case insensitive
 zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd' # Better killall completion
 zstyle ':completion:*' verbose yes
+[[ -r ~/.pyenv/completions/pyenv.zsh ]] && . ~/.pyenv/completions/pyenv.zsh # Pyenv
 
 
 ##### History #####
@@ -58,3 +61,7 @@ setopt HIST_VERIFY # When using a hist thing, make a newline show the change bef
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FIND_NO_DUPS
+
+
+##### Non built-ins #####
+VIRTUAL_ENV_DISABLE_PROMPT=0 # Keep virtualenv prompt
