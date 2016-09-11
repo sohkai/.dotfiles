@@ -1,0 +1,39 @@
+##### Options #####
+zstyle ':prezto:*:*' color 'yes' # Color output
+
+
+##### Autoload #####
+# Set the Zsh modules to load (man zshmodules).
+# zstyle ':prezto:load' zmodule 'attr' 'stat'
+
+# Set the Zsh functions to load (man zshcontrib).
+# zstyle ':prezto:load' zfunction 'zargs' 'zmv'
+
+
+##### Prezto modules #####
+# The order matters.
+# Note that 'ruby' should be last module to modify path
+zstyle ':prezto:load' pmodule \
+  'environment' \
+  'terminal' \
+  'editor' \
+  'history' \
+  'homebrew' \
+  'node' \
+  'osx' \
+  'python' \
+  'spectrum' \
+  'utility' \
+  'completion' \
+  'fasd' \
+  'git' \
+  'ruby' \
+  'syntax-highlighting' \
+  'history-substring-search' \
+  'autosuggestions' \
+  'prompt'
+
+# Module settings
+zstyle ':prezto:module:editor' key-bindings 'vi'
+zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:syntax-highlighting' highlighters 'main' 'brackets'
