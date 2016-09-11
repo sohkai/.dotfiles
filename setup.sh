@@ -19,8 +19,8 @@ brew install --default-names findutils gnu-sed gnu-tar gnu-which gnutls grep
 brew install ack autoenv bash binutils colordiff colormake coreutils curl \
              diffutils erlang ffmpeg fasd gifsicle git git-lfs gnupg2 gpg go \
              gzip heroku heroku-toolbelt htop imagemagick mercurial mongodb \
-             nmap openssl perl pgcli postgresql python rename rmtrash tmux \
-             watch wdiff wifi-password wget zsh zsh-completions
+             nmap openssl perl pgcli postgresql pyenv pyenv-virtualenv rename \
+             rmtrash tmux watch wdiff wifi-password wget zsh zsh-completions
 
 brew cask install chrome-devtools dockertoolbox firefox github-desktop \
                   google-chrome grandperspective iterm2 skype steam xquartz

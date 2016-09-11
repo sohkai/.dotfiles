@@ -50,3 +50,10 @@ alias dockm="docker-machine"
 alias dockc="docker-compose"
 alias dmls="docker-machine ls"
 alias dcps="docker-compose ps"
+
+##### Pyenv-virtualenv #####
+alias mkvirtualenv="pyenv virtualenv"
+alias lsvirtualenv="pyenv virtualenvs"
+alias rmvirtualenv="pyenv uninstall"
+alias workon="pyenv activate"
+alias stopwork="pyenv deactivate"

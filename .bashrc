@@ -16,7 +16,7 @@
 [ -r "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # NVM
 [ -r "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm" # RVM
 eval "$(pyenv init -)" # Pyenv
-[ -r "/usr/local/bin/virtualenvwrapper.sh" ] && . "/usr/local/bin/virtualenvwrapper.sh" # virtualenvwrapper
+eval "$(pyenv virtualenv-init -)" # Pyenv-virtualenv
 
 
 ##### Aliases #####

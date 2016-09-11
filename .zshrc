@@ -18,6 +18,7 @@ zsh-mime-setup
 [[ -r ~/.dotfiles/shell/.function ]] && . ~/.dotfiles/shell/.function
 
 # Note: Node, Python, and Ruby's version managers are automatically loaded from Prezto
+eval "$(pyenv virtualenv-init -)" # Pyenv-virtualenv
 
 
 ##### Aliases #####
@@ -70,4 +71,3 @@ setopt HIST_FIND_NO_DUPS
 
 
 ##### Non built-ins #####
-VIRTUAL_ENV_DISABLE_PROMPT=0 # Keep virtualenv prompt
