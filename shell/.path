@@ -7,4 +7,4 @@
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Android SDK
-export PATH=${PATH}:/Users/Brett/Development/Android\ SDK/platform-tools:/Users/Brett/Development/Android\ SDK/tools
+export PATH=${PATH}:/Users/Brett/Development/androidSDK/platform-tools:/Users/Brett/Development/androidSDK/tools
