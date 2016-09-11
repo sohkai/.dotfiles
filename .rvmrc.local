@@ -1,0 +1,1 @@
+rvm_silence_path_mismatch_check_flag=1 # Don't warn if RVM is not the first thing in PATH

@@ -76,6 +76,7 @@ A list of files to be wary for when changing:
 
 * [`.tmux.conf`](./.tmux.conf.local)
 * [`.pypirc`](./.pypirc.local)
+* [`.rvmrc`](./.rvmrc.local)
 * [`.profile_env`](./.profile_env.local) (although this should **ONLY** ever contain local
   configuration, so you shouldn't be duplicating anything other than an environment template to this
   file)
