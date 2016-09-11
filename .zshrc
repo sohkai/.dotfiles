@@ -22,7 +22,7 @@ eval "$(pyenv virtualenv-init -)" # Pyenv-virtualenv
 
 
 ##### Aliases #####
-alias zresource="source ~/.zshrc"
+alias resource="source ~/.zshrc"
 
 
 ##### Key bindings #####
