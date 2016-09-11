@@ -1,23 +1,37 @@
-System configuration files
-==========================
+OSX configuration files
+=======================
 
-Source the files from the config files sitting in the home directory:
+Just `cd && git clone git@github.com:sohkai/.dotfiles.git && ~/.dotfiles/install.sh`.
 
-Bash
-----
-`[[ -r ~/.dotfiles/.bashrc ]] && . ~/.dotfiles/.bashrc`
+You'll still need to do some things by hand, such as:
 
-Vim
----
-`source ~/.dotfiles/.vimrc.after`
+- Upload your git SSH keys to Github
+- Set up a [git signing key](https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work) in
+  `~/.gitconfig`
+- Set up [homebrew's git token](https://gist.github.com/christopheranderton/8644743)
+  (`HOMEBREW_GITHUB_API_TOKEN`) in `~/.bashrc`
 
-Mercurial
----------
-`%include ~/.dotfiles/.hgrc`
+So make sure to follow some of the messages (a summary will be printed at the end).
 
-Dependencies
-------------
-* Depends on [git-completion.bash](https://github.com/git/git/blob/master/contrib/completion/git-completion.bash)
-also being present in the folder.
-* Expects that [nvm](https://github.com/creationix/nvm), if installed,
-is located at its default directory of `~/.nvm`
+**NOTE**: Mostly useful only on OSX.
+
+install.sh
+----------
+
+What's included (everything with a `.local` suffix is copied to `~/` without the suffix):
+
+- Setting up [homebrew](http://brew.sh/), [Cask](https://caskroom.github.io/), and then a whole
+  bunch of goodies
+- Languages:
+    - Node.js (with [nvm](https://github.com/creationix/nvm))
+        - npmrc
+    - Python (with [pyenv](https://github.com/yyuu/pyenv))
+        - pypirc
+    - Ruby (with [rvm](https://rvm.io/))
+- inputrc
+- Bash profile
+- Zsh and Prezto profile
+- Tmux configuration
+- vimrc
+- git configuration (and Github SSH key)
+- mercurial configuration

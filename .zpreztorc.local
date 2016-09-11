@@ -1,0 +1,2 @@
+# Source .zpreztorc
+[[ -r ~/.dotfiles/.zpreztorc ]] && . ~/.dotfiles/.zpreztorc

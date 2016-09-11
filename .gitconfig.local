@@ -1,0 +1,4 @@
+[user]
+    signingkey =
+[include]
+    path = /Users/Brett/.dotfiles/.gitconfig

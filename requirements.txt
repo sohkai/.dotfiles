@@ -1,5 +1,0 @@
-# Global python requirements
-#
-ipython
-restview
-twine
