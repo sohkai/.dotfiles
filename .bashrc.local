@@ -1,1 +1,4 @@
 [[ -r ~/.dotfiles/.bashrc ]] && . ~/.dotfiles/.bashrc
+
+# Load local profile
+[[ -r ~/.profile_env ]] && . ~/.profile_env

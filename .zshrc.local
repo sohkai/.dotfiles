@@ -1,2 +1,5 @@
 # Source .zshrc
 [[ -r ~/.dotfiles/.zshrc ]] && . ~/.dotfiles/.zshrc
+
+# Load local profile
+[[ -r ~/.profile_env ]] && . ~/.profile_env
