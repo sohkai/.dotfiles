@@ -35,6 +35,7 @@ alias resource="source ~/.bash_profile"
 alias +='pushd'
 alias -- -='popd'
 alias ?='dirs -v'
+alias dirs='dirs -v'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -69,6 +70,7 @@ alias dcps="docker-compose ps"
 # Git aliases
 alias gll="git log --pretty=format:'%C(yellow)%h|%Cred%ad|%Cblue%an|%Cgreen%d %Creset%s' --date=short | column -ts'|' | less -rX"
 alias glg="git log --graph --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an %Cgreen%d %Creset%s' --date=short --abbrev-commit"
+alias gshf="git show --name-status"
 alias gst="git status"
 alias gs="git stash"
 alias gsp="git stash pop"
@@ -76,6 +78,7 @@ alias gbr="git branch"
 alias gbrup="git branch -u"
 alias gch="git checkout"
 alias gchbr="git checkout -b"
+alias gdf="git diff"
 
 # History settings
 export HISTCONTROL=ignoredups
