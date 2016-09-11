@@ -10,6 +10,8 @@ You'll still need to do some things by hand, such as:
   `~/.gitconfig`
 - Set up [homebrew's git token](https://gist.github.com/christopheranderton/8644743)
   (`HOMEBREW_GITHUB_API_TOKEN`) in your resulting `~/.profile_env`.
+- Add any other local configuration (e.g. aliases, paths, etc) to your resulting `~/.bashrc`,
+  `~/.zshrc, ~/.profile_env`, etc.
 
 So make sure to follow some of the messages (a summary will be printed at the end).
 
