@@ -14,6 +14,8 @@ You'll still need to do some things by hand, such as:
 So make sure to follow some of the messages (a summary will be printed at the end).
 
 **NOTE**: Mostly useful only on OSX.
+**NOTE**: You should probably install Xcode, or at least the Xcode CLI tools, before running
+`~/.dotfiles/install.sh`.
 
 install.sh
 ----------
