@@ -5,6 +5,9 @@
 [[ -r ~/.dotfiles/shell/.alias ]] && . ~/.dotfiles/shell/.alias
 [[ -r ~/.dotfiles/shell/.function ]] && . ~/.dotfiles/shell/.function
 
+# Source bash specifics
+[[ -r ~/.dotfiles/shell/bash/.alias ]] && . ~/.dotfiles/shell/bash/.alias
+
 # iTerm shell integration
 [[ -r ~/.iterm2_shell_integration.bash ]] && . ~/.iterm2_shell_integration.bash
 
