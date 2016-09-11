@@ -9,6 +9,7 @@
 [[ -r ~/.iterm2_shell_integration.bash ]] && . ~/.iterm2_shell_integration.bash
 
 # Scripts
+[[ -r $(brew --prefix autoenv)/activate.sh ]] && . $(brew --prefix autoenv)/activate.sh # autoenv
 [[ -r shell/bash/tab.bash ]] && . shell/bash/tab.bash # OSX new tab
 
 # Language version managers
