@@ -53,6 +53,11 @@ zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd' # Better killall c
 zstyle ':completion:*' verbose yes
 [[ -r ~/.pyenv/completions/pyenv.zsh ]] && . ~/.pyenv/completions/pyenv.zsh # Pyenv
 
+# In case git completion ever gets slow, turn this on:
+# function __git_files {
+#   _wanted files expl 'local files' _files # Just use all files in the directory instead of being based on git status
+# }
+
 
 ##### History #####
 SAVEHIST=10000
