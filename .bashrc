@@ -1,5 +1,9 @@
 ##### Terminal settings #####
+# Source .profile under bash emulation
+[[ -r .profile ]] && . .profile
 
+# OSX new tab
+[[ -r bash/tab.bash ]] && . bash/tab.bash
 # Set language
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
@@ -142,9 +146,6 @@ rtfm() {
 gpip() {
     PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
-
-# Open up tabs
-[[ -r ~/.dotfiles/bash/tab.bash ]] && . ~/.dotfiles/bash/tab.bash
 
 
 ##### Random cool things from the internet #####

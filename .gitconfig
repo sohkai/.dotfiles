@@ -2,7 +2,7 @@
     name = Brett Sun
     email = qisheng.brett.sun@gmail.com
 [core]
-    excludesfile = ~/.dotfiles/.gitignore_global
+    excludesfile = .gitignore_global
     autocrlf = input
 [credential]
     helper = osxkeychain

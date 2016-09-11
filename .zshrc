@@ -3,6 +3,12 @@ autoload -U compinit zcalc zsh-mime-setup
 compinit
 zsh-mime-setup
 
+# Source .profile under bash emulation
+[[ -r .profile ]] && emulate sh -c 'source .profile'
+
+# iTerm shell integration
+[[ -r ~/.iterm2_shell_integration.bash ]] && . ~/.iterm2_shell_integration.bash
+
 
 ##### Aliases #####
 alias zresource="source ~/.zshrc"
