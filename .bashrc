@@ -60,6 +60,11 @@ alias chrome="open -a 'Google Chrome'" # Only on OSX
 
 # Alias rmtrash instead of rm
 alias rt="rmtrash"
+# Tmux aliases
+alias mxresource="tmux source-file ~/.tmux.conf"
+alias mew="tmux new"
+alias mxls="tmux ls"
+alias mxat="tmux attach"
 
 # Docker aliases
 alias dockm="docker-machine"
