@@ -2,3 +2,6 @@
 
 # Load local profile
 [[ -r ~/.profile_env ]] && . ~/.profile_env
+
+# Load local language version defaults
+[[ -r ~/.language_ver ]] &&  . ~/.language_ver

@@ -11,7 +11,7 @@ You'll still need to do some things by hand, such as:
 - Set up [homebrew's git token](https://gist.github.com/christopheranderton/8644743)
   (`HOMEBREW_GITHUB_API_TOKEN`) in your resulting `~/.profile_env`.
 - Add any other local configuration (e.g. aliases, paths, etc) to your resulting `~/.bashrc`,
-  `~/.zshrc, ~/.profile_env`, etc.
+  `~/.zshrc`, `~/.profile_env`, `~/.language_ver`, etc.
 
 So make sure to follow some of the messages (a summary will be printed at the end).
 
@@ -49,6 +49,7 @@ For bash, the general source order is:
 1. `~/.bashrc`
 1. `~/.dotfiles/.bashrc`
 1. `~/.profile_env`
+1. `~/.language_ver`
 
 For zsh, the general source order is:
 
@@ -58,9 +59,12 @@ For zsh, the general source order is:
 1. `~/.dotfiles/.zpreztorc` (as first step of `~/.dotfiles/zshrc`)
 1. `~/.dotfiles/.zshrc`
 1. `~/.profile_env`
+1. `~/.language_ver`
 
 Both bash and zsh source their paths, environment settings, aliases, and functions from files in the
-[`shell`](./shell) folder.
+[`shell`](./shell) folder. The local `.profile_env` file should be used for any local
+configurations, e.g. aliases, environments, etc, and the local `.language_ver` file should specify
+defaults for the language version managers.
 
 In general, any local configurations should be made to one of the local files, and any changes that
 should be kept for all environments should be made to files in this repo.
@@ -77,8 +81,8 @@ A list of files to be wary for when changing:
 * [`.tmux.conf`](./.tmux.conf.local)
 * [`.pypirc`](./.pypirc.local)
 * [`.rvmrc`](./.rvmrc.local)
-* [`.profile_env`](./.profile_env.local) (although this should **ONLY** ever contain local
-  configuration, so you shouldn't be duplicating anything other than an environment template to this
-  file)
+* [`.profile_env`](./.profile_env.local) and [`.language_ver`](./.language_ver.local) (although
+  these should **ONLY** ever contain local configuration, so you shouldn't need to duplicate
+  anything other than a template for these files)
 * [`.bash_profile`](./.bash_profile.local) (if you want to make modifications to this, make sure you
   have a good reason not to change your local or tracked `.bashrc` instead)
