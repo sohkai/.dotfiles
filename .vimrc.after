@@ -137,6 +137,16 @@ augroup make_filetype
     au FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
 augroup END
 
+augroup json_filetype
+    au!
+    au BufRead,BufNewFile *.json setlocal shiftwidth=2 tabstop=2 softtabstop=2
+augroup END
+
+augroup yml_filetype
+    au!
+    au BufRead,BufNewFile *.yml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+augroup END
+
 " Don't conceal json syntax
 let g:vim_json_syntax_conceal = 0
 
