@@ -11,6 +11,11 @@
 # Scripts
 [[ -r shell/bash/tab.bash ]] && . shell/bash/tab.bash # OSX new tab
 
+# Language version managers
+[ -r "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # NVM
+[ -r "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm" # RVM
+eval "$(pyenv init -)" # Pyenv
+[ -r "/usr/local/bin/virtualenvwrapper.sh" ] && . "/usr/local/bin/virtualenvwrapper.sh" # virtualenvwrapper
 
 
 ##### Aliases #####
@@ -24,6 +29,8 @@ bind "\C-k menu-complete-backward" # Backward cycle through completions
 
 ##### Completion #####
 [[ -r shell/bash/.git-completion.bash ]] && . shell/bash/.git-completion.bash # git
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # NVM
+[[ -r ~/.pyenv/completions/pyenv.bash ]] && . ~/.pyenv/completions/pyenv.bash # Pyenv
 
 
 ##### History #####
