@@ -1,5 +1,2 @@
-# Source Prezto
-[[ -r "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]] && . ${ZDOTDIR:-$HOME}/.zprezto/init.zsh
-
 # Source .zshrc
 [[ -r ~/.dotfiles/.zshrc ]] && . ~/.dotfiles/.zshrc

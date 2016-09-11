@@ -3,6 +3,9 @@ autoload -U compinit zcalc zsh-mime-setup
 compinit
 zsh-mime-setup
 
+# Source Prezto
+[[ -r "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]] && . ${ZDOTDIR:-$HOME}/.zprezto/init.zsh
+
 # iTerm shell integration
 [[ -r ~/.iterm2_shell_integration.bash ]] && . ~/.iterm2_shell_integration.bash
 
