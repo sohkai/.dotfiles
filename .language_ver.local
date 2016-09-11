@@ -2,3 +2,4 @@
 
 # rvm use 2.3
 # nvm use v6.2.0
+# export PYENV_VERSION=3.5.2
