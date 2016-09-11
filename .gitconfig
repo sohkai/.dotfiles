@@ -1,6 +1,19 @@
-# Add an include path to this file in your local .gitconfig:
-# [include]
-#	path = /Users/Brett/.dotfiles/.gitconfig
-
+[user]
+    name = Brett Sun
+    email = qisheng.brett.sun@gmail.com
+[core]
+    excludesfile = ~/.dotfiles/.gitignore_global
+    autocrlf = input
+[credential]
+    helper = osxkeychain
+[push]
+    default = simple
+[commit]
+    gpgsign = true
+[filter "lfs"]
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
 [alias]
-	cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+    cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+    unstage = "reset HEAD --"
