@@ -67,3 +67,20 @@ should be kept for all environments should be made to files in this repo.
 
 **NOTE**: If you did not clone this repo into your home directory, you will need to modify all the
 links to this repo in the local configuration files to point to your install directory yourself.
+
+Changes
+-------
+
+For the most part, changing the files in this repo and then resourcing the local configuration file
+should propagate those changes. However, there are a few configuration files that do not have the
+ability to load from another file or are designed to only be locally placed; changes to these files
+will only come into effect if they are made locally and will have to be duplicated into this repo.
+A list of files to be wary for when changing:
+
+* [`.tmux.conf`](./.tmux.conf.local)
+* [`.pypirc`](./.pypirc.local)
+* [`.profile_env`](./.profile_env.local) (although this should **ONLY** ever contain local
+  configuration, so you shouldn't be duplicating anything other than an environment template to this
+  file)
+* [`.bash_profile`](./.bash_profile.local) (if you want to make modifications to this, make sure you
+  have a good reason not to change your local or tracked `.bashrc` instead)
