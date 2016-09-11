@@ -13,9 +13,9 @@ zsh-mime-setup
 [[ -r $(brew --prefix autoenv)/activate.sh ]] && . $(brew --prefix autoenv)/activate.sh # autoenv
 
 # Source paths, aliases, and functions
-[[ -r shell/.path ]] && . shell/.path
-[[ -r shell/.alias ]] && . shell/.alias
-[[ -r shell/.function ]] && . shell/.function
+[[ -r ~/.dotfiles/shell/.path ]] && . ~/.dotfiles/shell/.path
+[[ -r ~/.dotfiles/shell/.alias ]] && . ~/.dotfiles/shell/.alias
+[[ -r ~/.dotfiles/shell/.function ]] && . ~/.dotfiles/shell/.function
 
 # Note: Node, Python, and Ruby's version managers are automatically loaded from Prezto
 

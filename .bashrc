@@ -1,16 +1,16 @@
 ##### Autoload #####
 # Source paths, environment variables, aliases, and functions
-[[ -r shell/.path ]] && . shell/.path
-[[ -r shell/.profile_env ]] && . shell/.profile_env
-[[ -r shell/.alias ]] && . shell/.alias
-[[ -r shell/.function ]] && . shell/.function
+[[ -r ~/.dotfiles/shell/.path ]] && . ~/.dotfiles/shell/.path
+[[ -r ~/.dotfiles/shell/.profile_env ]] && . ~/.dotfiles/shell/.profile_env
+[[ -r ~/.dotfiles/shell/.alias ]] && . ~/.dotfiles/shell/.alias
+[[ -r ~/.dotfiles/shell/.function ]] && . ~/.dotfiles/shell/.function
 
 # iTerm shell integration
 [[ -r ~/.iterm2_shell_integration.bash ]] && . ~/.iterm2_shell_integration.bash
 
 # Scripts
 [[ -r $(brew --prefix autoenv)/activate.sh ]] && . $(brew --prefix autoenv)/activate.sh # autoenv
-[[ -r shell/bash/tab.bash ]] && . shell/bash/tab.bash # OSX new tab
+[[ -r ~/.dotfiles/shell/bash/tab.bash ]] && . ~/.dotfiles/shell/bash/tab.bash # OSX new tab
 
 # Language version managers
 [ -r "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # NVM
@@ -29,7 +29,7 @@ bind "\C-k menu-complete-backward" # Backward cycle through completions
 
 
 ##### Completion #####
-[[ -r shell/bash/.git-completion.bash ]] && . shell/bash/.git-completion.bash # git
+[[ -r ~/.dotfiles/shell/bash/.git-completion.bash ]] && . ~/.dotfiles/shell/bash/.git-completion.bash # git
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # NVM
 [[ -r ~/.pyenv/completions/pyenv.bash ]] && . ~/.pyenv/completions/pyenv.bash # Pyenv
 

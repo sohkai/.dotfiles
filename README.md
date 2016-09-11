@@ -15,7 +15,7 @@ You'll still need to do some things by hand, such as:
 
 So make sure to follow some of the messages (a summary will be printed at the end).
 
-**NOTE**: Mostly useful only on OSX.
+**NOTE**: Mostly useful only on OSX, and **MUST** be cloned into the home directory (`~/`)
 **NOTE**: You should probably install Xcode, or at least the Xcode CLI tools, before running
 `~/.dotfiles/install.sh`.
 
@@ -64,9 +64,6 @@ Both bash and zsh source their paths, environment settings, aliases, and functio
 
 In general, any local configurations should be made to one of the local files, and any changes that
 should be kept for all environments should be made to files in this repo.
-
-**NOTE**: If you did not clone this repo into your home directory, you will need to modify all the
-links to this repo in the local configuration files to point to your install directory yourself.
 
 Changes
 -------
