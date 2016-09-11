@@ -7,7 +7,7 @@ zsh-mime-setup
 [[ -r "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]] && . ${ZDOTDIR:-$HOME}/.zprezto/init.zsh
 
 # iTerm shell integration
-[[ -r ~/.iterm2_shell_integration.bash ]] && . ~/.iterm2_shell_integration.bash
+[[ -r ~/.iterm2_shell_integration.zsh ]] && . ~/.iterm2_shell_integration.zsh
 
 # Scripts
 [[ -r $(brew --prefix autoenv)/activate.sh ]] && . $(brew --prefix autoenv)/activate.sh # autoenv
