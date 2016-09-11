@@ -28,6 +28,9 @@ endif
 " Set leader key to ,
 let mapleader = ","
 
+" Allow . operator in visual mode
+vnoremap . :normal.<CR>
+
 " Map F1 key to ESC
 noremap <F1> <Esc>
 inoremap <F1> <Esc>
