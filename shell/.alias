@@ -1,7 +1,4 @@
 ##### Misc #####
-alias +='pushd'
-alias -- -='popd'
-alias ?='dirs -v'
 alias dirs='dirs -v'
 alias ..="cd .."
 alias ...="cd ../.."
