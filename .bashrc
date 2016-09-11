@@ -1,10 +1,5 @@
 ##### Terminal settings #####
 
-# If not already set, try to get 256 colors
-if [ "$TERM" == "xterm" ]; then
-    export TERM=xterm-256color
-fi
-
 # Set language
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
