@@ -9,7 +9,7 @@ You'll still need to do some things by hand, such as:
 - Set up a [git signing key](https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work) in
   `~/.gitconfig`
 - Set up [homebrew's git token](https://gist.github.com/christopheranderton/8644743)
-  (`HOMEBREW_GITHUB_API_TOKEN`) in [`.env`](./shell/.env)
+  (`HOMEBREW_GITHUB_API_TOKEN`) in your resulting `~/.profile_env`.
 
 So make sure to follow some of the messages (a summary will be printed at the end).
 
