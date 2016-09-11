@@ -1,0 +1,2 @@
+# Source .zshenv
+[[ -r ~/.dotfiles/.zshenv ]] && . ~/.dotfiles/.zshenv

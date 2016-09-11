@@ -1,222 +1,30 @@
-##### Terminal settings #####
-# Source .profile under bash emulation
-[[ -r .profile ]] && . .profile
-
-# OSX new tab
-[[ -r bash/tab.bash ]] && . bash/tab.bash
-# Set language
-if [[ -z "$LANG" ]]; then
-  export LANG='en_US.UTF-8'
-fi
-
-export CLICOLOR=1                    # ls colourful
-export GREP_OPTIONS='--color=auto'   # grep colourful
+##### Autoload #####
+# Source paths, environment variables, aliases, and functions
+[[ -r shell/.path ]] && . shell/.path
+[[ -r shell/.profile_env ]] && . shell/.profile_env
+[[ -r shell/.alias ]] && . shell/.alias
+[[ -r shell/.function ]] && . shell/.function
 
 # iTerm shell integration
-[[ -r ~/.iterm2_shell_integration.bash ]] && source ~/.iterm2_shell_integration.`basename $SHELL`
+[[ -r ~/.iterm2_shell_integration.bash ]] && . ~/.iterm2_shell_integration.bash
 
-# Move (or Add) /usr/local/bin and /usr/local/sbin to the front of the path
-[ -d /usr/local/bin ] && export PATH=$(echo /usr/local/bin:$PATH | sed -e 's;:/usr/local/bin;;')
-[ -d /usr/local/sbin ] && export PATH=$(echo /usr/local/sbin:$PATH | sed -e 's;:/usr/local/sbin;;')
 
-# Python local user packages
-export PATH=/Users/Brett/Library/Python/2.7/bin:${PATH}
 
-# Android SDK settings
-export PATH=${PATH}:/Users/Brett/Development/Android\ SDK/platform-tools:/Users/Brett/Development/Android\ SDK/tools
-export ANDROID_HOME=/Users/Brett/Development/Android\ SDK
 
-# Git bash completion
-source ~/.dotfiles/.git-completion.bash
-
-# Bindings
-bind "\C-j menu-complete"           # Forward cycle through completions
-bind "\C-k menu-complete-backward"  # Backward cycle through completions
-
-# Aliases
+##### Aliases #####
 alias resource="source ~/.bash_profile"
 
-alias +='pushd'
-alias -- -='popd'
-alias ?='dirs -v'
-alias dirs='dirs -v'
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ......="cd ../../../../.."
-alias cd..="cd .."
-alias ls="ls -CF"
-alias sl="ls"
-alias ll="ls -lhA"
-alias mkdir="mkdir -pv"
 
-alias shist="history | grep"
+##### Key bindings #####
+bind "\C-j menu-complete" # Forward cycle through completions
+bind "\C-k menu-complete-backward" # Backward cycle through completions
 
-alias ff="find . -iname" # Find file
-alias ss="grep -rniEI" # Search string
-alias gss="git grep -niEI" # Search string respective to git
 
-alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
-alias killps="sudo kill -9"
+##### Completion #####
 
-alias chrome="open -a 'Google Chrome'" # Only on OSX
 
-# Alias rmtrash instead of rm
-alias rt="rmtrash"
-# Tmux aliases
-alias mxresource="tmux source-file ~/.tmux.conf"
-alias mew="tmux new"
-alias mxls="tmux ls"
-alias mxat="tmux attach"
-
-# Docker aliases
-alias dockm="docker-machine"
-alias dockc="docker-compose"
-alias dmls="docker-machine ls"
-alias dcps="docker-compose ps"
-
-# Git aliases
-alias gll="git log --pretty=format:'%C(yellow)%h|%Cred%ad|%Cblue%an|%Cgreen%d %Creset%s' --date=short | column -ts'|' | less -rX"
-alias glg="git log --graph --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an %Cgreen%d %Creset%s' --date=short --abbrev-commit"
-alias gshf="git show --name-status"
-alias gst="git status"
-alias gs="git stash"
-alias gsp="git stash pop"
-alias gbr="git branch"
-alias gbrup="git branch -u"
-alias gch="git checkout"
-alias gchbr="git checkout -b"
-alias gdf="git diff"
-
-# History settings
+##### History #####
 export HISTCONTROL=ignoredups
 export HISTTIMEFORMAT='%F %T '
 
 stty -ixon # disable XON/XOFF flow control for <C-S>
-
-# Editor settings
-vim='mvim -v'
-alias vim="${vim}"
-alias gvim="mvim"
-export EDITOR="${vim} -f"
-export GIT_EDITOR="${vim} -f"
-
-# Pager settings
-export PAGER='less'
-export LESS='-F -g -i -M -R -S -w -X -z-4'
-
-# Python settings
-export PYTHONDONTWRITEBYTECODE=1 # Don't save .pyc files
-
-# PIP settings
-export PIP_REQUIRE_VIRTUALENV=true # Don't allow global pip installs unless using gpip
-
-# NVM settings
-export NVM_DIR="${HOME}/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # Load NVM
-
-# RVM settings
-[ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm" # Load RVM
-
-# Virtualenv settings
-[ -s "/usr/local/bin/virtualenvwrapper.sh" ] && . "/usr/local/bin/virtualenvwrapper.sh" # Load virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Development
-
-# Docker settings
-export MACHINE_DRIVER=virtualbox
-
-
-##### Functions #####
-
-# Make a directory and cd into it
-mkcd () {
-    mkdir -p $1;
-    cd $1;
-}
-
-# Open up man, OSX edition
-# http://www.commandlinefu.com/commands/view/7581/rtfm-function#comment
-rtfm() {
-    help $@ || man $@ || open "http://www.google.com/search?q=$@";
-}
-
-# Install pip packages globally
-gpip() {
-    PIP_REQUIRE_VIRTUALENV="" pip "$@"
-}
-
-
-##### Random cool things from the internet #####
-
-# Remove all files except for specified one
-# http://www.commandlinefu.com/commands/view/6652/remove-all-but-one-specific-file#comment
-#
-# rm -f !(survivior.txt)
-
-# Make a directory and move into it
-# http://www.commandlinefu.com/commands/view/9000/mkdir-cd-into-it-as-single-command#comment
-#
-# mkdir /home/foo/doc/bar && cd $_
-
-# Rename a file extension
-# http://www.commandlinefu.com/commands/view/1295/quickly-rename-a-file#comment
-#
-# mv filename.{old,new}
-
-# Open Finder from the current Terminal location
-# http://www.commandlinefu.com/commands/view/2395/open-finder-from-the-current-terminal-location#comment
-#
-# open .
-
-# Start COMMAND, and kill it if still running after 5 seconds
-# http://www.commandlinefu.com/commands/view/9721/start-command-and-kill-it-if-still-running-after-5-seconds#comment
-#
-# timeout 5s <COMMAND>
-
-# Run last command (potentially as root)
-# http://www.commandlinefu.com/commands/view/13/run-the-last-command-as-root#comment
-#
-# [sudo] !!
-
-# Run previous command with changed arguments
-# http://www.commandlinefu.com/commands/view/19/runs-previous-command-but-replacing#comment
-#
-# ^foo^bar    (changes first found match)
-# ^foo^bar^:& (changes all found matches)
-
-# Invoke editor to edit command
-# http://www.commandlinefu.com/commands/view/1446/rapidly-invoke-an-editor-to-write-a-long-complex-or-tricky-command#comment
-#
-# ctrl-x e
-# fc
-# <Esc> v (in vim mode; ie. go out of insert mode and v)
-
-# Use last argument of most recent command
-# http://www.commandlinefu.com/commands/view/1551/place-the-argument-of-the-most-recent-command-on-the-shell#comment
-#
-# <Esc> _
-# $_
-
-# Delete and yank partial command
-# http://www.commandlinefu.com/commands/view/6148/type-partial-command-kill-this-command-check-something-you-forgot-yank-the-command-resume-typing.#comment
-#
-# <ctrl+u> [...] <ctrl+y>
-# <Esc> dd [...] p (in vim mode; ie. same yanking as usual)
-
-# Show currently mounted file systems
-# http://www.commandlinefu.com/commands/view/1556/currently-mounted-filesystems-in-nice-layout#comment
-#
-# mount | column -t
-
-# Show external IP
-# http://www.commandlinefu.com/commands/view/5427/get-your-external-ip-address#comment
-#
-# curl ifconfig.me
-
-# Serve current directory as LAN server
-# http://www.commandlinefu.com/commands/view/71/serve-current-directory-tree-at-httphostname8000#comment
-#
-# python -m SimpleHTTPServer 8080
-# python3 -m http.server 8080

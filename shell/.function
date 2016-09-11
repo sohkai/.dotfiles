@@ -1,0 +1,16 @@
+# Make a directory and cd into it
+mkcd () {
+    mkdir -p $1;
+    cd $1;
+}
+
+# Open up man, OSX edition
+# http://www.commandlinefu.com/commands/view/7581/rtfm-function#comment
+rtfm() {
+    help $@ || man $@ || open "http://www.google.com/search?q=$@";
+}
+
+# Install pip packages globally
+gpip() {
+    PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}

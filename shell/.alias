@@ -1,0 +1,52 @@
+##### Misc #####
+alias +='pushd'
+alias -- -='popd'
+alias ?='dirs -v'
+alias dirs='dirs -v'
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias cd..="cd .."
+alias ls="ls -CF"
+alias sl="ls"
+alias ll="ls -lhA"
+alias mkdir="mkdir -pv"
+
+alias shist="history | grep"
+
+alias ff="find . -iname" # Find file
+alias ss="grep -rniEI" # Search string
+alias gss="git grep -niEI" # Search string respective to git
+
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
+alias killps="sudo kill -9"
+
+alias chrome="open -a 'Google Chrome'" # Only on OSX
+
+alias rt="rmtrash" # Safe rm (to trash)
+
+alias gll="git log --pretty=format:'%C(yellow)%h|%Cred%ad|%Cblue%an|%Cgreen%d %Creset%s' --date=short | column -ts'|' | less -rX"
+alias glg="git log --graph --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an %Cgreen%d %Creset%s' --date=short --abbrev-commit"
+alias gshf="git show --name-status"
+alias gst="git status"
+alias gs="git stash"
+alias gsp="git stash pop"
+alias gbr="git branch"
+alias gbrup="git branch -u"
+alias gch="git checkout"
+alias gchbr="git checkout -b"
+alias gdf="git diff"
+
+##### Tmux #####
+alias mxresource="tmux source-file ~/.tmux.conf"
+alias mew="tmux new"
+alias mxls="tmux ls"
+alias mxat="tmux attach"
+
+###### Docker #####
+alias dockm="docker-machine"
+alias dockc="docker-compose"
+alias dmls="docker-machine ls"
+alias dcps="docker-compose ps"

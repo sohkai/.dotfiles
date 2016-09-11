@@ -1,4 +1,3 @@
-[[ -r ~/.dotfiles/.profile ]] && . ~/.dotfiles/.profile
-
 # Add git completion if available
 [[ -r ~/.dotfiles/bash/.git-completion.bash ]] && . ~/.dotfiles/bash/.git-completion.bash
+[[ -r ~/.dotfiles/.bashrc ]] && . ~/.dotfiles/.bashrc

@@ -1,0 +1,7 @@
+# Homebrew
+# Move (or Add) /usr/local/bin and /usr/local/sbin to the front of the path
+[ -d /usr/local/bin ] && export PATH=$(echo /usr/local/bin:$PATH | sed -e 's;:/usr/local/bin;;')
+[ -d /usr/local/sbin ] && export PATH=$(echo /usr/local/sbin:$PATH | sed -e 's;:/usr/local/sbin;;')
+
+# Android SDK
+export PATH=${PATH}:/Users/Brett/Development/Android\ SDK/platform-tools:/Users/Brett/Development/Android\ SDK/tools

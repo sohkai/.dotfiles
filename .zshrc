@@ -3,8 +3,10 @@ autoload -U compinit zcalc zsh-mime-setup
 compinit
 zsh-mime-setup
 
-# Source .profile under bash emulation
-[[ -r .profile ]] && emulate sh -c 'source .profile'
+# Source paths, aliases, and functions
+[[ -r shell/.path ]] && . shell/.path
+[[ -r shell/.alias ]] && . shell/.alias
+[[ -r shell/.function ]] && . shell/.function
 
 # iTerm shell integration
 [[ -r ~/.iterm2_shell_integration.bash ]] && . ~/.iterm2_shell_integration.bash
