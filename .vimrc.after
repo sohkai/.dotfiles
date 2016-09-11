@@ -79,7 +79,7 @@ set softtabstop=4   " Sets the number of columns for a TAB
 
 set expandtab       " Expand TABs to spaces
 
-set smarttab        " make "tab" insert indents instead of tabs at the beginning of a line
+set smarttab        " Make "tab" insert indents instead of tabs at the beginning of a line
 
 " Set textwidth at 100
 set textwidth=100

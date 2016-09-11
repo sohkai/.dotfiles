@@ -15,4 +15,4 @@ progress =
 
 
 [tortoisehg]
-editor = gvim
+editor = vim
