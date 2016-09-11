@@ -35,5 +35,6 @@ zstyle ':prezto:load' pmodule \
 
 # Module settings
 zstyle ':prezto:module:editor' key-bindings 'vi'
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:git:status:ignore' submodules 'all' # Ignore all submodules' status
 zstyle ':prezto:module:syntax-highlighting' highlighters 'main' 'brackets'
+zstyle ':prezto:module:prompt' theme 'sorin'
