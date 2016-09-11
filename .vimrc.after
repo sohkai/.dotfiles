@@ -127,6 +127,11 @@ augroup md_filetype
     au BufRead,BufNewFile *.md setlocal textwidth=100 colorcolumn=101
 augroup END
 
+augroup rst_filetype
+    au!
+    au BufRead,BufNewFile *.rst setlocal textwidth=79 colorcolumn=80
+augroup END
+
 augroup make_filetype
     au!
     au FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
