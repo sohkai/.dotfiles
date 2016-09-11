@@ -8,7 +8,7 @@ export CLICOLOR=1 # ls colourful
 export GREP_OPTIONS='--color=auto' # grep colourful
 
 # Editor
-export EDITOR="${vim} -f"
+export EDITOR="vim -f"
 
 # Pager
 export PAGER='less'
