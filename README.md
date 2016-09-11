@@ -25,15 +25,43 @@ What's included (everything with a `.local` suffix is copied to `~/` without the
 - Setting up [homebrew](http://brew.sh/), [Cask](https://caskroom.github.io/), and then a whole
   bunch of goodies
 - Languages:
-    - Node.js (with [nvm](https://github.com/creationix/nvm))
-        - npmrc
-    - Python (with [pyenv](https://github.com/yyuu/pyenv))
-        - pypirc
+    - Node.js (with [nvm](https://github.com/creationix/nvm)) and an [.npmrc](./.npmrc)
+    - Python (with [pyenv](https://github.com/yyuu/pyenv)) and an [.pypirc](./.pypirc)
     - Ruby (with [rvm](https://rvm.io/))
-- inputrc
-- Bash profile
+- Bash profile and inputrc
 - Zsh and Prezto profile
 - Tmux configuration
 - vimrc
 - git configuration (and Github SSH key)
 - mercurial configuration
+
+Shell Structure
+---------------
+
+The installed local shell files will ultimately refer back to the configuration files in this
+directory.
+
+For bash, the general source order is:
+
+1. `~/.bash_profile`
+1. `~/.bashrc`
+1. `~/.dotfiles/.bashrc`
+1. `~/.profile_env`
+
+For zsh, the general source order is:
+
+1. `~/.zshenv` (loaded by zsh separately first)
+1. `~/.zlogin` (loaded by zsh separately)
+1. `~/.zshrc`
+1. `~/.dotfiles/.zpreztorc` (as first step of `~/.dotfiles/zshrc`)
+1. `~/.dotfiles/.zshrc`
+1. `~/.profile_env`
+
+Both bash and zsh source their paths, environment settings, aliases, and functions from files in the
+[`shell`](./shell) folder.
+
+In general, any local configurations should be made to one of the local files, and any changes that
+should be kept for all environments should be made to files in this repo.
+
+**NOTE**: If you did not clone this repo into your home directory, you will need to modify all the
+links to this repo in the local configuration files to point to your install directory yourself.
