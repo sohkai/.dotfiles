@@ -54,8 +54,8 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Map insert-mode uppercase word
-inoremap <C-i> <esc>viwU<esc>ea
-nnoremap <C-i> viwU<esc>e
+inoremap <C-c> <esc>viwU<esc>ea
+nnoremap <C-c> viwU<esc>e
 
 " Set find path to be dir of open file, current dir, and any dirs under current dir
 set path=.,,**
