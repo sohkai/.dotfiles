@@ -12,8 +12,7 @@ zsh-mime-setup
 # Scripts
 [[ -r $(brew --prefix autoenv)/activate.sh ]] && . $(brew --prefix autoenv)/activate.sh # autoenv
 
-# Source paths, aliases, and functions
-[[ -r ~/.dotfiles/shell/.path ]] && . ~/.dotfiles/shell/.path
+# Source aliases, and functions
 [[ -r ~/.dotfiles/shell/.alias ]] && . ~/.dotfiles/shell/.alias
 [[ -r ~/.dotfiles/shell/.function ]] && . ~/.dotfiles/shell/.function
 
