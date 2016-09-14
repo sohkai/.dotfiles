@@ -27,6 +27,7 @@ alias shist="history | grep"
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias killps="sudo kill -9"
 alias chrome="open -a 'Google Chrome'" # Only on OSX
+alias serve="python -m http.server"
 
 
 ##### Tmux #####
