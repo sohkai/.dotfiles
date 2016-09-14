@@ -20,7 +20,10 @@ brew install ack autoenv bash binutils colordiff colormake coreutils curl \
              diffutils erlang ffmpeg fasd gifsicle git git-lfs gnupg2 gpg go \
              gzip heroku heroku-toolbelt htop imagemagick mercurial mongodb \
              nmap openssl perl pgcli postgresql pyenv pyenv-virtualenv rename \
-             rmtrash tmux watch wdiff wifi-password wget zsh zsh-completions
+             rmtrash tmux watch wdiff wifi-password wget vim zsh zsh-completions
+
+# Override system vim with macvim
+brew install macvim --env-std --with-override-system-vim
 
 brew cask install chrome-devtools dockertoolbox firefox github-desktop \
                   google-chrome grandperspective iterm2 skype steam xquartz
