@@ -28,6 +28,9 @@ brew install macvim --env-std --with-override-system-vim
 brew cask install chrome-devtools dockertoolbox firefox github-desktop \
                   google-chrome grandperspective iterm2 skype steam xquartz
 
+# Link brewed apps to /Applications
+brew linkapps
+
 # Install iTerm shell integration
 curl -L https://iterm2.com/misc/bash_startup.in -o ~/.iterm2_shell_integration.bash
 curl -L https://iterm2.com/misc/zsh_startup.in -o ~/.iterm2_shell_integration.zsh
