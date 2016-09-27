@@ -1,15 +1,15 @@
 [user]
     name = Brett Sun
     email = qisheng.brett.sun@gmail.com
+[credential]
+    helper = osxkeychain
 [core]
     excludesfile = .gitignore_global
     autocrlf = input
-[credential]
-    helper = osxkeychain
-[push]
-    default = simple
 [commit]
     gpgsign = true
+[push]
+    default = simple
 [filter "lfs"]
     clean = git-lfs clean %f
     smudge = git-lfs smudge %f
