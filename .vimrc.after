@@ -103,6 +103,9 @@ set sidescroll=1    " Scroll sideways a character at a time, rather than a scree
 set backspace=indent,eol,start
 set whichwrap=h,l,b,<,>,~,[,]
 
+" Only insert one space when J(oining)
+set nojoinspaces
+
 " File types handling
 " Enable filetype detection:
 filetype on
