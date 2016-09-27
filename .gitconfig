@@ -6,6 +6,7 @@
 [core]
     excludesfile = .gitignore_global
     autocrlf = input
+    pager = diff-highlight | diff-so-fancy | less -r
 [commit]
     gpgsign = true
 [push]
@@ -16,5 +17,13 @@
     required = true
 [alias]
     cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+    patch = --no-pager diff --no-color
     wipebranches = "!git branch | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
     unstage = "reset HEAD --"
+
+[color]
+    ui = always
+[color "diff"]
+    frag = magenta bold
+[diff-so-fancy]
+    stripLeadingSymbols = false
