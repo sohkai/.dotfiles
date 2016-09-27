@@ -2,6 +2,7 @@
 
 # Load Antibody first
 . <(antibody init)
+antibody bundle < ~/.dotfiles/shell/zsh/.antibody
 
 autoload -U compinit zcalc zsh-mime-setup
 compinit
