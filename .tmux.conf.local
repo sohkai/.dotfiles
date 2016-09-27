@@ -18,26 +18,17 @@ bind c new-window -c "#{pane_current_path}"
 bind i split-window -v -c "#{pane_current_path}"
 bind s split-window -h -c "#{pane_current_path}"
 bind I display-message
-bind S choose-tree
+bind g choose-tree
 
 # Map resource
 bind r source-file ~/.tmux.conf
-
-# Map window switches to vim switches
-bind h select-pane -L
-bind l select-pane -R
-bind j select-pane -D
-bind k select-pane -U
 
 # Map shift arrow to switch windows
 bind -n S-Left  previous-window
 bind -n S-Right next-window
 
-# Map window resizes
-bind J resize-pane -D 5
-bind K resize-pane -U 5
-bind H resize-pane -L 5
-bind L resize-pane -R 5
+# Map copy mode
+bind v copy-mode
 
 # Remap vi-mode copy
 bind -t vi-copy v begin-selection # 'v' to select
@@ -45,12 +36,17 @@ bind -t vi-copy y copy-pipe "pbcopy" # 'y' to copy
 unbind -t vi-copy Enter
 bind -t vi-copy Enter copy-pipe "pbcopy" # Enter is same as 'y'
 
+bind-key -t vi-copy Escape cancel # swap ESC and q in copy mode
+bind-key -t vi-copy q clear-selection
+
 # Enable mouse copy
 bind -t vi-copy MouseDragEnd1Pane copy-pipe "pbcopy"
 
 
 ##### Options #####
 
+set -ga terminal-overrides ',*:Tc' # Enable true colour
+set -ga terminal-overrides ',*:Ss=\E[%p1%d q:Se=\E[2 q' # Enable nvim cursor switching
 set -g mouse on # Enable mouse control
 set -g base-index 1 # Start window numbering from 1
 setw -g pane-base-index 1 # Start pane numbering from 1
@@ -60,3 +56,30 @@ set -g history-limit 10000 # Keep 10000 history entries
 setw -g monitor-activity on # Show messages from other windows
 set -g visual-activity on
 set -g default-terminal "screen-256color" # Use 256 colours
+
+
+##### Plugins #####
+
+set -g @tpm_plugins '                \
+    caiogondim/maglev                \
+    tmux-plugins/tpm                 \
+    tmux-plugins/tmux-sessionist     \
+    tmux-plugins/tmux-pain-control   \
+    tmux-plugins/tmux-yank           \
+    tmux-plugins/tmux-copycat        \
+    tmux-plugins/tmux-logging        \
+    tmux-plugins/tmux-resurrect      \
+    tmux-plugins/tmux-continuum      \
+    tmux-plugins/tmux-battery        \
+    tmux-plugins/tmux-cpu            \
+'
+
+# Options
+set -g @sessionist-goto 'G'
+set -g @resurrect-save 'C-t'
+set -g @copycat_hash_search 'C-s'
+set -g @continuum-restore 'on'
+#set -g @resurrect-strategy-nvim 'session'
+
+# Initialize TMUX plugin manager (MUST be at bottom of .tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'

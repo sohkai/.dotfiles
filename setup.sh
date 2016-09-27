@@ -72,6 +72,9 @@ chsh -s /bin/zsh
 # Zsh Prezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
+# Install tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 
 ##### Dotfiles #####
 
@@ -99,4 +102,8 @@ git config --global color.ui true
 
 
 ##### Set up user #####
+
 mkdir ~/Development
+
+# Install tpm plugins
+source .tmux/plugins/tpm/scripts/variables.sh && ~/.tmux/plugins/tpm/bin/install_plugins
