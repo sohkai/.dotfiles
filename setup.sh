@@ -23,6 +23,10 @@ brew install ack ag ansiweather autoenv bash binutils colordiff colormake \
              perl pgcli postgresql pyenv pyenv-virtualenv rename rmtrash tmux \
              watch wdiff wifi-password wget vim zsh zsh-completions
 
+# Install antibody
+brew tap getantibody/homebrew-antibody
+brew install antibody
+
 # Override system vim with macvim
 brew install macvim --env-std --with-override-system-vim
 

@@ -9,6 +9,9 @@ zsh-mime-setup
 # iTerm shell integration
 [[ -r ~/.iterm2_shell_integration.zsh ]] && . ~/.iterm2_shell_integration.zsh
 
+# Antibody
+. <(antibody init)
+
 # Scripts
 [[ -r ~/.dotfiles/modules/grc/grc.zsh ]] && . ~/.dotfiles/modules/grc/grc.zsh # grc
 
