@@ -1,9 +1,10 @@
 ##### Autoload #####
-# Source paths, environment variables, aliases, and functions
+# Source paths, environment variables, aliases, functions, and shell plugins
 [[ -r ~/.dotfiles/shell/.path ]] && . ~/.dotfiles/shell/.path
 [[ -r ~/.dotfiles/shell/.profile_env ]] && . ~/.dotfiles/shell/.profile_env
 [[ -r ~/.dotfiles/shell/.alias ]] && . ~/.dotfiles/shell/.alias
 [[ -r ~/.dotfiles/shell/.function ]] && . ~/.dotfiles/shell/.function
+[[ -r ~/.dotfiles/shell/.plugin ]] && . ~/.dotfiles/shell/.plugin
 
 # Source bash specifics
 [[ -r ~/.dotfiles/shell/bash/.alias ]] && . ~/.dotfiles/shell/bash/.alias
@@ -12,7 +13,7 @@
 [[ -r ~/.iterm2_shell_integration.bash ]] && . ~/.iterm2_shell_integration.bash
 
 # Scripts
-[[ -r $(brew --prefix autoenv)/activate.sh ]] && . $(brew --prefix autoenv)/activate.sh # autoenv
+[[ -r ~/.dotfiles/modules/grc/grc.sh ]] && . ~/.dotfiles/modules/grc/grc.bashrc # grc
 [[ -r ~/.dotfiles/shell/bash/tab.bash ]] && . ~/.dotfiles/shell/bash/tab.bash # OSX new tab
 
 # Language version managers

@@ -10,12 +10,12 @@ zsh-mime-setup
 [[ -r ~/.iterm2_shell_integration.zsh ]] && . ~/.iterm2_shell_integration.zsh
 
 # Scripts
-[[ -r /usr/local/opt/autoenv/activate.sh ]] && . /usr/local/opt/autoenv/activate.sh # autoenv
 [[ -r ~/.dotfiles/modules/grc/grc.zsh ]] && . ~/.dotfiles/modules/grc/grc.zsh # grc
 
-# Source aliases, and functions
+# Source aliases, functions, and shell plugins
 [[ -r ~/.dotfiles/shell/.alias ]] && . ~/.dotfiles/shell/.alias
 [[ -r ~/.dotfiles/shell/.function ]] && . ~/.dotfiles/shell/.function
+[[ -r ~/.dotfiles/shell/.plugin ]] && . ~/.dotfiles/shell/.plugin
 
 # Note: Node, Python, and Ruby's version managers are automatically loaded from Prezto
 eval "$(pyenv virtualenv-init -)" # Pyenv-virtualenv
