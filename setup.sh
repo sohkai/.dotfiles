@@ -61,7 +61,7 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable
 rvm install ruby --latest
 
-gem install lolcat screengif tmuxinator
+gem install lolcat screengif travis
 
 
 ##### Shells #####
