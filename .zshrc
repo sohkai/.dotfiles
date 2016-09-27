@@ -11,6 +11,7 @@ zsh-mime-setup
 
 # Scripts
 [[ -r /usr/local/opt/autoenv/activate.sh ]] && . /usr/local/opt/autoenv/activate.sh # autoenv
+[[ -r ~/.dotfiles/modules/grc/grc.zsh ]] && . ~/.dotfiles/modules/grc/grc.zsh # grc
 
 # Source aliases, and functions
 [[ -r ~/.dotfiles/shell/.alias ]] && . ~/.dotfiles/shell/.alias

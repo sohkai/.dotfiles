@@ -3,6 +3,8 @@ alias gcma='gca -m'
 alias giai='gia --interactive'
 alias gll="git log --pretty=format:'%C(yellow)%h|%Cred%ad|%Cblue%an|%Cgreen%d %Creset%s' --date=short | column -ts'|' | less -rX"
 alias glgp="git log --graph --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an %Cgreen%d %Creset%s' --date=short --abbrev-commit"
+unalias grc 2>/dev/null # We want the brewed 'grc'
+alias grC='git rebase --continue' # Note that is the same as the the default 'grc'
 
 
 ##### Misc #####

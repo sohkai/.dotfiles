@@ -18,7 +18,7 @@ brew install --default-names findutils gnu-sed gnu-tar gnu-which gnutls grep
 # FIXME: LIST MORE!!! (And Casks)
 brew install ack ag ansiweather autoenv bash binutils colordiff colormake \
              coreutils curl diff-so-fancy diffutils erlang ffmpeg fasd \
-             gifsicle git git-extras git-lfs gnupg2 gpg go gzip heroku \
+             gifsicle git git-extras git-lfs gnupg2 gpg go grc gzip heroku \
              heroku-toolbelt htop imagemagick mercurial mongodb nmap openssl \
              perl pgcli postgresql pyenv pyenv-virtualenv rename rmtrash tmux \
              watch wdiff wifi-password wget vim zsh zsh-completions

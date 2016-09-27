@@ -1,0 +1,3 @@
+[submodule "modules/grc"]
+	path = modules/grc
+	url = https://github.com/garabik/grc.git
