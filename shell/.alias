@@ -34,7 +34,7 @@ alias serve="python -m http.server"
 alias mxresource="tmux source-file ~/.tmux.conf"
 alias mew="tmux new"
 alias mxls="tmux ls"
-alias mxat="tmux attach"
+alias mxat="tmux attach -t"
 
 
 ###### Docker #####
