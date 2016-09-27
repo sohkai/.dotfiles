@@ -10,7 +10,7 @@ zsh-mime-setup
 [[ -r ~/.iterm2_shell_integration.zsh ]] && . ~/.iterm2_shell_integration.zsh
 
 # Scripts
-[[ -r $(brew --prefix autoenv)/activate.sh ]] && . $(brew --prefix autoenv)/activate.sh # autoenv
+[[ -r /usr/local/opt/autoenv/activate.sh ]] && . /usr/local/opt/autoenv/activate.sh # autoenv
 
 # Source aliases, and functions
 [[ -r ~/.dotfiles/shell/.alias ]] && . ~/.dotfiles/shell/.alias
