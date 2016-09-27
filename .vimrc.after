@@ -5,6 +5,9 @@ set nocompatible
 " Set the all important colorscheme AS SOON AS POSSIBLE
 colorscheme solarized
 set background=dark
+if $TERM_PROGRAM =~ "iTerm" "Get true colour support
+  " set termguicolors
+endif
 
 set backupcopy=yes
 
