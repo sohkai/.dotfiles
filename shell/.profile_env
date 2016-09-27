@@ -24,6 +24,10 @@ export MACHINE_DRIVER=virtualbox
 export ANDROID_HOME=~/Development/Android\ SDK
 
 
+##### Ansiweather#####
+export ANSIWEATHERRC=~/.dotfiles/.ansiweatherrc
+
+
 ##### Node #####
 export NVM_DIR="${HOME}/.nvm"
 

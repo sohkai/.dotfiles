@@ -16,11 +16,12 @@ brew tap caskroom/cask
 brew install --default-names findutils gnu-sed gnu-tar gnu-which gnutls grep
 
 # FIXME: LIST MORE!!! (And Casks)
-brew install ack autoenv bash binutils colordiff colormake coreutils curl \
-             diffutils erlang ffmpeg fasd gifsicle git git-lfs gnupg2 gpg go \
-             gzip heroku heroku-toolbelt htop imagemagick mercurial mongodb \
-             nmap openssl perl pgcli postgresql pyenv pyenv-virtualenv rename \
-             rmtrash tmux watch wdiff wifi-password wget vim zsh zsh-completions
+brew install ack ansiweather autoenv bash binutils colordiff colormake \
+             coreutils curl diffutils erlang ffmpeg fasd gifsicle git \
+             git-lfs gnupg2 gpg go gzip heroku heroku-toolbelt \
+             htop imagemagick mercurial mongodb nmap openssl perl pgcli \
+             postgresql pyenv pyenv-virtualenv rename rmtrash tmux watch wdiff \
+             wifi-password wget vim zsh zsh-completions
 
 # Override system vim with macvim
 brew install macvim --env-std --with-override-system-vim
