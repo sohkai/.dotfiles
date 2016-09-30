@@ -27,3 +27,6 @@
     frag = magenta bold
 [diff-so-fancy]
     stripLeadingSymbols = false
+
+[github]
+    user = sohkai
