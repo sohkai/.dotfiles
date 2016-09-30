@@ -36,9 +36,6 @@ bind -t vi-copy y copy-pipe "pbcopy" # 'y' to copy
 unbind -t vi-copy Enter
 bind -t vi-copy Enter copy-pipe "pbcopy" # Enter is same as 'y'
 
-bind-key -t vi-copy Escape cancel # swap ESC and q in copy mode
-bind-key -t vi-copy q clear-selection
-
 # Enable mouse copy
 bind -t vi-copy MouseDragEnd1Pane copy-pipe "pbcopy"
 
