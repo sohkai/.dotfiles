@@ -52,43 +52,49 @@ For bash, the general source order is:
 
 1. `~/.bash_profile (loaded by bash on login; always on OSX)`
 1. `~/.bashrc`
-1. `~/.dotfiles/.bashrc`
-1. `~/.profile_env`
-1. `~/.language_ver`
+1. `~/.profilerc`
+1. `~/.languagerc`
 
 For zsh, the general source order is:
 
 1. `~/.zshenv` (loaded by zsh)
 1. `~/.zlogin` (loaded by zsh on login; always on OSX)
 1. `~/.zshrc`
-1. `~/.zim` (as first step of `~/.dotfiles/zshrc`)
-1. `~/.dotfiles/.zshrc`
-1. `~/.profile_env`
-1. `~/.language_ver`
+1. `~/.zimrc` (as first step of `~/.dotfiles/zsh/zshrc`)
+1. `~/.dotfiles/profile/*.sh`
+1. `~/.profilerc`
+1. `~/.languagerc`
 
-Both bash and zsh source their paths, environment settings, aliases, and functions from files in the
-[`shell`](./shell) folder. The local `.profile_env` file should be used for any local
-configurations, e.g. aliases, environments, etc, and the local `.language_ver` file should specify
-defaults for the language version managers.
+Bash and zsh both source their paths, environment settings, aliases, functions, and other
+configuration details from the `*.sh` files found in the shared [`profile/`](./profile) folder
+as well as their own respective folder. The `profile/` files are loaded first before
+any corresponding [`bash/`](./bash) or [`zsh/`](./zsh) files are loaded; this allows the files in
+`bash/` or `zsh/` to override any inherited setting from `profile/`.
 
-In general, any local configurations should be made to one of the local files, and any changes that
-should be kept for all environments should be made to files in this repo.
+The `.profilerc` and `.languagerc` files do not have a corresponding file in this repo; as such,
+they should contain only local configuration. Specifically, the `.profilerc` file should be used for
+general environment settings (e.g. local aliases, environments, etc) and `.languagerc` should
+specify any defaults for any loaded language version managers. Due to the slow speed of some version
+manages (*ahem* nvm *ahem*), `.languagerc` is only loaded at startup if confirmed.
 
 
 Changes
 -------
 
-For the most part, changing the files in this repo and then resourcing the local configuration file
-should propagate those changes. However, there are a few configuration files that do not have the
-ability to load from another file or are designed to only be locally placed; changes to these files
-will only come into effect if they are made locally and will have to be duplicated into this repo.
-A list of files to be wary for when changing:
+In general, keep local configurations to one of the local files. Only modify the files in this repo
+when you know you would like to also propagate that change to all environments.
+
+For the most part, if you do make a change to a file in this repo, you will be able to propagate
+that change by resourcing the corresponding local configuration file. However, there are a few
+configuration files that do not have the ability to load from another file or are designed to only
+be locally placed; changes to these files will only come into effect if they are made locally and
+will have to be duplicated into this repo. A list of files to be wary for when changing:
 
 * [`.tmux.conf`](./.tmux.conf.local)
 * [`.pypirc`](./.pypirc.local)
 * [`.rvmrc`](./.rvmrc.local)
-* [`.profile_env`](./.profile_env.local) and [`.language_ver`](./.language_ver.local) (although
-  these should **ONLY** ever contain local configuration, so you shouldn't need to duplicate
-  anything other than a template for these files)
+* [`.profilerc`](./.profilerc.local) and [`.languagerc`](./.languagerc.local) (although these should
+  **ONLY** ever contain local configuration, so you shouldn't need to duplicate anything other than
+  a template for these files)
 * [`.bash_profile`](./.bash_profile.local) (if you want to make modifications to this, make sure you
   have a good reason not to change your local or tracked `.bashrc` instead)
