@@ -43,9 +43,20 @@ is_defined() {
 
 
 # Make a directory and cd into it
-mkcd () {
+mkcd() {
     mkdir -p $1;
     cd $1;
+}
+
+# Automatically cd after ranger closes
+function ranger_cd {
+    tempfile="$(mktemp -t tmp.XXXXXX)"
+    ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+        cd -- "$(cat "$tempfile")"
+    fi
+    rm -f -- "$tempfile"
 }
 
 # Open up man, OSX edition

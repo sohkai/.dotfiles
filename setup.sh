@@ -20,8 +20,8 @@ brew install ack ag ansiweather autoenv bash binutils colordiff colormake \
              coreutils curl diff-so-fancy diffutils erlang fasd ffmpeg fortune \
              gifsicle git git-extras git-lfs gnupg2 gpg go grc gzip heroku \
              heroku-toolbelt htop imagemagick mercurial mongodb mtr nmap openssl \
-             perl pgcli postgresql pyenv pyenv-virtualenv rename rmtrash tmux \
-             watch wdiff wifi-password wget vim zsh zsh-completions
+             perl pgcli postgresql pyenv pyenv-virtualenv ranger rename rmtrash tmux \
+             tree watch wdiff wifi-password wget vim zsh zsh-completions
 
 # Override system vim with macvim
 brew install macvim --env-std --with-override-system-vim

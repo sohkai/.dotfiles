@@ -59,6 +59,10 @@ bindkey -M viins ' ' magic-space # Magic space completion for history
 is_defined history-substring-search-up && bindkey -M vicmd 'k' history-substring-search-up
 is_defined history-substring-search-down && bindkey -M vicmd 'j' history-substring-search-down
 
+# Ranger
+is_defined ranger && bindkey -s '^O' "ranger_cd\n"
+
+
 ##### Misc #####
 setopt VI # Vim key bindings
 setopt CORRECT # Correct commands

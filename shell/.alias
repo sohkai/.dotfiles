@@ -17,6 +17,7 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias cd..="cd .."
 alias mkdir="mkdir -pv"
+alias r="ranger_cd"
 
 # File search
 alias ff="find . -iname" # Find file
