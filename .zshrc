@@ -48,6 +48,7 @@ setopt NO_CASE_GLOB # Case insensitive glob
 setopt RC_EXPAND_PARAM # Expand arrays
 setopt IGNORE_EOF # Force 'exit' to logout
 setopt COMPLETE_IN_WORD # Tab complete in word
+unsetopt COMPLETE_ALIASES # Don't expand aliases to allow for completion after aliases
 
 KEYTIMEOUT=1 # Shorten vi mode delay
 
