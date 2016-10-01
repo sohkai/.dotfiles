@@ -43,3 +43,14 @@ export HISTCONTROL=ignoredups
 export HISTTIMEFORMAT='%F %T '
 
 stty -ixon # disable XON/XOFF flow control for <C-S>
+
+
+###############
+# After hooks #
+###############
+
+# Source profile.d/after
+source_dir $HOME/.dotfiles/profile.d/after
+
+# Source bash.d/after
+source_dir $HOME/.dotfiles/bash.d/after

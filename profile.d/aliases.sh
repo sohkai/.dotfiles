@@ -37,11 +37,6 @@ alias chrome="open -a 'Google Chrome'" # Only on OSX
 alias serve="python -m http.server"
 
 
-##### Grc #####
-unalias ls 2>/dev/null # Use the built-in ls
-unalias grep 2>/dev/null # Use the built-in grep
-
-
 ##### Tmux #####
 alias mxresource="tmux source-file ~/.tmux.conf"
 alias mew="tmux new"
