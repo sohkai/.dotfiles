@@ -52,18 +52,27 @@ For bash, the general source order is:
 
 1. `~/.bash_profile (loaded by bash on login; always on OSX)`
 1. `~/.bashrc`
-1. `~/.profilerc`
-1. `~/.languagerc`
+    - `~/.dotfiles/bash.d/bashrc`
+        - `~/.dotfiles/profile.d/*.sh`
+        - `~/.dotfiles/bash.d/*.sh`
+        - `~/.dotfiles/profile.d/after*.sh`
+    - `~/.profilerc`
+    - `~/.languagerc`
 
 For zsh, the general source order is:
 
 1. `~/.zshenv` (loaded by zsh)
 1. `~/.zlogin` (loaded by zsh on login; always on OSX)
 1. `~/.zshrc`
-1. `~/.zimrc` (as first step of `~/.dotfiles/zsh/zshrc`)
-1. `~/.dotfiles/profile/*.sh`
-1. `~/.profilerc`
-1. `~/.languagerc`
+    - `~/.dotfiles/zsh.d/zshrc`
+        - `~/.zimrc`
+        - `~/.dotfiles/zsh.d/zimrc`
+        - `~/.dotfiles/profile.d/*.sh`
+        - `~/.dotfiles/zsh.d/*.zsh`
+        - `~/.dotfiles/zsh.d/zplug.zsh`
+        - `~/.dotfiles/profile.d/after*.sh`
+    - `~/.profilerc`
+    - `~/.languagerc`
 
 Bash and zsh both source their paths, environment settings, aliases, functions, and other
 configuration details from the `*.sh` files found in the shared [`profile.d/`](./profile.d) folder
