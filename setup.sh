@@ -30,6 +30,10 @@ brew install antibody
 # Override system vim with macvim
 brew install macvim --env-std --with-override-system-vim
 
+# Install neovim
+brew tap neovim/neovim
+brew install neovim
+
 brew cask install chrome-devtools dockertoolbox firefox github-desktop \
                   google-chrome grandperspective iterm2 skype steam xquartz
 
@@ -58,7 +62,7 @@ pyenv install 2.7.12
 pyenv install 3.5.2
 pyenv global 3.5.2
 
-pip install ipython restview twine virtualenv
+pip install --user neovim ipython restview twine virtualenv
 
 # Ruby (and RVM)
 gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
