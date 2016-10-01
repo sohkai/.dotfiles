@@ -56,6 +56,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" FIXME: remove and just use gU / gUU instead
 " Map insert-mode uppercase word
 inoremap <C-c> <esc>viwU<esc>ea
 nnoremap <C-c> viwU<esc>e
@@ -69,6 +70,7 @@ vnoremap * #
 " Set find path to be dir of open file, current dir, and any dirs under current dir
 set path=.,,**
 
+" FIXME: move to autogroups
 " Add .js, .css, and .scss extensions to files
 set suffixesadd+=.js,.css,.scss
 
@@ -205,3 +207,8 @@ endfunction
 
 " Editorconfig excludes files over git and scp
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+if has('nvim')
+    let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1 " Let cursor shape change on insert
+    " Will probably be useful to look at https://github.com/neovim/neovim/issues/2048#issuecomment-98307896
+endif

@@ -187,6 +187,7 @@ alias gwx='git rm -r'
 alias gwX='git rm -rf'
 
 ## Homebrew (see https://github.com/sorin-ionescu/prezto/tree/master/modules/homebrew)
+# FIXME: add return if not osx https://github.com/sorin-ionescu/prezto/blob/master/modules/homebrew/init.zsh#L8
 alias brewc='brew cleanup'
 alias brewC='brew cleanup --force'
 alias brewi='brew install'

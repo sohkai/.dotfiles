@@ -1,3 +1,7 @@
+# FIXME: maybe look at using prezto's aliases instead (see git, utility)
+alias vim="mvim -v"
+alias gvim="mvim"
+
 ##### Git (also see Prezto's git module and bash/.alias) #####
 alias gcma='gca -m'
 alias giai='gia --interactive'

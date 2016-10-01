@@ -39,6 +39,9 @@ zsh-mime-setup
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)" # Pyenv-virtualenv
 
+# FIXME: add npm completion (see https://github.com/sorin-ionescu/prezto/blob/master/modules/node/init.zsh#L23)
+# FIXME: add prezto's osx module as a git submodule
+
 
 ##### Aliases #####
 alias resource="source ~/.zshrc && source ~/.zshenv"
