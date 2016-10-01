@@ -79,6 +79,9 @@ git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR:-${HOME}}/.zim
 # Install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# Install tpm plugins
+source ~/.tmux/plugins/tpm/scripts/variables.sh && ~/.tmux/plugins/tpm/bin/install_plugins
+
 
 ##### Dotfiles #####
 
@@ -109,5 +112,3 @@ git config --global color.ui true
 
 mkdir ~/Development
 
-# Install tpm plugins
-source .tmux/plugins/tpm/scripts/variables.sh && ~/.tmux/plugins/tpm/bin/install_plugins
