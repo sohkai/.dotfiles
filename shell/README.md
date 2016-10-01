@@ -1,7 +1,7 @@
 Shell configuration
 ===================
 
-Hopefully the structure of this is self-explanatory.
+Hopefully the structure of this folder is self-explanatory.
 
 Tips and tricks: random cool things from the internet
 -----------------------------------------------------
