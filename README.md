@@ -66,10 +66,10 @@ For zsh, the general source order is:
 1. `~/.languagerc`
 
 Bash and zsh both source their paths, environment settings, aliases, functions, and other
-configuration details from the `*.sh` files found in the shared [`profile/`](./profile) folder
-as well as their own respective folder. The `profile/` files are loaded first before
-any corresponding [`bash/`](./bash) or [`zsh/`](./zsh) files are loaded; this allows the files in
-`bash/` or `zsh/` to override any inherited setting from `profile/`.
+configuration details from the `*.sh` files found in the shared [`profile.d/`](./profile.d) folder
+as well as their own respective folder. The `profile.d/` files are loaded first before any
+corresponding [`bash.d/`](./bash.d) or [`zsh.d/`](./zsh.d) files are loaded; this allows the files
+in `bash.d/` or `zsh.d/` to override any inherited setting from `profile.d/`.
 
 The `.profilerc` and `.languagerc` files do not have a corresponding file in this repo; as such,
 they should contain only local configuration. Specifically, the `.profilerc` file should be used for
