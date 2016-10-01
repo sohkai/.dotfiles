@@ -29,6 +29,7 @@ zsh-mime-setup
 
 # Source aliases, functions, and shell plugins
 [[ -r ~/.dotfiles/shell/.alias ]] && . ~/.dotfiles/shell/.alias
+[[ -r ~/.dotfiles/shell/zsh/.alias ]] && . ~/.dotfiles/shell/zsh/.alias
 [[ -r ~/.dotfiles/shell/.function ]] && . ~/.dotfiles/shell/.function
 [[ -r ~/.dotfiles/shell/.plugin ]] && . ~/.dotfiles/shell/.plugin
 
