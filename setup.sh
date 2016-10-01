@@ -23,10 +23,6 @@ brew install ack ag ansiweather autoenv bash binutils colordiff colormake \
              perl pgcli postgresql pyenv pyenv-virtualenv rename rmtrash tmux \
              watch wdiff wifi-password wget vim zsh zsh-completions
 
-# Install antibody
-brew tap getantibody/homebrew-antibody
-brew install antibody
-
 # Override system vim with macvim
 brew install macvim --env-std --with-override-system-vim
 
@@ -79,6 +75,9 @@ chsh -s /bin/zsh
 # Install zim
 git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR:-${HOME}}/.zim
 
+
+# Install zplug
+curl -sL zplug.sh/installer | zsh
 
 # Install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

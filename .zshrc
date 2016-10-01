@@ -11,9 +11,9 @@ fi
 
 ##### Autoload #####
 
-# Load Antibody first
-. <(antibody init)
-antibody bundle < ~/.dotfiles/shell/zsh/.antibody
+# Load zplug and plugins
+[[ -r ~/.zplug/init.zsh ]] && . ~/.zplug/init.zsh
+zplug "eventi/noreallyjustfuckingstopalready"
 
 autoload -U zcalc zsh-mime-setup
 zsh-mime-setup
@@ -92,3 +92,18 @@ setopt HIST_REDUCE_BLANKS
 
 
 ##### Non built-ins #####
+
+
+##### Zplug loading #####
+#
+# Install packages that have not been installed yet
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    else
+        echo
+    fi
+fi
+
+zplug load
