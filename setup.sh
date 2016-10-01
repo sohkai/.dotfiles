@@ -17,7 +17,7 @@ brew install --default-names findutils gnu-sed gnu-tar gnu-which gnutls grep
 
 # FIXME: LIST MORE!!! (And Casks)
 brew install ack ag ansiweather autoenv bash binutils colordiff colormake \
-             coreutils curl diff-so-fancy diffutils erlang ffmpeg fasd \
+             coreutils curl diff-so-fancy diffutils erlang fasd ffmpeg fortune \
              gifsicle git git-extras git-lfs gnupg2 gpg go grc gzip heroku \
              heroku-toolbelt htop imagemagick mercurial mongodb mtr nmap openssl \
              perl pgcli postgresql pyenv pyenv-virtualenv rename rmtrash tmux \
@@ -72,9 +72,9 @@ gem install ghi lolcat screengif travis
 
 # Set Zsh to be the default shell
 chsh -s /bin/zsh
+# Install zim
+git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR:-${HOME}}/.zim
 
-# Zsh Prezto
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 # Install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

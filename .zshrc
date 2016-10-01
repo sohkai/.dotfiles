@@ -1,15 +1,25 @@
+##### FIRST THINGS FIRST #####
+
+# Print a random, hopefully interesting, adage.
+if (( $+commands[fortune] )); then
+  if [[ -t 0 || -t 1 ]]; then
+    fortune -s
+    print
+  fi
+fi
+
+
 ##### Autoload #####
 
 # Load Antibody first
 . <(antibody init)
 antibody bundle < ~/.dotfiles/shell/zsh/.antibody
 
-autoload -U compinit zcalc zsh-mime-setup
-compinit
+autoload -U zcalc zsh-mime-setup
 zsh-mime-setup
 
-# Source Prezto
-[[ -r "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]] && . ${ZDOTDIR:-$HOME}/.zprezto/init.zsh
+# Source Zim
+[[ -r "${ZDOTDIR:-$HOME}/.zim/init.zsh" ]] && . ${ZDOTDIR:-$HOME}/.zim/init.zsh
 
 # iTerm shell integration
 [[ -r ~/.iterm2_shell_integration.zsh ]] && . ~/.iterm2_shell_integration.zsh
@@ -22,7 +32,10 @@ zsh-mime-setup
 [[ -r ~/.dotfiles/shell/.function ]] && . ~/.dotfiles/shell/.function
 [[ -r ~/.dotfiles/shell/.plugin ]] && . ~/.dotfiles/shell/.plugin
 
-# Note: Node, Python, and Ruby's version managers are automatically loaded from Prezto
+# Language version managers
+[[ -r "$NVM_DIR/nvm.sh" ]] && . "$NVM_DIR/nvm.sh" # NVM
+[[ -r "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # RVM
+eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)" # Pyenv-virtualenv
 
 
@@ -31,17 +44,23 @@ alias resource="source ~/.zshrc && source ~/.zshenv"
 
 
 ##### Key bindings #####
+bindkey -M viins '^F' vi-forward-word
+bindkey -M viins '^E' vi-add-eol
 bindkey -M viins '^R' history-incremental-search-backward
 bindkey -M vicmd '^R' history-incremental-search-backward
 bindkey -M viins '^S' history-incremental-search-forward
 bindkey -M vicmd '^S' history-incremental-search-forward
 
-bindkey -M vicmd "q" push-line # Reset the current prompt but save it for the next command
+bindkey -M vicmd 'q' push-line # Reset the current prompt but save it for the next command
 bindkey -M viins ' ' magic-space # Magic space completion for history
 
+# Requires history-substring-search
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
 ##### Misc #####
 setopt VI # Vim key bindings
+setopt CORRECT # Correct commands
 setopt RM_STAR_WAIT # Sanity check for rm *
 setopt EXTENDED_GLOB # Use extended globbing
 setopt NO_CASE_GLOB # Case insensitive glob
@@ -66,19 +85,9 @@ zstyle ':completion:*' verbose yes
 
 
 ##### History #####
-SAVEHIST=10000
-HISTSIZE=10000
-
-setopt EXTENDED_HISTORY # Save the time and how long a command ran
+# See zim.history
 setopt APPEND_HISTORY # Don't overwrite history
-setopt SHARE_HISTORY # Share history between multiple shells
-setopt HIST_IGNORE_DUPS # Ignore duplicates
-setopt HIST_IGNORE_ALL_DUPS # Account for inbetween commands when ignoring duplicates
 setopt HIST_REDUCE_BLANKS
-setopt HIST_VERIFY # When using a hist thing, make a newline show the change before executing it.
-setopt HIST_SAVE_NO_DUPS
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_FIND_NO_DUPS
 
 
 ##### Non built-ins #####

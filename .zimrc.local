@@ -1,0 +1,2 @@
+# Source .zimrc
+[[ -r ~/.dotfiles/.zimrc ]] && . ~/.dotfiles/.zimrc

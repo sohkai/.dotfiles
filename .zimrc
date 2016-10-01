@@ -1,0 +1,38 @@
+#################
+# CORE SETTINGS #
+#################
+
+# Activated modules
+
+zmodules=( \
+    directory \
+    environment \
+    history \
+    input \
+    utility \
+    meta \
+    archive \
+    fasd \
+    spectrum \
+    # Note that the next modules may depend on options set by earlier modules.
+    # These dependencies are noted on the respective module's README.md.
+    syntax-highlighting \
+    history-substring-search \
+    prompt \
+    completion \
+)
+
+
+###################
+# MODULE SETTINGS #
+###################
+
+# Prompt
+zprompt_theme='pure'
+
+# Input
+# Append '../' to your input for each '.' you type after an initial '..'
+zdouble_dot_expand='true'
+
+# Syntax-Highlighting
+zhighlighters=(main brackets cursor)
