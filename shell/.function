@@ -36,6 +36,11 @@ ask() {
     done
 }
 
+is_defined() {
+    type $1 &> /dev/null;
+    return $?
+}
+
 
 # Make a directory and cd into it
 mkcd () {

@@ -56,8 +56,8 @@ bindkey -M vicmd 'q' push-line # Reset the current prompt but save it for the ne
 bindkey -M viins ' ' magic-space # Magic space completion for history
 
 # Requires history-substring-search
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
+is_defined history-substring-search-up && bindkey -M vicmd 'k' history-substring-search-up
+is_defined history-substring-search-down && bindkey -M vicmd 'j' history-substring-search-down
 
 ##### Misc #####
 setopt VI # Vim key bindings
