@@ -17,8 +17,8 @@
 [[ -r ~/.dotfiles/shell/bash/tab.bash ]] && . ~/.dotfiles/shell/bash/tab.bash # OSX new tab
 
 # Language version managers
-[ -r "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # NVM
-[ -r "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm" # RVM
+[[ -r "$NVM_DIR/nvm.sh" ]] && . "$NVM_DIR/nvm.sh" # NVM
+[[ -r "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # RVM
 eval "$(pyenv init -)" # Pyenv
 eval "$(pyenv virtualenv-init -)" # Pyenv-virtualenv
 
