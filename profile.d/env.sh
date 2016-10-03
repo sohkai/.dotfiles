@@ -25,7 +25,7 @@ export ANDROID_HOME=~/Development/androidSDK
 
 
 ##### Ansiweather#####
-export ANSIWEATHERRC=~/.dotfiles/.ansiweatherrc
+export ANSIWEATHERRC=~/.dotfiles/profile.d/ansiweatherrc
 
 
 ##### Node #####
