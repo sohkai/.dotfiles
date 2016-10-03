@@ -57,6 +57,30 @@ is_defined() {
     return $?
 }
 
+# Source a directory (non-recursively).
+# Args:
+#    dir_loc: Location of directory to source. **MUST** not have a trailing slash.
+#    ext (optional): Extension of files to source. Defaults to 'sh'
+#    ignored_files (optional): Comma delimited string of ignored files. Can be only be
+#                              just the base file name. Defaults to ''
+#                              Example: 'ignored.sh,another_ignored.sh'
+source_dir() {
+    if [[ $# -ne 1 &&  $# -ne 2 && $# -ne 3 ]]; then
+        return 1 # Return error if not given right arguments
+    fi
+
+    local dir_loc="$1"
+    local file_ext=${2:-sh}
+    local ignored_files=$3
+    if [[ -d $dir_loc ]]; then
+        for file in "$dir_loc"/*."$file_ext"; do
+            if [[ ${ignored_files#*${file:t}} == $ignored_files ]]; then
+                source $file
+            fi
+        done
+    fi
+}
+
 # Source a file, if the file exists and is readable.
 # Args:
 #    file_loc: Abosolute location of file to source.
