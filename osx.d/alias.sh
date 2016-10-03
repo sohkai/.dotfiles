@@ -8,5 +8,5 @@ if [[ "$OSTYPE" != darwin* ]]; then
   return 1
 fi
 
-alias pbc='pbcopy'
-alias pbp='pbpaste'
+alias pbc='pbcopy' # Clipboard copy
+alias pbp='pbpaste' # Clipboard paste
