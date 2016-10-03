@@ -30,42 +30,39 @@ eval "$(pyenv virtualenv-init -)" # Pyenv-virtualenv
 # FIXME: add prezto's osx module as a git submodule
 
 
+##############
+# Completion #
+##############
 
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # Case insensitive
+zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd' # Better killall completion
+zstyle ':completion:*' verbose yes
+source_file ~/.pyenv/completions/pyenv.zsh # Pyenv
 
+###########
+# Options #
+###########
 
-##### Misc #####
 setopt VI # Vim key bindings
 setopt CORRECT # Correct commands
+setopt COMPLETE_IN_WORD # Tab complete in word
+unsetopt COMPLETE_ALIASES # Don't expand aliases to allow for completion after aliases
 setopt RM_STAR_WAIT # Sanity check for rm *
 setopt EXTENDED_GLOB # Use extended globbing
 setopt NO_CASE_GLOB # Case insensitive glob
 setopt RC_EXPAND_PARAM # Expand arrays
 setopt IGNORE_EOF # Force 'exit' to logout
-setopt COMPLETE_IN_WORD # Tab complete in word
-unsetopt COMPLETE_ALIASES # Don't expand aliases to allow for completion after aliases
 
 KEYTIMEOUT=1 # Shorten vi mode delay
 
+#####################
+#      History      #
+# (see zim.history) #
+#####################
 
-##### Completion #####
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # Case insensitive
-zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd' # Better killall completion
-zstyle ':completion:*' verbose yes
-[[ -r ~/.pyenv/completions/pyenv.zsh ]] && . ~/.pyenv/completions/pyenv.zsh # Pyenv
-
-# In case git completion ever gets slow, turn this on:
-# function __git_files {
-#   _wanted files expl 'local files' _files # Just use all files in the directory instead of being based on git status
-# }
-
-
-##### History #####
-# See zim.history
 setopt APPEND_HISTORY # Don't overwrite history
 setopt HIST_REDUCE_BLANKS
 
-
-##### Non built-ins #####
 
 ################
 # After hooks #
