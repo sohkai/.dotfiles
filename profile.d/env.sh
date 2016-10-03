@@ -28,6 +28,3 @@ export ANDROID_HOME=~/Development/androidSDK
 export ANSIWEATHERRC=~/.dotfiles/profile.d/ansiweatherrc
 
 
-##### Node #####
-export NVM_DIR="${HOME}/.nvm"
-
