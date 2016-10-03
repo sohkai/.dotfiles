@@ -22,19 +22,19 @@ eval "$(pyenv init -)" # Pyenv
 eval "$(pyenv virtualenv-init -)" # Pyenv-virtualenv
 
 
+##############
+# Completion #
+##############
 
 source_file ~/.dotfiles/bash.d/external/.git-completion.bash # git
 source_file $NVM_DIR/bash_completion # NVM
 source_file ~/.pyenv/completions/pyenv.bash # Pyenv
 
 
+###########
+# History #
+###########
 
-##### Completion #####
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # NVM
-[[ -r ~/.pyenv/completions/pyenv.bash ]] && . ~/.pyenv/completions/pyenv.bash # Pyenv
-
-
-##### History #####
 export HISTCONTROL=ignoredups
 export HISTTIMEFORMAT='%F %T '
 
