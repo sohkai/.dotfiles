@@ -7,13 +7,6 @@ if [[ $- != *i* ]] ; then
     return
 fi
 
-# Load utilities first
-if [[ -d $HOME/.dotfiles/utility.d ]]; then
-    for file in $HOME/.dotfiles/utility.d/*.sh; do
-        source $file
-    done
-fi
-
 # Source profile.d
 source_dir $HOME/.dotfiles/profile.d
 

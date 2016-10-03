@@ -1,3 +1,10 @@
+# Load utilities first
+if [[ -d $HOME/.dotfiles/utility.d ]]; then
+    for file in $HOME/.dotfiles/utility.d/*.sh; do
+        source $file
+    done
+fi
+
 # Load synced .bashrc
 source_file ~/.dotfiles/bash.d/bashrc
 
