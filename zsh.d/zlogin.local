@@ -1,2 +1,2 @@
-# Source .zlogin
-[[ -r ~/.dotfiles/.zlogin ]] && . ~/.dotfiles/.zlogin
+# Load synced .zlogin
+source_file ~/.dotfiles/zsh.d/zlogin

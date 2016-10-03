@@ -1,5 +1,5 @@
-# Source .zshrc
-[[ -r ~/.dotfiles/.zshrc ]] && . ~/.dotfiles/.zshrc
+# Load synced .zshrc
+source_file ~/.dotfiles/zsh.d/zshrc
 
 # Load local profile
 [[ -r ~/.profile_env ]] && . ~/.profile_env

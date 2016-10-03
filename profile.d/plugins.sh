@@ -1,1 +1,6 @@
-[[ -r /usr/local/opt/autoenv/activate.sh ]] && . /usr/local/opt/autoenv/activate.sh # autoenv
+####################
+# External plugins #
+####################
+
+# Autoenv
+source_file /usr/local/opt/autoenv/activate.sh

@@ -1,14 +1,14 @@
-##### Autoload #####
-# Source paths, environment variables, aliases, functions, and shell plugins
-[[ -r ~/.dotfiles/shell/.path ]] && . ~/.dotfiles/shell/.path
-[[ -r ~/.dotfiles/shell/.profile_env ]] && . ~/.dotfiles/shell/.profile_env
-[[ -r ~/.dotfiles/shell/.alias ]] && . ~/.dotfiles/shell/.alias
-[[ -r ~/.dotfiles/shell/.function ]] && . ~/.dotfiles/shell/.function
-[[ -r ~/.dotfiles/shell/.plugin ]] && . ~/.dotfiles/shell/.plugin
+############
+# Autoload #
+############
 
-# Source bash specifics
-[[ -r ~/.dotfiles/shell/bash/.alias ]] && . ~/.dotfiles/shell/bash/.alias
 
+# Load utilities first
+if [[ -d $HOME/.dotfiles/utility.d ]]; then
+    for file in $HOME/.dotfiles/utility.d/*.sh; do
+        source $file
+    done
+fi
 
 
 # Language version managers
@@ -19,9 +19,15 @@ eval "$(pyenv virtualenv-init -)" # Pyenv-virtualenv
 
 
 
+source_file ~/.dotfiles/bash.d/external/.git-completion.bash # git
+source_file $NVM_DIR/bash_completion # NVM
+source_file ~/.pyenv/completions/pyenv.bash # Pyenv
 
 
 
+##### Completion #####
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # NVM
+[[ -r ~/.pyenv/completions/pyenv.bash ]] && . ~/.pyenv/completions/pyenv.bash # Pyenv
 
 
 ##### History #####

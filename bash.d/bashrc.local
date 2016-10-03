@@ -1,4 +1,5 @@
-[[ -r ~/.dotfiles/.bashrc ]] && . ~/.dotfiles/.bashrc
+# Load synced .bashrc
+source_file ~/.dotfiles/bash/bashrc
 
 # Load local profile
 [[ -r ~/.profile_env ]] && . ~/.profile_env

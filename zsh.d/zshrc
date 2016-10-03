@@ -1,15 +1,16 @@
-##### FIRST THINGS FIRST #####
+############
+# Autoload #
+############
 
-# Print a random, hopefully interesting, adage.
-if (( $+commands[fortune] )); then
-  if [[ -t 0 || -t 1 ]]; then
-    fortune -s
-    print
-  fi
+# Load utilities first
+if [[ -d $HOME/.dotfiles/utility.d ]]; then
+    for file in $HOME/.dotfiles/utility.d/*.sh; do
+        source $file
+    done
 fi
 
-
-##### Autoload #####
+# Load Zim
+source_file ${ZDOTDIR:-$HOME}/.zim/init.zsh
 
 # Load plugins
 source_file $HOME/.dotfiles/zsh.d/zplugrc
@@ -18,15 +19,6 @@ source_file $HOME/.dotfiles/zsh.d/zplugrc
 autoload -U zcalc zsh-mime-setup
 zsh-mime-setup
 
-# Source Zim
-[[ -r "${ZDOTDIR:-$HOME}/.zim/init.zsh" ]] && . ${ZDOTDIR:-$HOME}/.zim/init.zsh
-
-
-# Source aliases, functions, and shell plugins
-[[ -r ~/.dotfiles/shell/.alias ]] && . ~/.dotfiles/shell/.alias
-[[ -r ~/.dotfiles/shell/zsh/.alias ]] && . ~/.dotfiles/shell/zsh/.alias
-[[ -r ~/.dotfiles/shell/.function ]] && . ~/.dotfiles/shell/.function
-[[ -r ~/.dotfiles/shell/.plugin ]] && . ~/.dotfiles/shell/.plugin
 
 # Language version managers
 [[ -r "$NVM_DIR/nvm.sh" ]] && . "$NVM_DIR/nvm.sh" # NVM

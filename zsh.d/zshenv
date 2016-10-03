@@ -1,6 +1,6 @@
 # Source path environment settings
-[[ -r ~/.dotfiles/shell/.path ]] && . ~/.dotfiles/shell/.path
-[[ -r ~/.dotfiles/shell/.profile_env ]] && . ~/.dotfiles/shell/.profile_env
+source_file ~/.dotfiles/profile.d/path.sh
+source_file ~/.dotfiles/profile.d/env.sh
 
 # Add .fpath to $FPATH
 local local_fpath_loc="$HOME/.fpath"

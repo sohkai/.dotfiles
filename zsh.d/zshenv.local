@@ -1,2 +1,2 @@
-# Source .zshenv
-[[ -r ~/.dotfiles/.zshenv ]] && . ~/.dotfiles/.zshenv
+# Load synced .zshenv
+source_file ~/.dotfiles/zsh.d/zshenv
