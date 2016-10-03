@@ -36,15 +36,6 @@ alias killps="sudo kill -9"
 alias chrome="open -a 'Google Chrome'" # Only on OSX
 alias serve="python -m http.server"
 
-
-##### Tmux #####
-alias mxresource="tmux source-file ~/.tmux.conf"
-alias mew="tmux new"
-alias mxls="tmux ls"
-alias mxat="tmux attach -t"
-
-
-###### Docker #####
 alias dockm="docker-machine"
 alias dockc="docker-compose"
 alias dmls="docker-machine ls"
