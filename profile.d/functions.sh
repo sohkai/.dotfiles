@@ -21,11 +21,6 @@ rtfm() {
     help $@ || man $@ || open "http://www.google.com/search?q=$@";
 }
 
-# Install pip packages globally
-gpip() {
-    PIP_REQUIRE_VIRTUALENV="" pip "$@"
-}
-
 travis() {
     source ~/.travis/travis.sh
     unset -f travis
