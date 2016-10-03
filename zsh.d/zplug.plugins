@@ -1,0 +1,7 @@
+# vim: set ft=zsh:
+
+#################
+# Zplug plugins #
+#################
+
+zplug "eventi/noreallyjustfuckingstopalready"

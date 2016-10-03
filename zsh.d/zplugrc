@@ -1,0 +1,26 @@
+# vim: set ft=zsh:
+
+#########
+# Zplug #
+#########
+
+# Init
+source_file ~/.zplug/init.zsh
+
+# Plugins
+local plugin_loc=$HOME/.dotfiles/zsh/zplug.plugins
+ZPLUG_LOADFILE=$plugin_loc
+source_file $plugin_loc
+
+# Install plugins
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    else
+        echo
+    fi
+fi
+
+# Load plugins
+zplug load

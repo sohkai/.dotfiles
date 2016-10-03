@@ -11,10 +11,10 @@ fi
 
 ##### Autoload #####
 
-# Load zplug and plugins
-[[ -r ~/.zplug/init.zsh ]] && . ~/.zplug/init.zsh
-zplug "eventi/noreallyjustfuckingstopalready"
+# Load plugins
+source_file $HOME/.dotfiles/zsh.d/zplugrc
 
+# Autoload functions
 autoload -U zcalc zsh-mime-setup
 zsh-mime-setup
 
@@ -79,20 +79,8 @@ setopt HIST_REDUCE_BLANKS
 # After hooks #
 ###############
 
-##### Zplug loading #####
-#
-# Install packages that have not been installed yet
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    else
-        echo
-    fi
-fi
 # Source profile.d/after
 source_dir $HOME/.dotfiles/profile.d/after
 
-zplug load
 # Source zsh.d/after
 source_dir $HOME/.dotfiles/zsh.d/after zsh

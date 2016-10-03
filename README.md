@@ -67,9 +67,9 @@ For zsh, the general source order is:
     - `~/.dotfiles/zsh.d/zshrc`
         - `~/.zimrc`
         - `~/.dotfiles/zsh.d/zimrc`
+        - `~/.dotfiles/zsh.d/zplugrc`
         - `~/.dotfiles/profile.d/*.sh`
         - `~/.dotfiles/zsh.d/*.zsh`
-        - `~/.dotfiles/zsh.d/zplug.zsh`
         - `~/.dotfiles/profile.d/after*.sh`
     - `~/.profilerc`
     - `~/.languagerc`
