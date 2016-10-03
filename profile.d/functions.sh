@@ -1,3 +1,7 @@
+#############
+# Functions #
+#############
+
 # Make a directory and cd into it
 mkcd() {
     mkdir -p $1;
@@ -5,7 +9,7 @@ mkcd() {
 }
 
 # Automatically cd after ranger closes
-function ranger_cd {
+ranger_cd() {
     tempfile="$(mktemp -t tmp.XXXXXX)"
     ranger --choosedir="$tempfile" "${@:-$(pwd)}"
     test -f "$tempfile" &&
@@ -21,6 +25,7 @@ rtfm() {
     help $@ || man $@ || open "http://www.google.com/search?q=$@";
 }
 
+# Lazy load travis.rb
 travis() {
     source ~/.travis/travis.sh
     unset -f travis
