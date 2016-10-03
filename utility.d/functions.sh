@@ -56,3 +56,15 @@ is_defined() {
     type $1 &> /dev/null;
     return $?
 }
+
+# Source a file, if the file exists and is readable.
+# Args:
+#    file_loc: Abosolute location of file to source.
+source_file() {
+    if [[ $# -ne 1 ]]; then
+        return 1 # Return error if not given right arguments
+    fi
+
+    local file_loc="$1"
+    [[ -r $1 ]] && . $1
+}
