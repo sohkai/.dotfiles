@@ -1,3 +1,9 @@
+###########
+# Aliases #
+###########
+
+alias resource="source ~/.zshrc && source ~/.zshenv"
+
 # Disable correction.
 alias ack='nocorrect ack'
 alias cd='nocorrect cd'
