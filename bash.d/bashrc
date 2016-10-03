@@ -9,12 +9,7 @@
 # Source bash specifics
 [[ -r ~/.dotfiles/shell/bash/.alias ]] && . ~/.dotfiles/shell/bash/.alias
 
-# iTerm shell integration
-[[ -r ~/.iterm2_shell_integration.bash ]] && . ~/.iterm2_shell_integration.bash
 
-# Scripts
-[[ -r ~/.dotfiles/modules/grc/grc.sh ]] && . ~/.dotfiles/modules/grc/grc.bashrc # grc
-[[ -r ~/.dotfiles/shell/bash/tab.bash ]] && . ~/.dotfiles/shell/bash/tab.bash # OSX new tab
 
 # Language version managers
 [[ -r "$NVM_DIR/nvm.sh" ]] && . "$NVM_DIR/nvm.sh" # NVM
@@ -23,19 +18,10 @@ eval "$(pyenv init -)" # Pyenv
 eval "$(pyenv virtualenv-init -)" # Pyenv-virtualenv
 
 
-##### Aliases #####
-alias resource="source ~/.bash_profile"
 
 
-##### Key bindings #####
-bind "\C-j menu-complete" # Forward cycle through completions
-bind "\C-k menu-complete-backward" # Backward cycle through completions
 
 
-##### Completion #####
-[[ -r ~/.dotfiles/shell/bash/.git-completion.bash ]] && . ~/.dotfiles/shell/bash/.git-completion.bash # git
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # NVM
-[[ -r ~/.pyenv/completions/pyenv.bash ]] && . ~/.pyenv/completions/pyenv.bash # Pyenv
 
 
 ##### History #####
