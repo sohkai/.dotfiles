@@ -1,3 +1,4 @@
+# vim: set ft=tmux:
 ##### Shell #####
 set-option -g default-shell $SHELL
 
