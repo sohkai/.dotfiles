@@ -1,5 +1,5 @@
 # Load synced .bashrc
-source_file ~/.dotfiles/bash/bashrc
+source_file ~/.dotfiles/bash.d/bashrc
 
 # Load local profile
 source_file ~/.profilerc

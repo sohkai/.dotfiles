@@ -13,9 +13,9 @@ fi
 # Autoload #
 ############
 
-source_dir docker.d
-source_dir git.d
-source_dir homebrew.d
-source_dir osx.d
-source_dir tmux.d
-source_dir vim.d
+source_dir $HOME/.dotfiles/docker.d
+source_dir $HOME/.dotfiles/git.d
+source_dir $HOME/.dotfiles/homebrew.d
+source_dir $HOME/.dotfiles/osx.d
+source_dir $HOME/.dotfiles/tmux.d
+source_dir $HOME/.dotfiles/vim.d

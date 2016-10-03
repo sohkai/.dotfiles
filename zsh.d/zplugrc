@@ -8,7 +8,7 @@
 source_file ~/.zplug/init.zsh
 
 # Plugins
-local plugin_loc=$HOME/.dotfiles/zsh/zplug.plugins
+local plugin_loc=$HOME/.dotfiles/zsh.d/zplug.plugins
 ZPLUG_LOADFILE=$plugin_loc
 source_file $plugin_loc
 
