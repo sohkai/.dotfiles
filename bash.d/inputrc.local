@@ -1,1 +1,1 @@
-$include ~/.dotfiles/.inputrc
+$include ~/.dotfiles/bash/inputrc
