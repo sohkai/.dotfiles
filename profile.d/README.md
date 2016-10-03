@@ -1,7 +1,8 @@
-Shell configuration
-===================
+Shared shell configuration
+==========================
 
-Hopefully the structure of this folder is self-explanatory.
+Shared settings between different shells.
+
 
 Tips and tricks: random cool things from the internet
 -----------------------------------------------------

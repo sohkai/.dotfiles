@@ -19,12 +19,11 @@ source_file $HOME/.dotfiles/zsh.d/zplugrc
 autoload -U zcalc zsh-mime-setup
 zsh-mime-setup
 
+# Source profile.d, ignoring what .zshenv has already sourced
+source_dir $HOME/.dotfiles/profile.d "path.sh,env.sh"
 
-# Language version managers
-[[ -r "$NVM_DIR/nvm.sh" ]] && . "$NVM_DIR/nvm.sh" # NVM
-[[ -r "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # RVM
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)" # Pyenv-virtualenv
+# Source zsh.d
+source_dir $HOME/.dotfiles/zsh.d zsh
 
 # FIXME: add npm completion (see https://github.com/sorin-ionescu/prezto/blob/master/modules/node/init.zsh#L23)
 # FIXME: add prezto's osx module as a git submodule
@@ -52,6 +51,7 @@ setopt EXTENDED_GLOB # Use extended globbing
 setopt NO_CASE_GLOB # Case insensitive glob
 setopt RC_EXPAND_PARAM # Expand arrays
 setopt IGNORE_EOF # Force 'exit' to logout
+setopt INTERACTIVECOMMENTS # Allow for comments on command line
 
 KEYTIMEOUT=1 # Shorten vi mode delay
 
