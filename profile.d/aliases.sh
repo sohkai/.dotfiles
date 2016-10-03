@@ -55,9 +55,3 @@ alias shist="history | grep"
 alias o='open'
 alias chrome="open -a 'Google Chrome'" # Only on OSX
 alias serve="python -m http.server"
-
-# Docker
-alias dockm="docker-machine"
-alias dockc="docker-compose"
-alias dmls="docker-machine ls"
-alias dcps="docker-compose ps"

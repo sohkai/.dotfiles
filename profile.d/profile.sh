@@ -13,6 +13,7 @@ fi
 # Autoload #
 ############
 
+source_dir docker
 source_dir git
 source_dir homebrew
 source_dir osx
