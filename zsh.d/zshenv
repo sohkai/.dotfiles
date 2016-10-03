@@ -3,5 +3,7 @@
 [[ -r ~/.dotfiles/shell/.profile_env ]] && . ~/.dotfiles/shell/.profile_env
 
 # Add .fpath to $FPATH
-[[ :$PATH: == *:$HOME/.fpath:* ]] || [ -d $HOME/.fpath ] && export FPATH=$FPATH:$HOME/.fpath
-[[ :$PATH: == *:$HOME/.dotfiles/zsh/.fpath:* ]] || [ -d $HOME/.dotfiles/zsh/.fpath ] && export FPATH=$FPATH:$HOME/.dotfiles/zsh/.fpath
+local local_fpath_loc="$HOME/.fpath"
+local synced_fpath_loc="$HOME/.dotfiles/zsh/.fpath"
+[[ :$PATH: != *:"$local_fpath_loc":* ]] && [[ -d "$local_fpath_loc" ]] && export FPATH=$FPATH:"$local_fpath_loc"
+[[ :$PATH: != *:"$synced_fpath_loc":* ]] && [[ -d "$synced_fpath_loc" ]] && export FPATH=$FPATH:"$synced_fpath_loc"

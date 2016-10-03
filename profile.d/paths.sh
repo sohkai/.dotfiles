@@ -1,13 +1,18 @@
 # Add to path if not already added and folder exists
 
 # Homebrew
-[[ :$PATH: == *:/usr/local/bin:* ]] || [ -d /usr/local/bin ] && export PATH=/usr/local/bin:$PATH
-[[ :$PATH: == *:/usr/local/sbin:* ]] || [ -d /usr/local/sbin ] && export PATH=/usr/local/sbin:$PATH
+local homebrew_bin_path=/usr/local/bin
+local homebrew_sbin_path=/usr/local/sbin
+[[ :$PATH: != *:"$homebrew_bin_path":* ]] && [[ -d "$homebrew_bin_path" ]] && export PATH="$homebrew_bin_path":$PATH
+[[ :$PATH: != *:"$homebrew_sbin_path":* ]] && [[ -d "$homebrew_sbin_path" ]] && export PATH="$homebrew_sbin_path":$PATH
 
 # RVM
 # Add RVM to PATH for scripting
-[[ :$PATH: == *:$HOME/.rvm/bin:* ]] || [ -d $HOME/.rvm/bin ] && export PATH=$PATH:$HOME/.rvm/bin
+local rvm_bin_path=$HOME/.rvm/bin
+[[ :$PATH: != *:"$rvm_bin_path":* ]] && [[ -d "$rvm_bin_path" ]] && export PATH=$PATH:"$rvm_bin_path"
 
 # Android SDK
-[[ :$PATH: == *:/Users/Brett/Development/androidSDK/platform-tools:* ]] || [ -d /Users/Brett/Development/androidSDK/platform-tools ] && export PATH=$PATH:/Users/Brett/Development/androidSDK/platform-tools
-[[ :$PATH: == *:/Users/Brett/Development/androidSDK/tools:* ]] || [ -d /Users/Brett/Development/androidSDK/tools ] && export PATH=$PATH:/Users/Brett/Development/androidSDK/tools
+local android_platform_tools_path=/Users/Brett/Development/androidSDK/platform-tools
+local android_tools_path=/Users/Brett/Development/androidSDK/tools
+[[ :$PATH: != *:"$android_platform_tools_path":* ]] && [[ -d "$android_platform_tools_path" ]] && export PATH=$PATH:"$android_platform_tools_path"
+[[ :$PATH: != *:"$android_tools_path":* ]] && [[ -d "$android_tools_path" ]] && export PATH=$PATH:"$android_tools_path"
