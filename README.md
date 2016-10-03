@@ -103,11 +103,11 @@ configuration files that do not have the ability to load from another file or ar
 be locally placed; changes to these files will only come into effect if they are made locally and
 will have to be duplicated into this repo. A list of files to be wary for when changing:
 
-* [`.tmux.conf`](./.tmux.conf.local)
-* [`.pypirc`](./.pypirc.local)
-* [`.rvmrc`](./.rvmrc.local)
-* [`.profilerc`](./.profilerc.local) and [`.languagerc`](./.languagerc.local) (although these should
-  **ONLY** ever contain local configuration, so you shouldn't need to duplicate anything other than
-  a template for these files)
-* [`.bash_profile`](./.bash_profile.local) (if you want to make modifications to this, make sure you
-  have a good reason not to change your local or tracked `.bashrc` instead)
+* [`.tmux.conf`](./tmux.d/tmux.conf.symlink)
+* [`.pypirc`](./python.d/pypirc.local)
+* [`.rvmrc`](./ruby.d/rvmrc.local)
+* [`.profilerc`](./profile.d/profilerc.local) and [`.languagerc`](./profile.d/languagerc.local)
+  (although these should **ONLY** ever contain local configuration, so you shouldn't need to
+  duplicate anything other than a template for these files)
+* [`.bash_profile`](./bash.d/bash_profile.local) (if you want to make modifications to this, make
+  sure you have a good reason not to change your local or tracked `.bashrc` instead)
