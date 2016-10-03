@@ -6,6 +6,19 @@ Shared settings between different shells.
 
 Tips and tricks: random cool things from the internet
 -----------------------------------------------------
+
+Get basename of file
+
+```bash
+echo ${path_to_file##*/}
+```
+
+Get dirname of file
+
+```bash
+echo ${path_to_file%/*}
+```
+
 Remove all files except for specified one [link](http://www.commandlinefu.com/commands/view/6652/remove-all-but-one-specific-file#comment):
 
 ```bash

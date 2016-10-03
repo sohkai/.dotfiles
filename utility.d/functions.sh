@@ -74,7 +74,7 @@ source_dir() {
     local ignored_files=$3
     if [[ -d $dir_loc ]]; then
         for file in "$dir_loc"/*."$file_ext"; do
-            if [[ ${ignored_files#*${file:t}} == $ignored_files ]]; then
+            if [[ ${ignored_files#*${file##*/}} == $ignored_files ]]; then
                 source $file
             fi
         done
