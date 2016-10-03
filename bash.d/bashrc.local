@@ -2,7 +2,7 @@
 source_file ~/.dotfiles/bash/bashrc
 
 # Load local profile
-[[ -r ~/.profile_env ]] && . ~/.profile_env
+source_file ~/.profilerc
 
-# Load local language version defaults
-[[ -r ~/.language_ver ]] &&  ask "Load languages?" N && . ~/.language_ver
+# Load local language configuration, if confirmed
+[[ -r ~/.languagerc ]] &&  ask "Load languages?" N && . ~/.languagerc
