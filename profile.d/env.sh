@@ -21,7 +21,7 @@ export MACHINE_DRIVER=virtualbox
 
 
 ##### Android #####
-export ANDROID_HOME=~/Development/Android\ SDK
+export ANDROID_HOME=~/Development/androidSDK
 
 
 ##### Ansiweather#####
