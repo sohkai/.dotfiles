@@ -2,6 +2,10 @@
 # Autoload #
 ############
 
+if [[ $- != *i* ]] ; then
+    # Shell is non-interactive; no need to do anything more
+    return
+fi
 
 # Load utilities first
 if [[ -d $HOME/.dotfiles/utility.d ]]; then
