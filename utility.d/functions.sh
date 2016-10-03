@@ -4,6 +4,7 @@
 
 # Confirm the action
 # https://gist.github.com/davejamesmiller/1965569
+#
 # Args:
 #    prompt: Confirmation prompt
 #    default: Default answer.
@@ -47,6 +48,7 @@ ask() {
 }
 
 # Check that a given alias or function is available
+#
 # Args:
 #    command: Command to check.
 #
@@ -58,6 +60,7 @@ is_defined() {
 }
 
 # Source a directory (non-recursively).
+#
 # Args:
 #    dir_loc: Location of directory to source. **MUST** not have a trailing slash.
 #    ext (optional): Extension of files to source. Defaults to 'sh'
@@ -70,8 +73,8 @@ source_dir() {
     fi
 
     local dir_loc="$1"
-    local file_ext=${2:-sh}
-    local ignored_files=$3
+    local file_ext="${2:-sh}"
+    local ignored_files="$3"
     if [[ -d $dir_loc ]]; then
         for file in "$dir_loc"/*."$file_ext"; do
             if [[ ${ignored_files#*${file##*/}} == $ignored_files ]]; then
@@ -90,5 +93,5 @@ source_file() {
     fi
 
     local file_loc="$1"
-    [[ -r $1 ]] && . $1
+    [[ -r $1 ]] && source $1
 }
