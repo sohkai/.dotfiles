@@ -4,7 +4,7 @@
 [credential]
     helper = osxkeychain
 [core]
-    excludesfile = .gitignore_global
+    excludesfile = ~/.dotfiles/git.d/.gitignore_global
     autocrlf = input
     pager = diff-highlight | diff-so-fancy | less -r
 [commit]
