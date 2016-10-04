@@ -1,10 +1,11 @@
 #!/bin/bash
 
-##### SYS UTILS #####
+#######################
+# System dependencies #
+#######################
 
-# Install brew
+# Make me some homebrew!
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew doctor
 
 # Install dupes for OSX packages
 brew tap homebrew/dupes
@@ -15,13 +16,16 @@ brew tap caskroom/cask
 # Get some nice brews
 brew install --default-names findutils gnu-sed gnu-tar gnu-which gnutls grep
 
-# FIXME: LIST MORE!!! (And Casks)
 brew install ack ag ansiweather autoenv bash binutils colordiff colormake \
              coreutils curl diff-so-fancy diffutils erlang fasd ffmpeg fortune \
              gifsicle git git-extras git-lfs gnupg2 gpg go grc gzip heroku \
-             heroku-toolbelt htop imagemagick mercurial mongodb mtr nmap openssl \
-             perl pgcli postgresql pyenv pyenv-virtualenv ranger rename rmtrash tmux \
-             tree watch wdiff wifi-password wget vim zsh zsh-completions
+             heroku-toolbelt htop imagemagick mercurial mongodb mtr nmap \
+             openssl perl pgcli postgresql pyenv pyenv-virtualenv ranger \
+             rename rmtrash tmux tree watch wdiff wifi-password wget vim zsh \
+             zsh-completions
+
+brew cask install chrome-devtools dockertoolbox firefox github-desktop \
+                  google-chrome grandperspective iterm2 skype steam xquartz
 
 # Override system vim with macvim
 brew install macvim --env-std --with-override-system-vim
@@ -29,9 +33,6 @@ brew install macvim --env-std --with-override-system-vim
 # Install neovim
 brew tap neovim/neovim
 brew install neovim
-
-brew cask install chrome-devtools dockertoolbox firefox github-desktop \
-                  google-chrome grandperspective iterm2 skype steam xquartz
 
 # Link brewed apps to /Applications
 brew linkapps
@@ -41,19 +42,22 @@ curl -L https://iterm2.com/misc/bash_startup.in -o ~/.iterm2_shell_integration.b
 curl -L https://iterm2.com/misc/zsh_startup.in -o ~/.iterm2_shell_integration.zsh
 
 
-##### Languages #####
+##################
+# Language setup #
+##################
 
 # Node.js (and NVM)
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.7/install.sh | bash
 # FIXME: double check that this will install nvm and source it
 nvm install node
 nvm use node
+
 npm install -g commitizen devtool greenkeeper jsonlint node-debug np \
                npm-check-updates npm-user-validate webpack-bundle-size-analyzer
 
 # Python (and Pyenv)
-echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
-exec $SHELL
+echo 'eval "$(pyenv init -)"' >> ~/.bash_profile # This will be overwritten after, just do it now to install global python packages
+. ~/.bash_profile
 pyenv install 2.7.12
 pyenv install 3.5.2
 pyenv global 3.5.2
@@ -68,13 +72,15 @@ rvm install ruby --latest
 gem install ghi lolcat screengif travis
 
 
-##### Shells #####
+###############
+# Shell setup #
+###############
 
 # Set Zsh to be the default shell
 chsh -s /bin/zsh
+
 # Install zim
 git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR:-${HOME}}/.zim
-
 
 # Install zplug
 curl -sL zplug.sh/installer | zsh
@@ -89,6 +95,21 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 . ./install_dotfiles.sh
 
+
+##############
+# User setup #
+##############
+
+mkdir ~/Development
+
+# Install tpm plugins (must be after .tmux.conf has been loaded)
+source ~/.tmux/plugins/tpm/scripts/variables.sh && ~/.tmux/plugins/tpm/bin/install_plugins
+
+
+###########################################################
+# Manual configuration (left as an exercise for the user) #
+###########################################################
+
 # FIXME
 
 # Git settings
@@ -99,22 +120,3 @@ ssh-keygen -t rsa -C "qisheng.brett.sun@gmail.com"
 echo ~/.ssh/id_rsa.pub
 
 ssh -T git@github.com # Test connection
-
-# FIXME move these settings to gitconfig
-# FIXME double check settings
-git config --global user.name "Brett Sun"
-git config --global user.email "qisheng.brett.sun@gmail.com"
-git config --global github.user sohkai
-# FIXME echo for token
-git config --global github.token your_token_here
-
-git config --global core.editor "vim"
-git config --global color.ui true
-
-
-##### Set up user #####
-
-mkdir ~/Development
-
-# Install tpm plugins (must be after .tmux.conf has been loaded)
-source ~/.tmux/plugins/tpm/scripts/variables.sh && ~/.tmux/plugins/tpm/bin/install_plugins
