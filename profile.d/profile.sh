@@ -1,11 +1,11 @@
 ##### FIRST THINGS FIRST #####
 
-# Gotta get my fortune
-if (( $+commands[fortune] )); then
-  if [[ -t 0 || -t 1 ]]; then
-    fortune -s
-    print
-  fi
+# Gotta get mai fortune cookiez
+if type fortune &> /dev/null ; then
+    if [[ -t 0 || -t 1 ]]; then
+        fortune -s
+        echo
+    fi
 fi
 
 
