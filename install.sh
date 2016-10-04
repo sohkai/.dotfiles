@@ -83,7 +83,11 @@ curl -sL zplug.sh/installer | zsh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 
-##### Dotfiles #####
+##################
+# Dotfiles setup #
+##################
+
+. ./install_dotfiles.sh
 
 # FIXME
 
