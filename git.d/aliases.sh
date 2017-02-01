@@ -5,6 +5,9 @@
 
 alias g='git'
 
+# Use hub (https://github.com/github/hub)
+alias git='hub'
+
 # Branch (b)
 alias gb='git branch'
 alias gbc='git checkout -b'
