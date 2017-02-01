@@ -27,6 +27,7 @@ alias cd..="cd .."
 alias po='popd'
 alias pu='pushd'
 alias r="ranger_cd"
+alias cdgithub="cd ~/Development/github"
 
 # File search
 alias ff="find . -iname" # Find file

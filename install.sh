@@ -101,6 +101,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ##############
 
 mkdir ~/Development
+mkdir ~/Development/github
 
 # Install tpm plugins (must be after .tmux.conf has been loaded)
 source ~/.tmux/plugins/tpm/scripts/variables.sh && ~/.tmux/plugins/tpm/bin/install_plugins
