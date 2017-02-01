@@ -16,10 +16,12 @@ things such as:
 
 Make sure to pay attention to the messages at the end for further instructions.
 
-**NOTE**: This repo **MUST** be cloned into the home directory (`~/`) as `~/.dotfiles/`
-**NOTE**: [`install.sh`](./install.sh) is most useful on OSX (due to `brew`)
-**NOTE**: On OSX, you should probably install Xcode, or at least the Xcode CLI tools, before running
-[`install.sh`](./install.sh).
+**NOTES**:
+
+- This repo **MUST** be cloned into the home directory (`~/`) as `~/.dotfiles/`
+- [`install.sh`](./install.sh) is most useful on OSX (due to `brew`)
+- On OSX, you should probably install Xcode, or at least the Xcode CLI tools
+  (`xcode-select --install`), before running [`install.sh`](./install.sh)
 
 
 install.sh
