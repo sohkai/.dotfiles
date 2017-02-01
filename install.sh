@@ -22,7 +22,7 @@ brew install ack ag ansiweather autoenv bash binutils colordiff colormake \
              heroku-toolbelt htop hub imagemagick mercurial mongodb mtr nmap \
              openssl parallel perl pgcli postgresql pstree pyenv \
              pyenv-virtualenv ranger rename rmtrash tmux tree watch wdiff \
-             wifi-password wget vim zsh zsh-completions
+             wifi-password wget vim yarn zsh zsh-completions
 
 brew cask install chrome-devtools dockertoolbox firefox github-desktop \
                   google-chrome grandperspective iterm2 skype steam xquartz

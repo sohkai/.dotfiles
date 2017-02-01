@@ -6,6 +6,11 @@ local homebrew_sbin_path=/usr/local/sbin
 [[ :$PATH: != *:"$homebrew_bin_path":* ]] && [[ -d "$homebrew_bin_path" ]] && export PATH="$homebrew_bin_path":$PATH
 [[ :$PATH: != *:"$homebrew_sbin_path":* ]] && [[ -d "$homebrew_sbin_path" ]] && export PATH="$homebrew_sbin_path":$PATH
 
+# Yarn (JS)
+local yarn_global_path=`yarn global bin`
+[[ :$PATH: != *:"$yarn_global_path":* ]] && export export PATH="$yarn_global_path":$PATH
+
+
 # RVM
 # Add RVM to PATH for scripting
 local rvm_bin_path=$HOME/.rvm/bin
