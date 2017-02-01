@@ -50,6 +50,7 @@ alias mkdir="mkdir -pv"
 alias mv='mv -i'
 alias p='$PAGER'
 alias rm='rm -i'
+alias t='type'
 alias type='type -a'
 alias rt="rmtrash" # Safe rm (to trash)
 alias shist="history | grep"
