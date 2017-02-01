@@ -17,7 +17,7 @@
     required = true
 [alias]
     cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
-    patch = --no-pager diff --no-color
+    patch = "!git --no-pager diff --no-color"
     wipebranches = "!git branch | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
     unstage = "reset HEAD --"
 
