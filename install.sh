@@ -18,12 +18,11 @@ brew install --default-names findutils gnu-sed gnu-tar gnu-which gnutls grep
 
 brew install ack ag ansiweather autoenv bash binutils colordiff colormake \
              coreutils curl diff-so-fancy diffutils erlang fasd ffmpeg fortune \
-             gifsicle git git-extras git-lfs gnupg2 gpg go grc gzip heroku \
-             heroku-toolbelt htop imagemagick mercurial mongodb mtr nmap \
-             openssl perl pgcli postgresql pyenv pyenv-virtualenv ranger \
-             rename rmtrash tmux tree watch wdiff wifi-password wget vim zsh \
-             zsh-completions
+             fzf gifsicle git git-extras git-lfs gnupg2 gpg go grc gzip heroku \
              heroku-toolbelt htop hub imagemagick mercurial mongodb mtr nmap \
+             openssl parallel perl pgcli postgresql pstree pyenv \
+             pyenv-virtualenv ranger rename rmtrash tmux tree watch wdiff \
+             wifi-password wget vim zsh zsh-completions
 
 brew cask install chrome-devtools dockertoolbox firefox github-desktop \
                   google-chrome grandperspective iterm2 skype steam xquartz
@@ -53,7 +52,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.7/install.sh | b
 nvm install node
 nvm use node
 
-npm install -g commitizen devtool greenkeeper htmlhint node-debug np \
+npm install -g commitizen devtool greenkeeper htmlhint jsonlint mancy node-debug np \
                npm-check-updates npm-user-validate webpack-bundle-size-analyzer
 
 # Python (and Pyenv)
@@ -63,7 +62,7 @@ pyenv install 2.7.12
 pyenv install 3.5.2
 pyenv global 3.5.2
 
-pip install --user neovim ipython restview twine virtualenv
+pip install --user glances neovim ipython restview twine virtualenv
 
 # Ruby (and RVM)
 gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
