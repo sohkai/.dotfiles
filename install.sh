@@ -53,7 +53,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.7/install.sh | b
 nvm install node
 nvm use node
 
-npm install -g commitizen devtool greenkeeper jsonlint node-debug np \
+npm install -g commitizen devtool greenkeeper htmlhint node-debug np \
                npm-check-updates npm-user-validate webpack-bundle-size-analyzer
 
 # Python (and Pyenv)
