@@ -10,13 +10,15 @@ Tips and tricks: random cool things from the internet
 Get basename of file
 
 ```bash
-echo ${path_to_file##*/}
+file_path=...
+echo ${file_path##*/}
 ```
 
 Get dirname of file
 
 ```bash
-echo ${path_to_file%/*}
+file_path=...
+echo ${file_path%/*}
 ```
 
 Remove all files except for specified one [link](http://www.commandlinefu.com/commands/view/6652/remove-all-but-one-specific-file#comment):
@@ -53,6 +55,12 @@ Run last command (potentially as root) [link](http://www.commandlinefu.com/comma
 
 ```bash
 [sudo] !!
+```
+
+Run last command starting with `string`
+
+```bash
+!string
 ```
 
 Run previous command with changed arguments [link](http://www.commandlinefu.com/commands/view/19/runs-previous-command-but-replacing#comment)
