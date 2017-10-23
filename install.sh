@@ -26,7 +26,7 @@ brew install ack ag ansiweather autoenv bash binutils colordiff colormake \
 
 brew cask install anki arq beyond-compare charles chrome-devtools cyberduck \
                   discord dockertoolbox dropbox firefox flux franz gimp gitter \
-                  github-desktop google-chrome google-drive grandperspective \
+                  github-desktop google-chrome google-drive gpgtools grandperspective \
                   iterm2 keybase linphone macdown mountain-duck namebench opera \
                   private-internet-access resucetime sizeup slack skype steam \
                   transmission unrarx virtualbox xquartz xtrafinder
