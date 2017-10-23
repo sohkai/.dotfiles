@@ -22,7 +22,7 @@ brew install ack ag ansiweather autoenv bash binutils colordiff colormake \
              heroku-toolbelt htop hub imagemagick mercurial mongodb mtr nmap \
              openssl parallel perl pgcli postgresql pstree pyenv \
              pyenv-virtualenv ranger rename rmtrash tmux tree watch wdiff \
-             wifi-password wget vim yarn zsh zsh-completions
+             wifi-password wget vim zsh zsh-completions
 
 brew cask install anki arq beyond-compare charles chrome-devtools cyberduck \
                   discord dockertoolbox dropbox firefox flux franz gimp gitter \
@@ -55,6 +55,8 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.7/install.sh | b
 # FIXME: double check that this will install nvm and source it
 nvm install node
 nvm use node
+
+brew install yarn --without-node # Install yarn and use NVM's version
 
 npm install -g commitizen devtool greenkeeper htmlhint jsonlint mancy node-debug np \
                npm-check-updates npm-user-validate webpack-bundle-size-analyzer
