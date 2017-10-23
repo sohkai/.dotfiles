@@ -5,7 +5,7 @@ set-option -g default-shell $SHELL
 
 ##### Remaps #####
 
-# Remap prefix from 'C-b' to 'C-;'
+# Remap prefix from 'C-b' to 'C-f'
 unbind C-b
 set-option -g prefix C-f
 bind C-f send-prefix
@@ -31,14 +31,17 @@ bind -n S-Right next-window
 # Map copy mode
 bind v copy-mode
 
+# Set vi mode in buffer
+setw -g mode-keys vi
+
 # Remap vi-mode copy
-bind -t vi-copy v begin-selection # 'v' to select
-bind -t vi-copy y copy-pipe "pbcopy" # 'y' to copy
-unbind -t vi-copy Enter
-bind -t vi-copy Enter copy-pipe "pbcopy" # Enter is same as 'y'
+bind -T copy-mode-vi v send -X begin-selection # 'v' to select
+bind -T copy-mode-vi y send -X copy-pipe "pbcopy" # 'y' to copy
+unbind -T copy-mode-vi Enter
+bind -T copy-mode-vi Enter send -X copy-pipe "pbcopy" # Enter is same as 'y'
 
 # Enable mouse copy
-bind -t vi-copy MouseDragEnd1Pane copy-pipe "pbcopy"
+bind -T copy-mode-vi MouseDragEnd1Pane send -X copy-pipe "pbcopy"
 
 
 ##### Options #####
