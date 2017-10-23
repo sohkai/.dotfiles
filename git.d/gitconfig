@@ -6,7 +6,7 @@
 [core]
     excludesfile = ~/.dotfiles/git.d/.gitignore_global
     autocrlf = input
-    pager = diff-highlight | diff-so-fancy | less -r
+    pager = diff-so-fancy | less -r
 [commit]
     gpgsign = true
 [push]
