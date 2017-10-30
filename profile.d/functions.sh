@@ -2,6 +2,18 @@
 # Functions #
 #############
 
+# Count code in a directory
+# Usage: code_count <directory> <file extension>
+# Example: code_count src/ js
+code_count() {
+    if [ "$#" -ne 2 ]; then
+        echo "Usage: code_count <directory> <file extension>"
+        return 1
+    fi
+
+    echo "$(find "$1" -type f -iname *."$2" | xargs wc -l | sort)"
+}
+
 # Make a directory and cd into it
 mkcd() {
     mkdir -p $1;
