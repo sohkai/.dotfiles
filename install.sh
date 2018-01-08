@@ -66,7 +66,7 @@ echo 'eval "$(pyenv init -)"' >> ~/.bash_profile # This will be overwritten afte
 . ~/.bash_profile
 pyenv install 2.7.12
 pyenv install 3.5.2
-pyenv global 3.5.2
+pyenv global 3.5.2 2.7.12
 
 pip install --user glances neovim ipython restview twine virtualenv
 
