@@ -10,6 +10,3 @@ source_file ~/.dotfiles/bash.d/bashrc
 
 # Load local profile
 source_file ~/.profilerc
-
-# Load local language configuration, if confirmed
-[[ -r ~/.languagerc ]] &&  ask "Load languages?" N && . ~/.languagerc

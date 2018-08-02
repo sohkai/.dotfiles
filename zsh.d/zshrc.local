@@ -3,6 +3,3 @@ source_file ~/.dotfiles/zsh.d/zshrc
 
 # Load local profile
 source_file ~/.profilerc
-
-# Load local language configuration, if confirmed
-[[ -r ~/.languagerc ]] &&  ask "Load languages?" N && . ~/.languagerc
