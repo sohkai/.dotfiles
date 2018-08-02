@@ -53,11 +53,15 @@ ask() {
 #    command: Command to check.
 #
 # Returns:
-#    True if the command is defined in the current session
+#    0 if the command is defined in the current session
 is_defined() {
     type $1 &> /dev/null;
 }
 
+# Check that the current OS is OSX/macOS
+#
+# Returns:
+#    0 if on OSX/macOS
 is_osx() {
     [[ "$OSTYPE" == darwin* ]]
 }
