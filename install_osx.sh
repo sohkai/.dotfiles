@@ -106,7 +106,7 @@ brew cask install \
     gimp \
     gitter \
     google-chrome \
-    gpgtools \
+    gpg-suite \
     grandperspective \
     iterm2 \
     keybase \
