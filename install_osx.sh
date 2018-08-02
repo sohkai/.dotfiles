@@ -10,7 +10,7 @@ echo
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Get some nice brews
-brew install --default-names \
+brew install --with-default-names \
     findutils \
     gnu-sed \
     gnu-tar \
@@ -161,6 +161,7 @@ curl -L https://iterm2.com/misc/zsh_startup.in -o $HOME/.iterm2_shell_integratio
 echo "Installing node through NVM..."
 echo
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+source $HOME/.bash_profile
 nvm install stable
 nvm use stable
 
@@ -181,7 +182,7 @@ npm install -g \
 echo "Installing python through pyenv..."
 echo
 echo 'eval "$(pyenv init -)"' >> $HOME/.bash_profile # This will be overwritten after, just do it now to install global python packages
-. $HOME/.bash_profile
+source $HOME/.bash_profile
 pyenv install 2.7.12
 pyenv install 3.5.2
 pyenv global 3.5.2 2.7.12
