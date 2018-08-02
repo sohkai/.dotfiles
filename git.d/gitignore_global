@@ -1,4 +1,12 @@
 *~
 .DS_Store
 .env
+.env.leave
+
+# JS
+yarn-debug.log
+yarn-error.log
+.lerna-debug.log
+
+# Python
 .python-version
