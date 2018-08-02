@@ -29,6 +29,10 @@ if [[ -d ./utility.d ]]; then
     done
 fi
 
+# Make sure some particular files exist
+touch $HOME/.bash_profile
+touch $HOME/.bashrc
+
 ############
 # OS setup #
 ############
