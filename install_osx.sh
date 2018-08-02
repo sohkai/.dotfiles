@@ -223,9 +223,3 @@ brew install zplug
 
 # Install tpm
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
-
-# Set Zsh to be the default shell
-chsh -s /bin/zsh
-
-echo "Set zsh as the default shell"
-echo

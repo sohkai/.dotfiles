@@ -72,6 +72,22 @@ echo "Creating local file structure..."
 mkdir $HOME/Development
 mkdir $HOME/Development/github
 
+###############
+# Shell setup #
+###############
+
+# Set Zsh to be the default shell
+
+if [ -x /bin/zsh ]; then
+    echo "------------------------"
+    echo "| Setting up the shell |"
+    echo "------------------------"
+    echo
+    echo "Setting zsh as the default shell..."
+
+    chsh -s /bin/zsh
+fi
+
 
 ###########################################################
 # Manual configuration (left as an exercise for the user) #
