@@ -14,22 +14,113 @@ brew tap homebrew/dupes
 brew tap caskroom/cask
 
 # Get some nice brews
-brew install --default-names findutils gnu-sed gnu-tar gnu-which gnutls grep
+brew install --default-names \
+    findutils \
+    gnu-sed \
+    gnu-tar \
+    gnu-which \
+    gnutls \
+    grep
 
-brew install ack ag ansiweather autoenv bash binutils colordiff colormake \
-             coreutils curl diff-so-fancy diffutils erlang fasd ffmpeg fortune \
-             fzf gifsicle git git-extras git-lfs gnupg2 gpg go grc gzip heroku \
-             heroku-toolbelt htop hub imagemagick mercurial mongodb mtr nmap \
-             openssl parallel perl pgcli postgresql pstree pyenv \
-             pyenv-virtualenv ranger rename rmtrash tmux tree watch wdiff \
-             wifi-password wget vim zsh zsh-completions
+brew install \
+    ack \
+    ag \
+    ansiweather \
+    autoenv \
+    bash \
+    binutils \
+    colordiff \
+    colormake \
+    coreutils \
+    curl \
+    diff-so-fancy \
+    diffutils \
+    erlang \
+    fasd \
+    ffmpeg \
+    fortune \
+    fzf \
+    gifsicle \
+    git \
+    git-extras \
+    git-lfs \
+    gnupg2 \
+    gpg \
+    go \
+    grc \
+    gzip \
+    heroku \
+    heroku-toolbelt \
+    htop \
+    hub \
+    imagemagick \
+    mercurial \
+    mongodb \
+    mtr \
+    nmap \
+    openssl \
+    parallel \
+    perl \
+    pgcli \
+    postgresql \
+    pstree \
+    pyenv \
+    pyenv-virtualenv \
+    ranger \
+    reattach-to-user-namespace \
+    rename \
+    rmtrash \
+    tmux \
+    tree \
+    watch \
+    wdiff \
+    wifi-password \
+    wget \
+    vim \
+    zsh \
+    zsh-completions
 
-brew cask install anki arq beyond-compare charles chrome-devtools cyberduck \
-                  discord dockertoolbox dropbox firefox flux franz gimp gitter \
-                  github-desktop google-chrome google-drive gpgtools grandperspective \
-                  iterm2 keybase linphone macdown mountain-duck namebench opera \
-                  private-internet-access resucetime sizeup slack skype steam \
-                  transmission unrarx virtualbox xquartz xtrafinder
+brew cask install \
+    anki \
+    arq \
+    beyond-compare \
+    charles \
+    chrome-devtools \
+    cyberduck \
+    discord \
+    dockertoolbox \
+    dropbox \
+    firefox \
+    flux \
+    franz \
+    gimp \
+    gitter \
+    github-desktop \
+    google-chrome \
+    google-drive \
+    gpgtools \
+    grandperspective \
+    iterm2 \
+    keybase \
+    linphone \
+    little-snitch \
+    macdown \
+    mountain-duck \
+    namebench \
+    notational-velocity \
+    opera \
+    private-internet-access \
+    resucetime \
+    sizeup \
+    slack \
+    skype \
+    steam \
+    time-out \
+    transmission \
+    unrarx \
+    virtualbox \
+    xquartz \
+    xtrafinder
 
 # Override system vim with macvim
 brew install macvim --env-std --with-override-system-vim
@@ -58,8 +149,19 @@ nvm use node
 
 brew install yarn --without-node # Install yarn and use NVM's version
 
-npm install -g commitizen devtool greenkeeper htmlhint jsonlint mancy node-debug np \
-               npm-check-updates npm-user-validate webpack-bundle-size-analyzer
+npm install -g \
+    commitizen \
+    devtool \
+    htmlhint \
+    jsonlint \
+    mancy \
+    node-debug \
+    np \
+    npm-check-updates \
+    npm-user-validate \
+    react-devtools \
+    @storybook/cli \
+    webpack-bundle-size-analyzer
 
 # Python (and Pyenv)
 echo 'eval "$(pyenv init -)"' >> ~/.bash_profile # This will be overwritten after, just do it now to install global python packages
@@ -68,7 +170,13 @@ pyenv install 2.7.12
 pyenv install 3.5.2
 pyenv global 3.5.2 2.7.12
 
-pip install --user glances neovim ipython restview twine virtualenv
+pip install --user \
+    glances \
+    neovim \
+    ipython \
+    restview \
+    twine \
+    virtualenv
 
 # Ruby (and RVM)
 gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
