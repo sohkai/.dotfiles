@@ -124,16 +124,16 @@ brew cask install \
     opera \
     paragon-ntfs \
     private-internet-access \
-    resucetime \
+    rescuetime \
     rocket-chat \
     signal \
     skype \
     spectacle \
     steam \
     telegram \
+    the-unarchiver \
     time-out \
     transmission \
-    unrarx \
     vimr \
     vlc \
     virtualbox \
