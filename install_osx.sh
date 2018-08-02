@@ -85,6 +85,7 @@ brew cask install \
     appcleaner \
     arq \
     bartender \
+    bettertouchtool \
     beyond-compare \
     brave \
     charles \
@@ -113,6 +114,7 @@ brew cask install \
     linphone \
     little-snitch \
     macdown \
+    macs-fan-control \
     mountain-duck \
     mpv \
     namebench \
@@ -121,6 +123,7 @@ brew cask install \
     omnifocus \
     onyx \
     opera \
+    paragon-ntfs \
     private-internet-access \
     resucetime \
     rocket-chat \
