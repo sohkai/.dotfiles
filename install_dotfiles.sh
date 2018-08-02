@@ -25,7 +25,7 @@ install_ext() {
     local file_ext="$2"
     local install_cmd="${3:-cp}"
 
-    for file_to_install in "$DOTFILES_DIR"/**/*."${file_ext}"; do
+    for file_to_install in "$DOTFILES"/**/*."${file_ext}"; do
         base_file_name=${file_to_install##*/}
         file_dest="$install_dir"/."${base_file_name%.$file_ext}" # Prepend $install_dir, make it a dotfile, and strip the trailing file extension
         echo "Installing $file_dest"

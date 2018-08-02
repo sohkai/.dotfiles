@@ -50,6 +50,8 @@ fi
 # Dotfiles setup #
 ##################
 
+export DOTFILES=$(pwd)
+
 echo "------------------------------"
 echo "| Installing local dotfiles |"
 echo "------------------------------"
@@ -57,7 +59,7 @@ echo
 source ./install_dotfiles.sh
 
 # Set up the environment to point to where the dotfiles are located
-echo "export DOTFILES=$(pwd)" >> $HOME/.init_env
+echo "export DOTFILES=$DOTFILES" >> $HOME/.init_env
 
 
 ##############
