@@ -56,11 +56,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" FIXME: remove and just use gU / gUU instead
-" Map insert-mode uppercase word
-inoremap <C-c> <esc>viwU<esc>ea
-nnoremap <C-c> viwU<esc>e
-
 " Swap directions of # and *
 nnoremap # *
 vnoremap # *
