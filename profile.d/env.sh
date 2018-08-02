@@ -19,5 +19,4 @@ export PAGER='less'
 export LESS='-F -g -i -M -R -S -w -X -z-4'
 
 # Utilities
-export ANDROID_HOME=~/Development/androidSDK # Android SDK
 export ANSIWEATHERRC=~/.dotfiles/profile.d/ansiweatherrc # Ansiweather

@@ -15,9 +15,3 @@ local yarn_global_path=`yarn global bin`
 # Add RVM to PATH for scripting
 local rvm_bin_path=$HOME/.rvm/bin
 [[ :$PATH: != *:"$rvm_bin_path":* ]] && [[ -d "$rvm_bin_path" ]] && export PATH=$PATH:"$rvm_bin_path"
-
-# Android SDK
-local android_platform_tools_path=/Users/Brett/Development/androidSDK/platform-tools
-local android_tools_path=/Users/Brett/Development/androidSDK/tools
-[[ :$PATH: != *:"$android_platform_tools_path":* ]] && [[ -d "$android_platform_tools_path" ]] && export PATH=$PATH:"$android_platform_tools_path"
-[[ :$PATH: != *:"$android_tools_path":* ]] && [[ -d "$android_tools_path" ]] && export PATH=$PATH:"$android_tools_path"
