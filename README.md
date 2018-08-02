@@ -89,8 +89,8 @@ plugin).
 The `.profilerc` and `.languagerc` files do not have a corresponding file in this repo; as such,
 they should contain only local configuration. Specifically, the `.profilerc` file should be used for
 general environment settings (e.g. local aliases, environments, etc) and `.languagerc` should
-specify any defaults for any loaded language version managers. Due to the slow speed of some version
-manages (*ahem* nvm *ahem*), `.languagerc` is only loaded at startup if confirmed.
+specify defaults for any loaded language version managers. Due to the slow speed of some version
+managers (*ahem* `nvm` *ahem*), `.languagerc` is only loaded at startup if confirmed.
 
 
 Changes
@@ -101,9 +101,9 @@ when you know you would like to also propagate that change to all environments.
 
 For the most part, if you do make a change to a file in this repo, you will be able to propagate
 that change by resourcing the corresponding local configuration file. However, there are a few
-configuration files that do not have the ability to load from another file or are designed to only
-be locally placed; changes to these files will only come into effect if they are made locally and
-will have to be duplicated into this repo. A list of files to be wary for when changing:
+configuration files that are not able to be loaded from another file or are designed to only be
+locally placed; changes to these files will only come into effect if they are made locally and will
+have to be duplicated into this repo. A list of files to be wary of when changing:
 
 * [`.tmux.conf`](./tmux.d/tmux.conf.symlink)
 * [`.pypirc`](./python.d/pypirc.local)
