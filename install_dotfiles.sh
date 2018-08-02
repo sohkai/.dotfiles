@@ -32,6 +32,7 @@ install_ext() {
             mv "$file_dest" "$file_dest".bak # Back up currently install configuration to .bak
             echo "$file_dest has been backed up to $file_dest.bak"
         fi
+        echo "Installing $file_dest"
         $install_cmd "$file_to_install" "$file_dest"
     done
 }

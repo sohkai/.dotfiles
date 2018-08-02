@@ -38,7 +38,7 @@ if is_osx; then
     echo "| Installing dependencies for OSX/macOS |"
     echo "-----------------------------------------"
     echo
-    source ./install_osx.d
+    source ./install_osx.sh
 fi
 
 
@@ -79,3 +79,4 @@ echo "All done! Phew, thanks for waiting :)."
 echo "There's a few manual steps left, that you'll need to finish by yourself:"
 echo
 echo "  - Please set up SSH keys for Github by visiting https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"
+echo
