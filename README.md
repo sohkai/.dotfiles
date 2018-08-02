@@ -86,11 +86,12 @@ and [`zsh.d/after/`](./zsh.d/after/) are run **after** all other files in `profi
 `zsh.` are sourced and can be used to reset non-local settings (e.g. an alias set by a sourced
 plugin).
 
-The `.profilerc` and `.languagerc` files do not have a corresponding file in this repo; as such,
-they should contain only local configuration. Specifically, the `.profilerc` file should be used for
-general environment settings (e.g. local aliases, environments, etc) and `.languagerc` should
-specify defaults for any loaded language version managers. Due to the slow speed of some version
-managers (*ahem* `nvm` *ahem*), `.languagerc` is only loaded at startup if confirmed.
+**NOTE**: After installation, the `.profilerc` and `.languagerc` files do not link to a
+corresponding file in this repo; as such, they should contain only local configuration.
+Specifically, the `.profilerc` file should be used for general environment settings (e.g. local
+aliases, environments, etc) and `.languagerc` should specify defaults for any loaded language
+version managers. Due to the slow speed of some version managers (*ahem* `nvm` *ahem*),
+`.languagerc` is only loaded at startup if confirmed.
 
 
 Changes
@@ -105,11 +106,17 @@ configuration files that are not able to be loaded from another file or are desi
 locally placed; changes to these files will only come into effect if they are made locally and will
 have to be duplicated into this repo. A list of files to be wary of when changing:
 
-* [`.tmux.conf`](./tmux.d/tmux.conf.symlink)
-* [`.pypirc`](./python.d/pypirc.local)
-* [`.rvmrc`](./ruby.d/rvmrc.local)
+* [`.bash_profile`](./bash.d/bash_profile.local) and [`.inputrc`](./bash.d/inputrc.local) (if you
+  want to make modifications to these, make sure you have a good reason not to change their tracked
+  version instead)
 * [`.profilerc`](./profile.d/profilerc.local) and [`.languagerc`](./profile.d/languagerc.local)
   (although these should **ONLY** ever contain local configuration, so you shouldn't need to
   duplicate anything other than a template for these files)
-* [`.bash_profile`](./bash.d/bash_profile.local) (if you want to make modifications to this, make
-  sure you have a good reason not to change your local or tracked `.bashrc` instead)
+* [`.gitconfig`](./git.d/gitconfig.local)
+* [`.hgrc`](./hg.d/hgrc.local) and [`.hgignore_global`](./hg.d/hgignore_global.local)
+* [`.npmrc`](./node.d/npmrc.local)
+* [`.pypirc`](./python.d/pypirc.local)
+* [`.rvmrc`](./ruby.d/rvmrc.local)
+* [`.vimrc`](./vim.d/vimrc.local) and [`.gvimrc`](./vim.d/gvimrc.local)
+* [`.zshrc`](./zsh.d/zshrc.local), [`.zshenv`](./zsh.d/zshev.local),
+  [`.zlogin`](./zsh.d/zlogin.local), and [`.zimrc`](./zsh.d/zimrc.local)
