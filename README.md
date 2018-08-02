@@ -1,7 +1,7 @@
 OSX configuration files
 =======================
 
-Just `cd && git clone git@github.com:sohkai/.dotfiles.git --recurse-submodules && ~/.dotfiles/install.sh`.
+Just `cd ~ && git clone git@github.com:sohkai/.dotfiles.git --recurse-submodules && ~/.dotfiles/install.sh`.
 
 At the end, you'll still need to do some things by hand to complete the install. This includes
 things such as:

@@ -1,230 +1,67 @@
 #!/bin/bash
 
-#######################
-# System dependencies #
-#######################
+################
+# Script setup #
+################
 
-# Make me some homebrew!
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# Get directory of where this install script is located
+SHELL_NAME=$(ps -p $$ -ocomm=)
+case "$SHELL_NAME" in
+    *bash)
+        SCRIPT_LOC=${BASH_SOURCE[0]}
+        ;;
+    *zsh)
+        SCRIPT_LOC=${(%):-%N}
+        ;;
+    *)
+        echo "install.sh must be run under either bash or zsh."
+        exit 1
+esac
+DOTFILES_DIR=$(dirname $SCRIPT_LOC)
 
-# Get some nice brews
-brew install --default-names \
-    findutils \
-    gnu-sed \
-    gnu-tar \
-    gnu-which \
-    gnutls \
-    grep
+# Move to the root location of where the dotfiles repo was cloned to
+cd $DOTFILES_DIR
 
-brew install \
-    ack \
-    ag \
-    ansiweather \
-    autoenv \
-    bash \
-    binutils \
-    colordiff \
-    colormake \
-    coreutils \
-    curl \
-    diff-so-fancy \
-    diffutils \
-    docker-compose \
-    docker-machine \
-    erlang \
-    fasd \
-    ffmpeg \
-    fortune \
-    fzf \
-    gifsicle \
-    git \
-    git-extras \
-    git-lfs \
-    gnupg2 \
-    gpg \
-    go \
-    grc \
-    gzip \
-    heroku \
-    heroku-toolbelt \
-    htop \
-    hub \
-    imagemagick \
-    mercurial \
-    mongodb \
-    mtr \
-    neovim \
-    nmap \
-    openssl \
-    parallel \
-    perl \
-    pgcli \
-    postgresql \
-    pstree \
-    pyenv \
-    pyenv-virtualenv \
-    ranger \
-    reattach-to-user-namespace \
-    rename \
-    rmtrash \
-    tmux \
-    tree \
-    watch \
-    wdiff \
-    wifi-password \
-    wget \
-    vim \
-    zsh \
-    zsh-completions
+# Source utilities
+if [[ -d ./utility.d ]]; then
+    for file in ./utility.d/*.sh; do
+        source $file
+    done
+fi
 
-brew cask install \
-    aegisub \
-    anki \
-    appcleaner \
-    arq \
-    bartender \
-    beyond-compare \
-    brave \
-    charles \
-    cheatsheet \
-    chrome-devtools \
-    chromium \
-    cyberduck \
-    discord \
-    docker \
-    dropbox \
-    fantastical \
-    firefox \
-    flow \
-    flux \
-    forklift \
-    franz \
-    ganache \
-    gimp \
-    gitter \
-    google-chrome \
-    google-drive \
-    gpgtools \
-    grandperspective \
-    iterm2 \
-    keybase \
-    linphone \
-    little-snitch \
-    macdown \
-    mountain-duck \
-    mpv \
-    namebench \
-    notion \
-    numi \
-    omnifocus \
-    onyx \
-    opera \
-    private-internet-access \
-    resucetime \
-    rocket-chat \
-    signal \
-    skype \
-    spectacle \
-    steam \
-    telegram \
-    time-out \
-    transmission \
-    unrarx \
-    vimr \
-    vlc \
-    virtualbox \
-    xquartz \
-    xtrafinder \
-    zoom
+############
+# OS setup #
+############
 
-# Override system vim with macvim
-brew install macvim --env-std --with-override-system-vim
-
-# Link brewed apps to /Applications
-brew linkapps
-
-# Install iTerm shell integration
-curl -L https://iterm2.com/misc/bash_startup.in -o ~/.iterm2_shell_integration.bash
-curl -L https://iterm2.com/misc/zsh_startup.in -o ~/.iterm2_shell_integration.zsh
-
-
-##################
-# Language setup #
-##################
-
-# Node.js (and NVM)
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-nvm install stable
-nvm use stable
-
-brew install yarn --without-node # Install yarn and use NVM's version
-
-npm install -g \
-    commitizen \
-    htmlhint \
-    jsonlint \
-    ndb \
-    np \
-    nps \
-    npm-check-updates \
-    react-devtools \
-    @storybook/cli
-
-# Python (and Pyenv)
-echo 'eval "$(pyenv init -)"' >> ~/.bash_profile # This will be overwritten after, just do it now to install global python packages
-. ~/.bash_profile
-pyenv install 2.7.12
-pyenv install 3.5.2
-pyenv global 3.5.2 2.7.12
-
-pip install --user \
-    glances \
-    neovim \
-    ipython \
-    restview \
-    twine \
-    virtualenv
-
-# Ruby (and RVM)
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-\curl -sSL https://get.rvm.io | bash -s stable --ruby
-
-gem install \
-    ghi \
-    lolcat \
-    pry \
-    screengif \
-    travis
-
-
-###############
-# Shell setup #
-###############
-
-# Set Zsh to be the default shell
-chsh -s /bin/zsh
-
-# Install zim
-git clone --recursive https://github.com/zimfw/zimfw.git ${ZDOTDIR:-${HOME}}/.zim
-
-# Install zplug
-brew install zplug
-
-# Install tpm
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+if is_osx; then
+    echo "-----------------------------------------"
+    echo "| Installing dependencies for OSX/macOS |"
+    echo "-----------------------------------------"
+    echo
+    source ./install_osx.d
+fi
 
 
 ##################
 # Dotfiles setup #
 ##################
 
-. ./install_dotfiles.sh
+echo "------------------------------"
+echo "| Installing local dotfiles |"
+echo "------------------------------"
+echo
+source ./install_dotfiles.sh
 
 
 ##############
 # User setup #
 ##############
 
+echo "-----------------------"
+echo "| Setting up the user |"
+echo "-----------------------"
+echo
+echo "Creating local file structure..."
 mkdir ~/Development
 mkdir ~/Development/github
 
@@ -233,4 +70,9 @@ mkdir ~/Development/github
 # Manual configuration (left as an exercise for the user) #
 ###########################################################
 
-echo "Please set up SSH keys for Github by visiting https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"
+echo "-------------------------------------------------------------"
+echo
+echo "All done! Phew, thanks for waiting :)."
+echo "There's a few manual steps left, that you'll need to finish by yourself:"
+echo
+echo "  - Please set up SSH keys for Github by visiting https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"
