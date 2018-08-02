@@ -3,11 +3,6 @@
 # Adapted from https://github.com/sorin-ionescu/prezto/tree/master/modules/osx #
 ################################################################################
 
-# No point doing anything else if we're not on OSX
-if [[ "$OSTYPE" != darwin* ]]; then
-  return 1
-fi
-
 # Open man pages in Dash
 mand() {
     if (( $# > 0 )); then

@@ -56,7 +56,10 @@ ask() {
 #    True if the command is defined in the current session
 is_defined() {
     type $1 &> /dev/null;
-    return $?
+}
+
+is_osx() {
+    [[ "$OSTYPE" == darwin* ]]
 }
 
 # Source a directory (non-recursively).
