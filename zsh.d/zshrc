@@ -6,17 +6,17 @@
 source_file ${ZDOTDIR:-$HOME}/.zim/init.zsh
 
 # Load plugins
-source_file $HOME/.dotfiles/zsh.d/zplugrc
+source_file $DOTFILES/zsh.d/zplugrc
 
 # Autoload functions
 autoload -U zcalc zsh-mime-setup
 zsh-mime-setup
 
 # Source profile.d, ignoring what .zshenv has already sourced
-source_dir $HOME/.dotfiles/profile.d sh "path.sh,env.sh"
+source_dir $DOTFILES/profile.d sh "path.sh,env.sh"
 
 # Source zsh.d
-source_dir $HOME/.dotfiles/zsh.d zsh
+source_dir $DOTFILES/zsh.d zsh
 
 # FIXME: add npm completion (see https://github.com/sorin-ionescu/prezto/blob/master/modules/node/init.zsh#L23)
 # FIXME: add prezto's osx module as a git submodule
@@ -29,7 +29,7 @@ source_dir $HOME/.dotfiles/zsh.d zsh
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # Case insensitive
 zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd' # Better killall completion
 zstyle ':completion:*' verbose yes
-source_file ~/.pyenv/completions/pyenv.zsh # Pyenv
+source_file $HOME/.pyenv/completions/pyenv.zsh # Pyenv
 
 ###########
 # Options #
@@ -62,7 +62,7 @@ setopt HIST_REDUCE_BLANKS
 ###############
 
 # Source profile.d/after
-source_dir $HOME/.dotfiles/profile.d/after
+source_dir $DOTFILES/profile.d/after
 
 # Source zsh.d/after
-source_dir $HOME/.dotfiles/zsh.d/after zsh
+source_dir $DOTFILES/zsh.d/after zsh

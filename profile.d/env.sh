@@ -19,4 +19,4 @@ export PAGER='less'
 export LESS='-F -g -i -M -R -S -w -X -z-4'
 
 # Utilities
-export ANSIWEATHERRC=~/.dotfiles/profile.d/ansiweatherrc # Ansiweather
+export ANSIWEATHERRC=$DOTFILES/profile.d/ansiweatherrc # Ansiweather

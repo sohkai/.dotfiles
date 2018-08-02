@@ -2,4 +2,4 @@
 # Aliases #
 ###########
 
-alias resource="source ~/.bash_profile"
+alias resource="source $HOME/.bash_profile"

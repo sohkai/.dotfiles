@@ -52,6 +52,9 @@ echo "------------------------------"
 echo
 source ./install_dotfiles.sh
 
+# Set up the environment to point to where the dotfiles are located
+echo "export DOTFILES=$(pwd)" >> $HOME/.init_env
+
 
 ##############
 # User setup #
@@ -62,8 +65,8 @@ echo "| Setting up the user |"
 echo "-----------------------"
 echo
 echo "Creating local file structure..."
-mkdir ~/Development
-mkdir ~/Development/github
+mkdir $HOME/Development
+mkdir $HOME/Development/github
 
 
 ###########################################################

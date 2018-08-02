@@ -1,12 +1,15 @@
+# Load initializing environment
+[[ -r $HOME/.init_env ]] && source $HOME/.init_env
+
 # Load utilities first
-if [[ -d $HOME/.dotfiles/utility.d ]]; then
-    for file in $HOME/.dotfiles/utility.d/*.sh; do
+if [[ -d $DOTFILES/utility.d ]]; then
+    for file in $DOTFILES/utility.d/*.sh; do
         source $file
     done
 fi
 
 # Load synced .bashrc
-source_file ~/.dotfiles/bash.d/bashrc
+source_file $DOTFILES/bash.d/bashrc
 
 # Load local profile
-source_file ~/.profilerc
+source_file $HOME/.profilerc

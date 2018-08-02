@@ -1,1 +1,1 @@
-%include ~/.dotfiles/hg.d/hgrc
+%include $DOTFILES/hg.d/hgrc

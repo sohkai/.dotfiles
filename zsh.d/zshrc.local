@@ -1,5 +1,5 @@
 # Load synced .zshrc
-source_file ~/.dotfiles/zsh.d/zshrc
+source_file $DOTFILES/zsh.d/zshrc
 
 # Load local profile
-source_file ~/.profilerc
+source_file $HOME/.profilerc

@@ -1,2 +1,2 @@
 # Load synced .zlogin
-source_file ~/.dotfiles/zsh.d/zlogin
+source_file $DOTFILES/zsh.d/zlogin

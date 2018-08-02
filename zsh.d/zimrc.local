@@ -1,2 +1,2 @@
 # Load synced .zimrc
-source_file ~/.dotfiles/zsh.d/zimrc
+source_file $DOTFILES/zsh.d/zimrc

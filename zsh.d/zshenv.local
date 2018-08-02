@@ -1,9 +1,12 @@
+# Load initializing environment
+[[ -r $HOME/.init_env ]] && source $HOME/.init_env
+
 # Load utilities first
-if [[ -d $HOME/.dotfiles/utility.d ]]; then
-    for file in $HOME/.dotfiles/utility.d/*.sh; do
+if [[ -d $DOTFILES/utility.d ]]; then
+    for file in $DOTFILES/utility.d/*.sh; do
         source $file
     done
 fi
 
 # Load synced .zshenv
-source_file ~/.dotfiles/zsh.d/zshenv
+source_file $DOTFILES/zsh.d/zshenv

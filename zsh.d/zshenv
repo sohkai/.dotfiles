@@ -1,9 +1,9 @@
 # Source path environment settings
-source_file ~/.dotfiles/profile.d/path.sh
-source_file ~/.dotfiles/profile.d/env.sh
+source_file $DOTFILES/profile.d/path.sh
+source_file $DOTFILES/profile.d/env.sh
 
 # Add .fpath to $FPATH
 local local_fpath_loc="$HOME/.fpath"
-local synced_fpath_loc="$HOME/.dotfiles/zsh/.fpath"
+local synced_fpath_loc="$DOTFILES/zsh/.fpath"
 [[ :$PATH: != *:"$local_fpath_loc":* ]] && [[ -d "$local_fpath_loc" ]] && export FPATH=$FPATH:"$local_fpath_loc"
 [[ :$PATH: != *:"$synced_fpath_loc":* ]] && [[ -d "$synced_fpath_loc" ]] && export FPATH=$FPATH:"$synced_fpath_loc"

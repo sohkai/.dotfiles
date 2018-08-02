@@ -23,7 +23,7 @@ bind I display-message
 bind g choose-tree
 
 # Map resource
-bind r source-file ~/.tmux.conf
+bind r source-file $HOME/.tmux.conf
 
 # Map shift arrow to switch windows
 bind -n S-Left  previous-window
@@ -88,4 +88,4 @@ set -g @continuum-restore 'on'
 #set -g @resurrect-strategy-nvim 'session'
 
 # Initialize TMUX plugin manager (MUST be at bottom of .tmux.conf)
-run '~/.tmux/plugins/tpm/tpm'
+run '$HOME/.tmux/plugins/tpm/tpm'

@@ -1,2 +1,2 @@
 # OSX runs a login shell on every new shell, so we load .bashrc from .bash_profile
-source_file ~/.bashrc
+source_file $HOME/.bashrc

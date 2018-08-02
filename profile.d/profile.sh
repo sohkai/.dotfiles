@@ -11,13 +11,13 @@ fi
 # Autoload #
 ############
 
-source_dir $HOME/.dotfiles/docker.d
-source_dir $HOME/.dotfiles/git.d
-source_dir $HOME/.dotfiles/homebrew.d
-source_dir $HOME/.dotfiles/tmux.d
-source_dir $HOME/.dotfiles/vim.d
+source_dir $DOTFILES/docker.d
+source_dir $DOTFILES/git.d
+source_dir $DOTFILES/tmux.d
+source_dir $DOTFILES/vim.d
 
 # Check if we should load OSX-specific files
 if is_osx; then
-    source_dir $HOME/.dotfiles/osx.d
+    source_dir $DOTFILES/osx.d
+    source_dir $DOTFILES/homebrew.d
 fi

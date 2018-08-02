@@ -54,7 +54,7 @@ rtfm() {
 
 # Lazy load travis.rb
 travis() {
-    source ~/.travis/travis.sh
+    source $HOME/.travis/travis.sh
     unset -f travis
     travis "$@"
 }

@@ -25,8 +25,8 @@ endif
 " Resource .vimrc
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 
-" Edit .vimrc (in ~/.dotfiles folder)
-:nnoremap <leader>ev :vsplit ~/.dotfiles/.vimrc.after<cr>
+" Edit .vimrc (in $DOTFILES folder)
+:nnoremap <leader>ev :vsplit $DOTFILES/.vimrc.after<cr>
 
 " Set leader key to ,
 let mapleader = ","

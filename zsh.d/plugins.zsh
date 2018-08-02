@@ -2,5 +2,8 @@
 # External plugins #
 ####################
 
-source_file ~/.iterm2_shell_integration.zsh  # iTerm shell integration
-source_file ~/.dotfiles/modules/grc/grc.zsh  # grc setup
+source_file $DOTFILES/modules/grc/grc.zsh  # grc setup
+
+if is_osx; then
+    source_file $HOME/.iterm2_shell_integration.zsh  # iTerm shell integration
+fi

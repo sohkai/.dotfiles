@@ -8,19 +8,19 @@ if [[ $- != *i* ]] ; then
 fi
 
 # Source profile.d
-source_dir $HOME/.dotfiles/profile.d
+source_dir $DOTFILES/profile.d
 
 # Source bash.d
-source_dir $HOME/.dotfiles/bash.d
+source_dir $DOTFILES/bash.d
 
 
 ##############
 # Completion #
 ##############
 
-source_file ~/.dotfiles/bash.d/external/.git-completion.bash # git
+source_file $DOTFILES/bash.d/external/.git-completion.bash # git
 source_file $NVM_DIR/bash_completion # NVM
-source_file ~/.pyenv/completions/pyenv.bash # Pyenv
+source_file $HOME/.pyenv/completions/pyenv.bash # Pyenv
 
 
 ###########
@@ -38,7 +38,7 @@ stty -ixon # disable XON/XOFF flow control for <C-S>
 ###############
 
 # Source profile.d/after
-source_dir $HOME/.dotfiles/profile.d/after
+source_dir $DOTFILES/profile.d/after
 
 # Source bash.d/after
-source_dir $HOME/.dotfiles/bash.d/after
+source_dir $DOTFILES/bash.d/after

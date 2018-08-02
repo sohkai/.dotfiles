@@ -18,8 +18,11 @@ Make sure to pay attention to the messages at the end for further instructions.
 
 **NOTES**:
 
-- This repo **MUST** be cloned into the home directory (`~/`) as `~/.dotfiles/`
-- [`install.sh`](./install.sh) is most useful on OSX (due to `brew`)
+- This repo does not need to be cloned in a particular directory (it'll set up a `$DOTFILES`
+  environment variable during installation), but I like to use `~/.dotfiles/` and all example paths
+  here will assume you also choose this location
+- [`install.sh`](./install.sh) is most useful on OSX (due to most things being installed with
+  `brew` for now)
 - On OSX, you should probably install Xcode, or at least the Xcode CLI tools
   (`xcode-select --install`), before running [`install.sh`](./install.sh)
 
@@ -54,6 +57,7 @@ For bash, the general source order is:
 
 1. `~/.bash_profile (loaded by bash on login; always on OSX)`
 1. `~/.bashrc`
+    - `~/.init_env`
     - `~/.dotfiles/bash.d/bashrc`
         - `~/.dotfiles/profile.d/*.sh`
         - `~/.dotfiles/bash.d/*.sh`
@@ -64,6 +68,7 @@ For bash, the general source order is:
 For zsh, the general source order is:
 
 1. `~/.zshenv` (loaded by zsh)
+    - `~/.init_env`
 1. `~/.zlogin` (loaded by zsh on login; always on OSX)
 1. `~/.zshrc`
     - `~/.dotfiles/zsh.d/zshrc`

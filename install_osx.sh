@@ -146,8 +146,8 @@ brew install macvim --env-std --with-override-system-vim
 brew linkapps
 
 # Install iTerm shell integration
-curl -L https://iterm2.com/misc/bash_startup.in -o ~/.iterm2_shell_integration.bash
-curl -L https://iterm2.com/misc/zsh_startup.in -o ~/.iterm2_shell_integration.zsh
+curl -L https://iterm2.com/misc/bash_startup.in -o $HOME/.iterm2_shell_integration.bash
+curl -L https://iterm2.com/misc/zsh_startup.in -o $HOME/.iterm2_shell_integration.zsh
 
 
 ##################
@@ -177,8 +177,8 @@ npm install -g \
 # Python (and Pyenv)
 echo "Installing python through pyenv..."
 echo
-echo 'eval "$(pyenv init -)"' >> ~/.bash_profile # This will be overwritten after, just do it now to install global python packages
-. ~/.bash_profile
+echo 'eval "$(pyenv init -)"' >> $HOME/.bash_profile # This will be overwritten after, just do it now to install global python packages
+. $HOME/.bash_profile
 pyenv install 2.7.12
 pyenv install 3.5.2
 pyenv global 3.5.2 2.7.12
@@ -222,4 +222,4 @@ git clone --recursive https://github.com/zimfw/zimfw.git ${ZDOTDIR:-${HOME}}/.zi
 brew install zplug
 
 # Install tpm
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm

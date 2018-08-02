@@ -1,1 +1,1 @@
-globalconfig=~/.dotfiles/.npmrc
+globalconfig=$DOTFILES/.npmrc
