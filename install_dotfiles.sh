@@ -28,11 +28,11 @@ install_ext() {
     for file_to_install in "$DOTFILES_DIR"/**/*."${file_ext}"; do
         base_file_name=${file_to_install##*/}
         file_dest="$install_dir"/."${base_file_name%.$file_ext}" # Prepend $install_dir, make it a dotfile, and strip the trailing file extension
+        echo "Installing $file_dest"
         if [[ -e $file_dest ]]; then
             mv "$file_dest" "$file_dest".bak # Back up currently install configuration to .bak
-            echo "$file_dest has been backed up to $file_dest.bak"
+            echo "  Original $file_dest has been backed up to $file_dest.bak"
         fi
-        echo "Installing $file_dest"
         $install_cmd "$file_to_install" "$file_dest"
     done
 }
