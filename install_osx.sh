@@ -138,8 +138,8 @@ brew cask install \
     vlc \
     virtualbox \
     xquartz \
-    xtrafinder \
-    zoom
+    zoom \
+    1password
 
 # Override system vim with macvim
 brew install macvim --with-override-system-vim
