@@ -13,7 +13,6 @@ echo
 brew install --with-default-names \
     findutils \
     gnu-sed \
-    gnu-tar \
     gnu-which \
     gnutls \
     grep
@@ -43,6 +42,7 @@ brew install \
     git-extras \
     git-lfs \
     gnupg2 \
+    gnu-tar \
     gpg \
     go \
     grc \
