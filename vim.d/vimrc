@@ -124,6 +124,12 @@ augroup custom_filetypes
     au BufRead,BufNewFile *.md setlocal filetype=markdown
 augroup END
 
+augroup js_filetype
+    au!
+    au BufRead,BufNewFile *.js setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    au BufRead,BufNewFile *.jsx setlocal shiftwidth=2 tabstop=2 softtabstop=2
+augroup END
+
 augroup py_filetype
     au!
     au BufRead,BufNewFile *.py setlocal textwidth=79 colorcolumn=80 foldlevel=20
