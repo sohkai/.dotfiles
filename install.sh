@@ -7,12 +7,6 @@
 # Make me some homebrew!
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Install dupes for OSX packages
-brew tap homebrew/dupes
-
-# Install cask for OSX apps
-brew tap caskroom/cask
-
 # Get some nice brews
 brew install --default-names \
     findutils \
@@ -35,6 +29,8 @@ brew install \
     curl \
     diff-so-fancy \
     diffutils \
+    docker-compose \
+    docker-machine \
     erlang \
     fasd \
     ffmpeg \
@@ -57,6 +53,7 @@ brew install \
     mercurial \
     mongodb \
     mtr \
+    neovim \
     nmap \
     openssl \
     parallel \
@@ -81,21 +78,30 @@ brew install \
     zsh-completions
 
 brew cask install \
+    aegisub \
     anki \
+    appcleaner \
     arq \
+    bartender \
     beyond-compare \
+    brave \
     charles \
+    cheatsheet \
     chrome-devtools \
+    chromium \
     cyberduck \
     discord \
-    dockertoolbox \
+    docker \
     dropbox \
+    fantastical \
     firefox \
+    flow \
     flux \
+    forklift \
     franz \
+    ganache \
     gimp \
     gitter \
-    github-desktop \
     google-chrome \
     google-drive \
     gpgtools \
@@ -106,28 +112,33 @@ brew cask install \
     little-snitch \
     macdown \
     mountain-duck \
+    mpv \
     namebench \
-    notational-velocity \
+    notion \
+    numi \
+    omnifocus \
+    onyx \
     opera \
     private-internet-access \
     resucetime \
-    sizeup \
-    slack \
+    rocket-chat \
+    signal \
     skype \
+    spectacle \
     steam \
+    telegram \
     time-out \
     transmission \
     unrarx \
+    vimr \
+    vlc \
     virtualbox \
     xquartz \
-    xtrafinder
+    xtrafinder \
+    zoom
 
 # Override system vim with macvim
 brew install macvim --env-std --with-override-system-vim
-
-# Install neovim
-brew tap neovim/neovim
-brew install neovim
 
 # Link brewed apps to /Applications
 brew linkapps
@@ -142,26 +153,22 @@ curl -L https://iterm2.com/misc/zsh_startup.in -o ~/.iterm2_shell_integration.zs
 ##################
 
 # Node.js (and NVM)
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.7/install.sh | bash
-# FIXME: double check that this will install nvm and source it
-nvm install node
-nvm use node
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+nvm install stable
+nvm use stable
 
 brew install yarn --without-node # Install yarn and use NVM's version
 
 npm install -g \
     commitizen \
-    devtool \
     htmlhint \
     jsonlint \
-    mancy \
-    node-debug \
+    ndb \
     np \
+    nps \
     npm-check-updates \
-    npm-user-validate \
     react-devtools \
-    @storybook/cli \
-    webpack-bundle-size-analyzer
+    @storybook/cli
 
 # Python (and Pyenv)
 echo 'eval "$(pyenv init -)"' >> ~/.bash_profile # This will be overwritten after, just do it now to install global python packages
@@ -179,11 +186,15 @@ pip install --user \
     virtualenv
 
 # Ruby (and RVM)
-gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
-curl -sSL https://get.rvm.io | bash -s stable
-rvm install ruby --latest
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
 
-gem install ghi lolcat pry screengif travis
+gem install \
+    ghi \
+    lolcat \
+    pry \
+    screengif \
+    travis
 
 
 ###############
@@ -194,10 +205,10 @@ gem install ghi lolcat pry screengif travis
 chsh -s /bin/zsh
 
 # Install zim
-git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR:-${HOME}}/.zim
+git clone --recursive https://github.com/zimfw/zimfw.git ${ZDOTDIR:-${HOME}}/.zim
 
 # Install zplug
-curl -sL zplug.sh/installer | zsh
+brew install zplug
 
 # Install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -217,21 +228,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 mkdir ~/Development
 mkdir ~/Development/github
 
-# Install tpm plugins (must be after .tmux.conf has been loaded)
-source ~/.tmux/plugins/tpm/scripts/variables.sh && ~/.tmux/plugins/tpm/bin/install_plugins
-
 
 ###########################################################
 # Manual configuration (left as an exercise for the user) #
 ###########################################################
 
-# FIXME
-
-# Git settings
-ssh-keygen -t rsa -C "qisheng.brett.sun@gmail.com"
-
-# Copy ssh key to github.com
-# FIXME echo some more messages
-echo ~/.ssh/id_rsa.pub
-
-ssh -T git@github.com # Test connection
+echo "Please set up SSH keys for Github by visiting https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"
