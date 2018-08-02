@@ -138,7 +138,7 @@ brew cask install \
     vlc \
     virtualbox \
     xquartz \
-    zoom \
+    zoomus \
     1password
 
 # Override system vim with macvim
@@ -198,6 +198,7 @@ echo "Installing ruby through rvm..."
 echo
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
+source $HOME/.bash_profile
 
 gem install \
     ghi \
@@ -214,9 +215,6 @@ gem install \
 echo "Setting zsh up..."
 echo
 
-# Set Zsh to be the default shell
-chsh -s /bin/zsh
-
 # Install zim
 git clone --recursive https://github.com/zimfw/zimfw.git ${ZDOTDIR:-${HOME}}/.zim
 
@@ -225,3 +223,9 @@ brew install zplug
 
 # Install tpm
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+
+# Set Zsh to be the default shell
+chsh -s /bin/zsh
+
+echo "Set zsh as the default shell"
+echo

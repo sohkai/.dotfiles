@@ -82,5 +82,6 @@ echo
 echo "All done! Phew, thanks for waiting :)."
 echo "There's a few manual steps left, that you'll need to finish by yourself:"
 echo
+echo "  - Some homebrewed apps may require manual setup, please see the logs above"
 echo "  - Please set up SSH keys for Github by visiting https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"
 echo
