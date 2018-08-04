@@ -52,6 +52,7 @@ brew install \
     htop \
     hub \
     imagemagick \
+    iina \
     mercurial \
     mongodb \
     mtr \
@@ -115,7 +116,6 @@ brew cask install \
     macdown \
     macs-fan-control \
     mountain-duck \
-    mpv \
     namebench \
     notion \
     numi \
