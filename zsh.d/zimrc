@@ -9,11 +9,9 @@ zmodules=( \
     environment \
     history \
     input \
-    utility \
-    meta \
     archive \
     fasd \
-    spectrum \
+    autosuggestions \
     # Note that the next modules may depend on options set by earlier modules.
     # These dependencies are noted on the respective module's README.md.
     syntax-highlighting \
@@ -27,12 +25,21 @@ zmodules=( \
 # MODULE SETTINGS #
 ###################
 
+#
 # Prompt
+#
 zprompt_theme='pure'
 
+#
 # Input
+#
+# Use vi input mode
+zinput_mode='vi'
+
 # Append '../' to your input for each '.' you type after an initial '..'
 zdouble_dot_expand='true'
 
+#
 # Syntax-Highlighting
+#
 zhighlighters=(main brackets cursor)
