@@ -22,5 +22,9 @@
     ui = always
 [color "diff"]
     frag = magenta bold
+[color "grep"]
+    linenumber = yellow bold
+    match = red
+    filename = cyan
 [diff-so-fancy]
     stripLeadingSymbols = false
