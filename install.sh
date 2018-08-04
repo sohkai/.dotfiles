@@ -119,3 +119,5 @@ echo "  - Please set up your git user config (see https://help.github.com/articl
 echo "  - Please set up SSH keys for Github by visiting https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"
 echo "  - Please set up GPG keys for Github by visiting https://help.github.com/articles/signing-commits-with-gpg/"
 echo
+echo "Note that some of these changes require a logout/restart to take effect."
+echo
