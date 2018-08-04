@@ -110,6 +110,7 @@ brew cask install \
     gpg-suite \
     grandperspective \
     iterm2 \
+    karabiner-elements \
     keybase \
     linphone \
     little-snitch \
