@@ -9,7 +9,6 @@ fi
 
 # Colour
 export CLICOLOR=1 # ls colourful
-export GREP_OPTIONS='--color=auto' # grep colourful
 
 # Editor
 export EDITOR="vim -f"

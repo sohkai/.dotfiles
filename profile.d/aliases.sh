@@ -30,9 +30,9 @@ alias r="ranger_cd"
 alias cdgithub="cd $HOME/Development/github"
 
 # File search
-alias ff="find . -iname" # Find file
-alias ss="grep -rniEI" # Search string
-alias ggs="git grep -niEI" # Search string respective to git
+alias ff='find . -iname' # Find file
+alias ss='grep -rniEI --color=auto' # Search string
+alias ggs='git grep -niEI --color=auto' # Search string respective to git
 
 # Resources
 alias top='htop'
