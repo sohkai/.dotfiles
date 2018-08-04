@@ -2,7 +2,7 @@
 # Aliases #
 ###########
 
-alias resource="source $HOME/.zshrc && source $HOME/.zshenv"
+alias resource='source $HOME/.zshrc && source $HOME/.zshenv'
 
 # Disable correction.
 alias ack='nocorrect ack'

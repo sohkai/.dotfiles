@@ -2,5 +2,5 @@
 # Aliases #
 ###########
 
-alias vim="mvim -v"
-alias gvim="mvim"
+alias vim='mvim -v'
+alias gvim='mvim'
