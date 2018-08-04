@@ -1,6 +1,3 @@
-[user]
-    name = Brett Sun
-    email = qisheng.brett.sun@gmail.com
 [credential]
     helper = osxkeychain
 [core]
@@ -27,6 +24,3 @@
     frag = magenta bold
 [diff-so-fancy]
     stripLeadingSymbols = false
-
-[github]
-    user = sohkai
