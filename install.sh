@@ -47,6 +47,17 @@ fi
 
 
 ##################
+# Language setup #
+##################
+
+echo "------------------------------------"
+echo "| Installing programming languages |"
+echo "------------------------------------"
+echo
+source ./install_language.sh
+
+
+##################
 # Dotfiles setup #
 ##################
 
