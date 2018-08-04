@@ -114,10 +114,13 @@ echo
 echo "All done! Phew, thanks for waiting :)."
 echo "There's a few manual steps left, that you'll need to finish by yourself:"
 echo
-echo "  - Some homebrewed apps may require manual setup, please see the logs above"
 echo "  - Please set up your git user config (see https://help.github.com/articles/setting-your-username-in-git/)"
 echo "  - Please set up SSH keys for Github by visiting https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"
 echo "  - Please set up GPG keys for Github by visiting https://help.github.com/articles/signing-commits-with-gpg/"
+if is_osx; then
+echo "  - Some homebrewed apps may require manual setup, please see the logs above"
+echo "  - Set up iterm2 to use the saved preferences at $DOTFILES/osx.d/iterm2/"
+fi
 echo
 echo "Note that some of these changes require a logout/restart to take effect."
 echo
