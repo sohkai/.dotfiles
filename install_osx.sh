@@ -94,6 +94,9 @@ defaults write com.apple.dock autohide -bool true
 #defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 # Add a spacer to the right side of the Dock (where the Trash is)
 #defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
+# Alternatively:
+# touch FullSpace.dockspace
+# touch HalfSpace.docksmallspace
 
 
 ###################
