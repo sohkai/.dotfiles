@@ -284,6 +284,12 @@ brew cask install \
     zoomus \
     1password
 
+# Install custom taps
+brew tap dteoh/sqa
+brew cask install slowquitapps
+
+defaults write com.dteoh.SlowQuitApps delay -int 1000
+
 # Override system vim with macvim
 brew install macvim --with-override-system-vim
 brew link --overwrite macvim
