@@ -91,12 +91,15 @@ mkdir $HOME/Development/github
 
 # Set Zsh to be the default shell
 
+echo "------------------------"
+echo "| Setting up the shell |"
+echo "------------------------"
+echo
+source ./install_shell.sh
+
 if [ -x /bin/zsh ]; then
-    echo "------------------------"
-    echo "| Setting up the shell |"
-    echo "------------------------"
-    echo
     echo "Setting zsh as the default shell..."
+    echo
 
     chsh -s /bin/zsh
 fi

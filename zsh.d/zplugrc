@@ -5,8 +5,7 @@
 #########
 
 # Init
-export ZPLUG_HOME=/usr/local/opt/zplug
-source_file $ZPLUG_HOME/init.zsh
+source_file ${ZPLUG_HOME:-~/.zplug}/init.zsh
 
 # Plugins
 local plugin_loc=$DOTFILES/zsh.d/zplug.plugins

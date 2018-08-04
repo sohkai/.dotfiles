@@ -70,15 +70,12 @@ brew install \
     reattach-to-user-namespace \
     rename \
     rmtrash \
-    tmux \
     tree \
     watch \
     wdiff \
     wifi-password \
     wget \
     vim \
-    zsh \
-    zsh-completions
 
 brew cask install \
     aegisub \
@@ -148,21 +145,3 @@ brew link --overwrite macvim
 
 # Install iTerm shell integration
 curl -L https://iterm2.com/misc/bash_startup.in -o $HOME/.iterm2_shell_integration.bash
-curl -L https://iterm2.com/misc/zsh_startup.in -o $HOME/.iterm2_shell_integration.zsh
-
-
-###############
-# Shell setup #
-###############
-
-echo "Setting zsh up..."
-echo
-
-# Install zim
-git clone --recursive https://github.com/zimfw/zimfw.git ${ZDOTDIR:-${HOME}}/.zim
-
-# Install zplug
-brew install zplug
-
-# Install tpm
-git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
