@@ -13,6 +13,9 @@ export CLICOLOR=1 # ls colourful
 # Editor
 export EDITOR="vim -f"
 
+# GPG
+export GPG_TTY=$(tty)
+
 # Pager
 export PAGER='less'
 export LESS='-F -g -i -M -R -S -w -X -z-4'

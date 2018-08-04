@@ -103,4 +103,5 @@ echo
 echo "  - Some homebrewed apps may require manual setup, please see the logs above"
 echo "  - Please set up your git user config (see https://help.github.com/articles/setting-your-username-in-git/)"
 echo "  - Please set up SSH keys for Github by visiting https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"
+echo "  - Please set up GPG keys for Github by visiting https://help.github.com/articles/signing-commits-with-gpg/"
 echo
