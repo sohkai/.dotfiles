@@ -118,6 +118,9 @@ have to be duplicated into this repo. A list of files to be wary of when changin
   (although these should **ONLY** ever contain local configuration, so you shouldn't need to
   duplicate anything other than a template for these files)
 * [`.gitconfig`](./git.d/gitconfig.local)
+    - Note that git doesn't support environment variable expansion in its config files, so the
+      global config and ignore files are also symlinked to the home directory (as
+      `.gitconfig_global` and `.gitignore_global`)
 * [`.hgrc`](./hg.d/hgrc.local) and [`.hgignore_global`](./hg.d/hgignore_global.local)
 * [`.npmrc`](./node.d/npmrc.local)
 * [`.pypirc`](./python.d/pypirc.local)
