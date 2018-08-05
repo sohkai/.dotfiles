@@ -121,6 +121,7 @@ if is_osx; then
 echo "  - Some homebrewed apps may require manual setup, please see the logs above"
 echo "  - Set up iterm2 to use the saved preferences at $DOTFILES/osx.d/iterm2/"
 echo "  - Set up karabiner to use the saved preferences at $DOTFILES/osx.d/karabiner/ by copying the folder into ~/.config/karabiner/"
+echo "  - Set up spectacle to use the saved preferences at $DOTFILES/osx.d/spectacle/ by copying the folder into ~/Library/Application\ Support/Spectacle/"
 fi
 echo
 echo "Note that some of these changes require a logout/restart to take effect."
