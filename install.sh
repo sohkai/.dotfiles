@@ -119,6 +119,7 @@ echo "  - Please set up SSH keys for Github by visiting https://help.github.com/
 echo "  - Please set up GPG keys for Github by visiting https://help.github.com/articles/signing-commits-with-gpg/"
 if is_osx; then
 echo "  - Some homebrewed apps may require manual setup, please see the logs above"
+echo "  - Set up Better Touch Tool to use the saved preferences at $DOTFILES/osx.d/bettertouchtool/ by importing the preferences"
 echo "  - Set up iterm2 to use the saved preferences at $DOTFILES/osx.d/iterm2/"
 echo "  - Set up karabiner to use the saved preferences at $DOTFILES/osx.d/karabiner/ by copying the folder into ~/.config/karabiner/"
 echo "  - Set up spectacle to use the saved preferences at $DOTFILES/osx.d/spectacle/ by copying the folder into ~/Library/Application\ Support/Spectacle/"

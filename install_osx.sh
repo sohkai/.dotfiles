@@ -201,6 +201,7 @@ brew install \
     hub \
     imagemagick \
     iina \
+    locateme \
     mercurial \
     mongodb \
     mtr \
@@ -254,6 +255,7 @@ brew cask install \
     google-chrome \
     gpg-suite \
     grandperspective \
+    haptic-touch-bar \
     iterm2 \
     karabiner-elements \
     keybase \
