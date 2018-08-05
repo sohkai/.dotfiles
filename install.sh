@@ -120,6 +120,7 @@ echo "  - Please set up GPG keys for Github by visiting https://help.github.com/
 if is_osx; then
 echo "  - Some homebrewed apps may require manual setup, please see the logs above"
 echo "  - Set up iterm2 to use the saved preferences at $DOTFILES/osx.d/iterm2/"
+echo "  - Set up karabiner to use the saved preferences at $DOTFILES/osx.d/karabiner/ by copying the folder into ~/.config/karabiner/"
 fi
 echo
 echo "Note that some of these changes require a logout/restart to take effect."
