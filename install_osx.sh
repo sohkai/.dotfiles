@@ -217,7 +217,6 @@ brew install \
     pyenv \
     pyenv-virtualenv \
     ranger \
-    reattach-to-user-namespace \
     rename \
     rmtrash \
     tree \
