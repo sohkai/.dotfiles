@@ -28,6 +28,12 @@ npm install -g \
     react-devtools \
     @storybook/cli
 
+# Install OSX-only npm packages
+if is_osx; then
+    npm install -g \
+        alfred-npms
+fi
+
 # Python (and Pyenv)
 echo "Installing python through pyenv..."
 echo

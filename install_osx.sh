@@ -228,6 +228,7 @@ brew install \
 
 brew cask install \
     aegisub \
+    alfred \
     anki \
     appcleaner \
     arq \
