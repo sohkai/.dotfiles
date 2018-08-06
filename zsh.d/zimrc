@@ -16,7 +16,6 @@ zmodules=( \
     # These dependencies are noted on the respective module's README.md.
     syntax-highlighting \
     history-substring-search \
-    prompt \
     completion \
 )
 
@@ -24,11 +23,6 @@ zmodules=( \
 ###################
 # MODULE SETTINGS #
 ###################
-
-#
-# Prompt
-#
-zprompt_theme='pure'
 
 #
 # Input

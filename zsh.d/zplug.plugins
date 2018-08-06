@@ -4,6 +4,11 @@
 # Zplug plugins #
 #################
 
+# Pure theme
+zplug mafredri/zsh-async, from:github
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+
+# Misc.
 zplug "eventi/noreallyjustfuckingstopalready"
 
 if is_osx; then
