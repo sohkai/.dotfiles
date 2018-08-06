@@ -89,8 +89,6 @@ mkdir $HOME/Development/github
 # Shell setup #
 ###############
 
-# Set Zsh to be the default shell
-
 echo "------------------------"
 echo "| Setting up the shell |"
 echo "------------------------"

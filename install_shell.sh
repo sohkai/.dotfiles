@@ -4,6 +4,17 @@
 # Shell setup #
 ###############
 
+echo "Setting base16 up..."
+echo
+
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+if is_osx; then
+    brew tap chrokh/tap
+    brew install base16-manager
+fi
+source $HOME/.bash_profile
+base16_oceanicnext
+
 echo "Setting tmux up..."
 echo
 
