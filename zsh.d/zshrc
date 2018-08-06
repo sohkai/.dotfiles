@@ -13,7 +13,7 @@ autoload -U zcalc zsh-mime-setup
 zsh-mime-setup
 
 # Source profile.d, ignoring what .zshenv has already sourced
-source_dir $DOTFILES/profile.d sh "path.sh,env.sh"
+source_dir $DOTFILES/profile.d sh "paths.sh,env.sh"
 
 # Source zsh.d
 source_dir $DOTFILES/zsh.d zsh

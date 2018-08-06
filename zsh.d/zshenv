@@ -1,5 +1,5 @@
 # Source path environment settings
-source_file $DOTFILES/profile.d/path.sh
+source_file $DOTFILES/profile.d/paths.sh
 source_file $DOTFILES/profile.d/env.sh
 
 # Add .fpath to $FPATH
