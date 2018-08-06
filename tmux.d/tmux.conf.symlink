@@ -71,7 +71,7 @@ set -s escape-time 0
 ##### Plugins #####
 
 set -g @tpm_plugins '                \
-    caiogondim/maglev                \
+    sohkai/maglev                    \
     tmux-plugins/tpm                 \
     tmux-plugins/tmux-sessionist     \
     tmux-plugins/tmux-pain-control   \
