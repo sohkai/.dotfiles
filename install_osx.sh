@@ -168,6 +168,7 @@ brew install --with-default-names \
 brew install \
     ack \
     ag \
+    ansifilter \
     ansiweather \
     autoenv \
     bash \

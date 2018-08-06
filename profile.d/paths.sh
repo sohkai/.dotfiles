@@ -1,5 +1,11 @@
 # Add to path if not already added and folder exists
 
+if [ -n "$TMUX" ]; then
+    # Reset the path if starting a shell in tmux; see https://superuser.com/a/583502/639617
+    PATH=""
+    source /etc/profile
+fi
+
 # Homebrew
 local homebrew_bin_path=/usr/local/bin
 local homebrew_sbin_path=/usr/local/sbin
@@ -8,7 +14,7 @@ local homebrew_sbin_path=/usr/local/sbin
 
 # Yarn (JS)
 local yarn_global_path=`yarn global bin`
-[[ :$PATH: != *:"$yarn_global_path":* ]] && export export PATH="$yarn_global_path":$PATH
+[[ :$PATH: != *:"$yarn_global_path":* ]] && export PATH="$yarn_global_path":$PATH
 
 
 # RVM
