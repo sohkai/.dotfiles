@@ -15,7 +15,7 @@ Recommended font size to the right of the name. For Macvim, subtract one from th
 - Menlo 12
 - Monaco 12
 - Meslo 12
-- Office Code Pro 12
+- **Office Code Pro 12**
 - PT Mono 12
 - Roboto Mono 12
 - Source Code Pro 12

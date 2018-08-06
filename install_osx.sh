@@ -249,6 +249,8 @@ brew cask install \
     flow \
     flux \
     forklift \
+    font-office-code-pro \
+    font-sourcecodepro-nerd-font-mono \
     franz \
     ganache \
     gimp \

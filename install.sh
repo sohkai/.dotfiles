@@ -123,6 +123,7 @@ echo "  - Set up Better Touch Tool to use the saved preferences at $DOTFILES/osx
 echo "  - Set up iterm2 to use the saved preferences at $DOTFILES/osx.d/iterm2/"
 echo "  - Set up karabiner to use the saved preferences at $DOTFILES/osx.d/karabiner/ by copying the folder into ~/.config/karabiner/"
 echo "  - Set up spectacle to use the saved preferences at $DOTFILES/osx.d/spectacle/ by copying the folder into ~/Library/Application\ Support/Spectacle/"
+echo "  - You might have to fix the patched Source Code Pro font using FontBook (see https://github.com/ryanoasis/nerd-fonts/issues/258)."
 fi
 echo
 echo "Note that some of these changes require a logout/restart to take effect."
