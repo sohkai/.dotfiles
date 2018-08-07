@@ -13,6 +13,11 @@ export CLICOLOR=1 # ls colourful
 # Editor
 export EDITOR="vim -f"
 
+# Enhancd
+export ENHANCD_FILTER=fzf
+ENHANCD_DOT_ARG=.
+ENHANCD_DOT_SHOW_FULLPATH=1
+
 # FZF
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git --color=always'
 export FZF_DEFAULT_OPTS="--reverse --height 40% --ansi"

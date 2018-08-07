@@ -12,6 +12,9 @@ zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 zplug "junegunn/fzf", as:command, hook-build:"./install --bin", use:"bin/fzf"
 zplug "junegunn/fzf", use:"shell/*.zsh"
 
+# Enhancd
+zplug "b4b4r07/enhancd", use:init.sh
+
 # Misc.
 zplug "eventi/noreallyjustfuckingstopalready"
 zplug 'wfxr/forgit', defer:1
