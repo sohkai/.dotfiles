@@ -182,6 +182,7 @@ brew install \
     docker-compose \
     docker-machine \
     erlang \
+    emojify \
     fasd \
     ffmpeg \
     fortune \

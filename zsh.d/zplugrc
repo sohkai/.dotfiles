@@ -4,6 +4,19 @@
 # Zplug #
 #########
 
+#
+# Plugin options
+# (Some plugins must have their options set before they're loaded)
+#
+
+# Forgit (https://github.com/wfxr/forgit)
+forgit_log=fglo
+forgit_diff=fgd
+forgit_add=fga
+forgit_ignore=fgi
+forgit_restore=fgcf
+forgit_clean=fgclean
+
 # Init
 source_file ${ZPLUG_HOME:-~/.zplug}/init.zsh
 

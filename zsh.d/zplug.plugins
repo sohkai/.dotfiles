@@ -10,6 +10,7 @@ zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 
 # Misc.
 zplug "eventi/noreallyjustfuckingstopalready"
+zplug 'wfxr/forgit', defer:1
 
 if is_osx; then
     zplug "iam4x/zsh-iterm-touchbar"
