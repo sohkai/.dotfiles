@@ -4,6 +4,11 @@
 # Zplug plugins #
 #################
 
+# NVM (should be as early as possible)
+export NVM_LAZY_LOAD=true
+export NVM_AUTO_USE=true
+zplug "lukechilds/zsh-nvm"
+
 # Pure theme
 zplug mafredri/zsh-async, from:github
 zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme

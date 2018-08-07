@@ -4,6 +4,3 @@
 
 # Homebrew
 export HOMEBREW_GITHUB_API_TOKEN=
-
-# Load local language configuration, if confirmed
-[[ -r $HOME/.languagerc ]] &&  ask "Load languages?" N && . $HOME/.languagerc
