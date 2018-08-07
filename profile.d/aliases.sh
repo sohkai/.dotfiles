@@ -27,6 +27,8 @@ alias cd..='cd ..'
 alias po='popd'
 alias pu='pushd'
 alias r='ranger_cd'
+alias v='fasd_fzf_vim'
+alias z='fasd_fzf_cd'
 alias cdgithub='cd $HOME/Development/github'
 
 # File search
@@ -37,6 +39,9 @@ alias ffa='fd -HI' # Find all files, including hidden and ignored
 
 alias ss='grep -rniEI --color=auto' # Search string
 alias ggs='git grep -niEI --color=auto' # Search string respective to git
+
+alias sd=fasd_fzf_sd # Select file via fasd + fzf
+alias sf=fasd_fzf_sf # select directory via fasd + fzf
 
 # Resources
 alias top='htop'

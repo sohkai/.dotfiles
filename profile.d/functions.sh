@@ -35,6 +35,33 @@ mkcd() {
     cd $1;
 }
 
+# FASD + FZF
+fasd_fzf() {
+  fasd -"$1" "$2" | fzf -1 -0 --no-sort +m
+}
+
+# FASD + FZF directory jump
+fasd_fzf_cd() {
+  local dir
+  dir="$(fasd_fzf -Rdl "$1")" && cd "${dir}" || return 1
+}
+
+# FASD + FZF select directory
+fasd_fzf_sd() {
+  fasd_fzf -Rdl "$1"
+}
+
+# FASD + FZF select file
+fasd_fzf_sf() {
+  fasd_fzf -Rfl "$1"
+}
+
+# FASD + FZF vim jump
+fasd_fzf_vim() {
+  local file
+  file="$(fasd_fzf -Rfl "$1")" && vim "${file}" || return 1
+}
+
 # FZF git branch checkout helper
 fzf_gitcheckout() {
   local branches branch
