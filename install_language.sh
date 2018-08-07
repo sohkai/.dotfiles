@@ -44,10 +44,10 @@ pyenv install 3.5.2
 pyenv global 3.5.2 2.7.12
 
 pip install --upgrade pip setuptools
+pip2 install --upgrade pip setuptools
 
 pip install --user \
     glances \
-    neovim \
     ipython \
     restview \
     twine \
@@ -66,3 +66,10 @@ gem install \
     pry \
     screengif \
     travis
+
+# Neovim
+
+npm install -g neovim
+pip2 install --user neovim
+pip3 install --user neovim
+gem install neovim
