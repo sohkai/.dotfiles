@@ -10,7 +10,6 @@ zmodules=( \
     history \
     input \
     archive \
-    fasd \
     autosuggestions \
     # Note that the next modules may depend on options set by earlier modules.
     # These dependencies are noted on the respective module's README.md.
