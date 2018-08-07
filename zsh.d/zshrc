@@ -5,21 +5,38 @@
 # Load Zim
 source_file ${ZDOTDIR:-$HOME}/.zim/init.zsh
 
-# Load plugins
-source_file $DOTFILES/zsh.d/zplugrc
-
 # Autoload functions
 autoload -U zcalc zsh-mime-setup
 zsh-mime-setup
+
+
+################
+# Before hooks #
+################
+
+# Source profile.d/before
+source_dir $DOTFILES/profile.d/before
+
+# Source zsh.d/before
+source_dir $DOTFILES/zsh.d/before zsh
+
+
+###########
+# Plugins #
+###########
+
+source_file $DOTFILES/zsh.d/zplugrc
+
+
+###########
+# Profile #
+###########
 
 # Source profile.d, ignoring what .zshenv has already sourced
 source_dir $DOTFILES/profile.d sh "paths.sh,env.sh"
 
 # Source zsh.d
 source_dir $DOTFILES/zsh.d zsh
-
-# FIXME: add npm completion (see https://github.com/sorin-ionescu/prezto/blob/master/modules/node/init.zsh#L23)
-# FIXME: add prezto's osx module as a git submodule
 
 
 ##############
@@ -30,6 +47,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # Case insensitive
 zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd' # Better killall completion
 zstyle ':completion:*' verbose yes
 source_file $HOME/.pyenv/completions/pyenv.zsh # Pyenv
+
 
 ###########
 # Options #
@@ -47,6 +65,7 @@ setopt IGNORE_EOF # Force 'exit' to logout
 setopt INTERACTIVECOMMENTS # Allow for comments on command line
 
 KEYTIMEOUT=1 # Shorten vi mode delay
+
 
 #####################
 #      History      #

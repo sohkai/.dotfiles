@@ -7,6 +7,22 @@ if [[ $- != *i* ]] ; then
     return
 fi
 
+
+################
+# Before hooks #
+################
+
+# Source profile.d/before
+source_dir $DOTFILES/profile.d/before
+
+# Source bash.d/before
+source_dir $DOTFILES/bash.d/before
+
+
+###########
+# Profile #
+###########
+
 # Source profile.d
 source_dir $DOTFILES/profile.d
 
