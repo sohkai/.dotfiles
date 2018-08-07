@@ -219,6 +219,7 @@ brew install \
     pyenv-virtualenv \
     ranger \
     rename \
+    ripgrep \
     rmtrash \
     tree \
     watch \

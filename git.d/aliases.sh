@@ -38,7 +38,6 @@ alias gcof='fzf_gitcheckout'
 alias gcohf='fzf_gitcommit'
 alias gch='fzf_gitcommithash'
 
-
 # Conflict (C)
 alias gCl='git status | sed -n "s/^.*both [a-z]*ed: *//p"'
 alias gCa='git add $(gCl)'
@@ -63,13 +62,9 @@ alias gfc='git clone'
 alias gfm='git pull'
 alias gfr='git pull --rebase'
 
-# Grep (g)
-alias gg='git grep'
-alias ggi='git grep --ignore-case'
-alias ggl='git grep --files-with-matches'
-alias ggL='git grep --files-without-matches'
-alias ggv='git grep --invert-match'
-alias ggw='git grep --word-regexp'
+# Grep (G)
+alias gG='git grep'
+alias gGs='git grep -niEI --color=auto' # Search string respective to git
 
 # Index (i)
 alias gia='git add'
