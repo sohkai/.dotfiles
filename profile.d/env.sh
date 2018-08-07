@@ -13,6 +13,12 @@ export CLICOLOR=1 # ls colourful
 # Editor
 export EDITOR="vim -f"
 
+# FZF
+export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git --color=always'
+export FZF_DEFAULT_OPTS="--reverse --height 40% --ansi"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--select-1 --exit-0"
+
 # GPG
 export GPG_TTY=$(tty)
 

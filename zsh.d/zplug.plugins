@@ -8,6 +8,10 @@
 zplug mafredri/zsh-async, from:github
 zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 
++# FZF
+zplug "junegunn/fzf", as:command, hook-build:"./install --bin", use:"bin/fzf"
+zplug "junegunn/fzf", use:"shell/*.zsh"
+
 # Misc.
 zplug "eventi/noreallyjustfuckingstopalready"
 zplug 'wfxr/forgit', defer:1
