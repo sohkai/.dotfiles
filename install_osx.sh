@@ -170,7 +170,6 @@ brew install \
     ag \
     ansifilter \
     ansiweather \
-    autoenv \
     bash \
     binutils \
     colordiff \
@@ -179,6 +178,7 @@ brew install \
     curl \
     diff-so-fancy \
     diffutils \
+    direnv \
     docker-compose \
     docker-machine \
     erlang \

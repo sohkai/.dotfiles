@@ -2,6 +2,7 @@
 # External plugins #
 ####################
 
+eval "$(direnv hook bash)" # direnv setup
 source_file $DOTFILES/modules/grc/grc.bashrc # grc setup
 
 if is_osx; then
