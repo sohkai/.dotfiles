@@ -34,6 +34,9 @@ alias gcP='git cherry-pick --no-commit'
 alias gcr='git revert'
 alias gcR='git reset "HEAD^"'
 alias gcs='git show'
+alias gcof='fzf_gitcheckout'
+alias gcohf='fzf_gitcommit'
+alias gch='fzf_gitcommithash'
 
 
 # Conflict (C)
@@ -138,6 +141,7 @@ alias gsp='git stash pop'
 alias gss='git stash save --include-untracked'
 alias gsS='git stash save --patch --no-keep-index'
 alias gsw='git stash save --include-untracked --keep-index'
+alias gsf='fzf_gitstash'
 
 # Submodule (S)
 alias gS='git submodule'

@@ -36,7 +36,7 @@ mkcd() {
 }
 
 # FZF git branch checkout helper
-fzf_gitbranch() {
+fzf_gitcheckout() {
   local branches branch
   branches=$(git branch -vv) &&
   branch=$(echo "$branches" | fzf +m) &&

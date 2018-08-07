@@ -8,7 +8,7 @@
 zplug mafredri/zsh-async, from:github
 zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 
-+# FZF
+# FZF
 zplug "junegunn/fzf", as:command, hook-build:"./install --bin", use:"bin/fzf"
 zplug "junegunn/fzf", use:"shell/*.zsh"
 
