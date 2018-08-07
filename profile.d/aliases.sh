@@ -30,7 +30,11 @@ alias r='ranger_cd'
 alias cdgithub='cd $HOME/Development/github'
 
 # File search
-alias ff='find . -iname' # Find file
+# alias ff='find . -iname' # Find file via builtin find
+alias ff='fd' # Find file recursively
+alias ffe='fd -e' # Find file recursively via extension
+alias ffa='fd -HI' # Find all files, including hidden and ignored
+
 alias ss='grep -rniEI --color=auto' # Search string
 alias ggs='git grep -niEI --color=auto' # Search string respective to git
 

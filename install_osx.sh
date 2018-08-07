@@ -184,9 +184,9 @@ brew install \
     erlang \
     emojify \
     fasd \
+    fd \
     ffmpeg \
     fortune \
-    fzf \
     gifsicle \
     git \
     git-extras \
