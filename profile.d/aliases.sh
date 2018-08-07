@@ -55,5 +55,9 @@ alias type='type -a'
 alias rt='rmtrash' # Safe rm (to trash)
 alias shist='history | grep'
 alias o='open'
-alias chrome="open -a 'Google Chrome'" # Only on OSX
 alias serve='python -m http.server'
+
+# macOS aliases
+if is_osx; then
+    alias chrome="open -a 'Google Chrome'" # Only on OSX
+fi
