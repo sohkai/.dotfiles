@@ -112,6 +112,7 @@ echo
 echo "All done! Phew, thanks for waiting :)."
 echo "There's a few manual steps left, that you'll need to finish by yourself:"
 echo
+echo "  - Please add '0 10 * * 5 find $VIM_UNDO_DIR -type f -mtime +90 -delete' to your crontab"
 echo "  - Please install the tmux plugins by invoking PREFIX+I (see https://github.com/tmux-plugins/tpm#installing-plugins)"
 echo "  - Please set up your git user config (see https://help.github.com/articles/setting-your-username-in-git/)"
 echo "  - Please set up SSH keys for Github by visiting https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/"

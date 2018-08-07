@@ -9,7 +9,10 @@ if $TERM_PROGRAM =~ "iTerm" "Get true colour support
   " set termguicolors
 endif
 
+" Backups
 set backupcopy=yes
+set undodir=$VIM_UNDO_DIR
+set undofile
 
 " Show incomplete commands
 set showcmd
