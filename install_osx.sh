@@ -294,15 +294,18 @@ brew cask install \
     zoomus \
     1password
 
+# Override system vim with macvim
+brew install macvim --with-override-system-vim
+brew link --overwrite macvim
+
 # Install custom taps
 brew tap dteoh/sqa
 brew cask install slowquitapps
 
-defaults write com.dteoh.SlowQuitApps delay -int 1000
+brew tap ValeLint/eale
+brew install vale
 
-# Override system vim with macvim
-brew install macvim --with-override-system-vim
-brew link --overwrite macvim
+defaults write com.dteoh.SlowQuitApps delay -int 1000
 
 # Install iTerm shell integration
 curl -L https://iterm2.com/misc/bash_startup.in -o $HOME/.iterm2_shell_integration.bash
