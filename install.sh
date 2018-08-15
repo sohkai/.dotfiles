@@ -120,6 +120,7 @@ echo "  - Please set up GPG keys for Github by visiting https://help.github.com/
 if is_osx; then
     echo "  - Some macOS-specific manual setup:"
     echo "    - Some homebrewed apps may require manual setup, please see the logs above"
+    echo "    - Configure GPG to work with pinentry-mac (see https://gist.github.com/bmhatfield/cc21ec0a3a2df963bffa3c1f884b676b#gistcomment-2165971)"
     echo "    - Set up Better Touch Tool to use the saved preferences at $DOTFILES/osx.d/bettertouchtool/ by importing the preferences"
     echo "    - Set up iterm2 to use the saved preferences at $DOTFILES/osx.d/iterm2/"
     echo "    - Set up karabiner to use the saved preferences at $DOTFILES/osx.d/karabiner/ by copying the folder into ~/.config/karabiner/"

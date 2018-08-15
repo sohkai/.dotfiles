@@ -212,6 +212,7 @@ brew install \
     openssl \
     parallel \
     perl \
+    pinentry-mac \
     pgcli \
     postgresql \
     pstree \
