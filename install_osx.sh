@@ -46,9 +46,6 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Devices #
 ###########
 
-# Increase sound quality for Bluetooth headphones/headsets
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
-
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
@@ -219,6 +216,7 @@ brew install \
     direnv \
     docker-compose \
     docker-machine \
+    editorconfig \
     erlang \
     emojify \
     fasd \
@@ -245,7 +243,6 @@ brew install \
     mercurial \
     mongodb \
     mtr \
-    neovim \
     nmap \
     openssl \
     parallel \
@@ -264,8 +261,7 @@ brew install \
     watch \
     wdiff \
     wifi-password \
-    wget \
-    vim \
+    wget
 
 brew cask install \
     aegisub \
@@ -332,10 +328,6 @@ brew cask install \
     xquartz \
     zoomus \
     1password
-
-# Override system vim with macvim
-brew install macvim --with-override-system-vim
-brew link --overwrite macvim
 
 # Install custom taps
 brew tap dteoh/sqa

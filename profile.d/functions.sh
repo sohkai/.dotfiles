@@ -59,7 +59,7 @@ fasd_fzf_sf() {
 # FASD + FZF vim jump
 fasd_fzf_vim() {
   local file
-  file="$(fasd_fzf -Rfl "$1")" && vim "${file}" || return 1
+  file="$(fasd_fzf -Rfl "$1")" && nvim "${file}" || return 1
 }
 
 # FZF git branch checkout helper

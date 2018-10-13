@@ -21,10 +21,12 @@ npm install -g \
     commitizen \
     htmlhint \
     jsonlint \
+    local-npm \
     ndb \
     np \
-    nps \
+    npmrc \
     npm-check-updates \
+    nps \
     react-devtools \
     @storybook/cli
 
@@ -66,10 +68,3 @@ gem install \
     pry \
     screengif \
     travis
-
-# Neovim
-
-npm install -g neovim
-pip2 install --user neovim
-pip3 install --user neovim
-gem install neovim

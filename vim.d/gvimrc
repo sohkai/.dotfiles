@@ -1,5 +1,31 @@
-colorscheme parsec
+" Load the base vim settings first
+let s:config_loc = expand('$DOTFILES/vim.d/vimrc')
+if filereadable(s:config_loc)
+  execute 'source '.fnameescape(s:config_loc)
+endif
 
+" Base settings {{{
+"==============================================================================
+colorscheme seoul256-light
+
+" Set lightline colorscheme and reinit
+let g:lightline.colorscheme = 'solarized'
+call lightline#init()
+
+if has("gui_macvim")
+  " Use OSX shift movements
+  let macvim_hig_shift_movement = 1
+endif
+
+if has("gui_running")
+  " Automatically resize splits when resizing MacVim window
+  autocmd VimResized * wincmd =
+endif
+" }}}
+
+" Mappings {{{
+"==============================================================================
 " Set tab navigation
 map <C-Tab> gt
 map <C-S-Tab> gT
+" }}}

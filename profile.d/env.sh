@@ -11,7 +11,7 @@ fi
 export CLICOLOR=1 # ls colourful
 
 # Editor
-export EDITOR="vim -f"
+export EDITOR="nvim"
 
 # Enhancd
 export ENHANCD_FILTER=fzf

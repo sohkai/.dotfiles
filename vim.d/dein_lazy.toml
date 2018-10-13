@@ -1,0 +1,60 @@
+#############
+# Utilities #
+#############
+
+[[plugins]]
+repo = 'rhysd/clever-f.vim'
+on_map = ['f', 'F', 't', 'T']
+hook_add = '''
+	" Enable smart case
+	let g:clever_f_smart_case = 1
+	" Fix direction of searching
+  let g:clever_f_fix_key_direction = 1
+
+  " Map reset
+  nmap <Leader>f <Plug>(clever-f-reset)
+	" Remap old ; and , keys
+	map ; <Plug>(clever-f-repeat-forward)
+	map , <Plug>(clever-f-repeat-back)
+'''
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+hook_add = '''
+	let g:user_emmet_settings = {
+	\  'javascript.jsx' : {
+	\    'extends' : 'jsx'
+	\  }
+	\}
+'''
+on_ft = ['javascript', 'html']
+
+[[plugins]]
+repo = 'junegunn/goyo.vim'
+on_ft = 'markdown'
+hook_add = '''
+	nnoremap <F6> :Goyo<CR>
+'''
+
+[[plugins]]
+repo = 'tmhedberg/SimpylFold'
+on_ft = 'python'
+hook_add = '''
+	let g:SimpylFold_docstring_preview = 1
+	let g:SimpylFold_docstring_level = 20
+	let g:SimpylFold_fold_import = 0
+
+	augroup plugin_simpylfold
+		" Sometimes necessary for SimpylFold
+		au BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+		au BufWinLeave *.py setlocal foldexpr< foldmethod<
+	augroup END
+'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+on_cmd = ['Git', 'Gstatus', 'Gwrite', 'Glog', 'Gcommit', 'Gblame', 'Gbrowse', 'Ggrep', 'Gdiff']
+
+[[plugins]]
+repo = 'tpope/vim-rhubarb'
+depends = 'vim-fugitive'

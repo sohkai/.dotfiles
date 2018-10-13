@@ -1,57 +1,195 @@
-" Use Vim settings, rather then Vi settings
-" This must be first, because it changes other options as a side effect.
-set nocompatible
+" OS {{{
+"==============================================================================
+let s:is_win   = has('win32') || has('win64')
+let s:is_mac   = has('mac') || system('uname') =~? '^darwin'
+let s:is_linux = !s:is_mac && has('unix')
+" }}}
 
-" Set the all important colorscheme AS SOON AS POSSIBLE
-colorscheme solarized
-set background=dark
-if $TERM_PROGRAM =~ "iTerm" "Get true colour support
-  " set termguicolors
+" Base settings {{{
+"==============================================================================
+if &compatible
+  " Use Vim settings, rather then Vi settings
+  " This must be first, because it changes other options as a side effect.
+  set nocompatible               " Be iMproved
 endif
 
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+if has('gui_running')
+  " Disable menu.vim and graphical confirm
+  set guioptions=Mc
+endif
+
+" Set default encoding to UTF-8
+set encoding=utf-8
+
+" Mapping leader key, should be done as soon as possible
+let mapleader = ","
+" }}}
+
+" Plugins {{{
+"==============================================================================
+let s:dein_config = fnamemodify(expand('<sfile>'), ':h').'/dein.vim'
+if filereadable(s:dein_config)
+	execute 'source '.fnameescape(s:dein_config)
+endif
+" }}}
+
+
+" Configuration {{{
+"==============================================================================
 " Backups
 set backupcopy=yes
+set directory=$VIM_TEMP_DIR
 set undodir=$VIM_UNDO_DIR
 set undofile
+
+" Disable bell
+set t_vb=
+set novisualbell
+set belloff=all
+
+" Confirm quit (if a save is needed)
+set confirm
+
+" Allow motions and back-spacing over line-endings etc
+set backspace=indent,eol,start
+set whichwrap=h,l,b,<,>,~,[,]
+
+" Default indent settings
+set expandtab       " Expand tabs to spaces
+set smarttab        " Make "tab" insert "indents" instead of tabs at the beginning of a line
+set autoindent      " Automatically apply indents from previous line
+set smartindent     " Use indenting rules based on filetype
+set shiftround 			" Round indents to the shiftwidth
+set shiftwidth=2    " Indents will have a width of 2
+set softtabstop=2   " Sets the number of columns for a tab to 2
+set tabstop=2       " The width of a tab is set to 2.
+                    " It is still a \t, it's just that Vim will interpret it
+                    " to be having a width of 2.
+
+" File types handling (must be before `syntax enable`)
+filetype plugin indent on
+
+" Enable ability to display another buffer when current buffer isn't saved.
+set hidden
+
+" Increase history amount.
+set history=10000
+
+" Whitespace display
+set list
+set listchars=""                  " Reset the listchars
+set listchars=tab:\ \             " A tab should display as "  "
+set listchars+=trail:.            " Show trailing spaces as dots
+set listchars+=extends:>          " The character to show in the last column when wrap is
+                                  " off and the line continues beyond the right of the screen
+set listchars+=precedes:<         " The character to show in the last column when wrap is
+                                  " off and the line continues beyond the left of the screen
+
+" Matching
+set matchpairs+=<:> " Highlight <>.
+
+" Markdown syntax highlighting
+let g:markdown_fenced_languages = [
+  \  'css',
+  \  'javascript',
+  \  'js=javascript',
+  \  'jsx=javascript',
+  \  'json=javascript',
+  \  'ruby',
+  \  'python',
+  \  'solidity',
+  \  'vim',
+  \]
+
+" Enable mouse in normal mode
+set mouse=n
+
+" Only insert one space when J(oining)
+set nojoinspaces
+
+" Show line numbers
+set number
+
+" Set find path to be dir of open file, current dir, and any dirs under current dir
+set path=.,,**
+
+" Show line and column number
+set ruler
+
+" Scrolling
+set scrolloff=3     " Start scrolling slightly before the cursor reaches an edge
+set sidescrolloff=5
+set sidescroll=1    " Scroll sideways a character at a time, rather than a screen at a time
+
+" Use select mode when making mouse selections
+set selectmode=mouse,key
+
+" Searching configuration
+set hlsearch    " highlight matches
+set incsearch   " incremental searching
+set ignorecase  " searches are case insensitive...
+set smartcase   " ... unless they contain at least one capital letter
 
 " Show incomplete commands
 set showcmd
 
-" Use select mode when making mouse selections"
-set selectmode=mouse,key
+" Set natural split opening
+set splitbelow
+set splitright
 
-" Use OSX shift movements
-if has("gui_macvim")
-    let macvim_hig_shift_movement = 1
-endif
+" Maintain the current cursor column while moving
+set nostartofline
+set virtualedit=all " Enable cursor to be positioned where there is no text
 
+" Enable syntax highlighting
+syntax enable
+
+" Set default textwidth at 100 and mark it
+set textwidth=100
+set colorcolumn=101
+
+" Disable text wrapping by default
+set nowrap
+set breakindent " Keep wrapped lines indented
+
+" Update time
+set updatetime=250
+
+" Wildcard settings
+set wildignore+=.git                                    " Disable VCS files
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz " Disable archive files
+set wildignore+=*.swp,*.un,*~,._*                       " Disable temp and backup files
+" }}}
+
+augroup startup
+  " Remember last location in file, but not for commit messages.
+  " see :help last-position-jump
+  au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g`\"" | endif
+augroup END
+
+" Set up automatic refresh for unchanged buffers
+set autoread
+augroup refresh_buffers
+  " Also refresh stale buffers on focus
+	au FocusGained * checktime
+augroup END
+
+" Mappings {{{
+"==============================================================================
 " Resource .vimrc
-:nnoremap <leader>sv :source $MYVIMRC<cr>
+:nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " Edit .vimrc (in $DOTFILES folder)
-:nnoremap <leader>ev :vsplit $DOTFILES/.vimrc.after<cr>
+:nnoremap <leader>ev :vsplit $DOTFILES/vim.d/vimrc<CR>
 
-" Set leader key to ,
-let mapleader = ","
-
-" Allow . operator in visual mode
-vnoremap . :normal.<CR>
-
-" Map F1 key to ESC
-noremap <F1> <Esc>
-inoremap <F1> <Esc>
-
-" Map F2 key to NERDTree
-nnoremap <F2> :NERDTreeToggle<cr>
-
-" Map F5 key to UndoTree
-nnoremap <F5> :UndotreeToggle<cr>
-
-" Map Set F6 key to SyntasticErrors
-nnoremap <silent> <F6> :<C-u>call ToggleErrors()<CR>
-
-" Map Set F7 key to Git blame
-nnoremap <F7> :Gblame<cr>
+" Open / close location list
+nnoremap <silent> <leader>l :lopen<CR>
+nnoremap <silent> <leader>L :lclose<CR>
 
 " Map window split commands
 nnoremap <C-J> <C-W><C-J>
@@ -59,166 +197,142 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Toggle highlight
+nnoremap <silent><expr> <Leader>hl (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
+
+" Find merge conflict markers
+nnoremap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+
+" Underline the current line
+nnoremap <silent> <leader>uL :t.<CR>Vr=
+nnoremap <silent> <leader>ul :t.<CR>Vr-
+
+" cd to the directory containing the current file in buffer
+nnoremap <silent> <leader>cd :lcd %:h<CR>
+
+" Open file relative to current file in buffer
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<CR>
+nmap <leader>ew :e %%
+nmap <leader>es :sp %%
+nmap <leader>ev :vsp %%
+nmap <leader>et :tabe %%
+
+" Toggle relative line numbers
+nnoremap <leader>n :set relativenumber!<CR>
+
+" Map the arrow keys to be based on display lines, not physical lines
+noremap <Down> gj
+noremap <Up> gk
+
+" Fold and unfold using enter
+nnoremap <silent> <Enter> @=(foldlevel('.')?'za':"\r")<CR>
+
 " Swap directions of # and *
 nnoremap # *
 vnoremap # *
 nnoremap * #
 vnoremap * #
 
-" Set find path to be dir of open file, current dir, and any dirs under current dir
-set path=.,,**
+" Allow . operator in visual mode
+vnoremap . :normal! .<CR>
 
-" FIXME: move to autogroups
-" Add .js, .css, and .scss extensions to files
-set suffixesadd+=.js,.css,.scss
+" Command mode navigation
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-b> <S-Left>
+cnoremap <C-w> <S-Right>
 
-" Set natural split opening
-set splitbelow
-set splitright
+" Map F1 key to ESC
+noremap <F1> <Esc>
+inoremap <F1> <Esc>
 
-" Indent settings
-set tabstop=4       " The width of a TAB is set to 4.
-                    " Still it is a \t. It is just that
-                    " Vim will interpret it to be having
-                    " a width of 4.
+" Map F2 key to NERDTree (see dein.toml)
+" Map F3 key to toggle location list (see dein.toml)
+" Map F4 key to toggle undotree (see dein.toml)
 
-set shiftwidth=4    " Indents will have a width of 4
+" Map Set F5 key to Git blame
+nnoremap <F5> :Gblame<CR>
+" }}}
 
-set softtabstop=4   " Sets the number of columns for a TAB
+" Map F12 to toggle paste mode
+nnoremap <silent> <F12> :set invpaste<CR>:set paste?<CR>
+inoremap <silent> <F12> <ESC>:set invpaste<CR>:set paste?<CR>
 
-set expandtab       " Expand TABs to spaces
+" Filetypes {{{
+"==============================================================================
+augroup filetype_detect
+  au!
 
-set smarttab        " Make "tab" insert indents instead of tabs at the beginning of a line
+  " Common CSS-like files
+  au BufRead,BufNewFile *.scss setlocal filetype=css
 
-" Set textwidth at 100
-set textwidth=100
-
-" Start scrolling slightly before the cursor reaches an edge
-set scrolloff=3
-set sidescrolloff=5
-
-set sidescroll=1    " Scroll sideways a character at a time, rather than a screen at a time
-
-" Allow motions and back-spacing over line-endings etc
-set backspace=indent,eol,start
-set whichwrap=h,l,b,<,>,~,[,]
-
-" Only insert one space when J(oining)
-set nojoinspaces
-
-" File types handling
-" Enable filetype detection:
-filetype on
-filetype plugin on
-filetype indent on " file type based indentation
-
-augroup custom_filetypes
-    au!
-    au BufRead,BufNewFile *.jsx setlocal filetype=javascript
-    au BufRead,BufNewFile *.jsonld setlocal filetype=json
-    au BufRead,BufNewFile *.cshtml setlocal filetype=html
-    au BufRead,BufNewFile *.cshtml_ setlocal filetype=html
-    au BufRead,BufNewFile *.scss setlocal filetype=css
-    au BufRead,BufNewFile *.md setlocal filetype=markdown
+  " Common JSON-like files
+  au BufRead,BufNewFile *.jsonld setlocal filetype=json
 augroup END
 
-augroup js_filetype
-    au!
-    au BufRead,BufNewFile *.js setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    au BufRead,BufNewFile *.jsx setlocal shiftwidth=2 tabstop=2 softtabstop=2
+augroup filetype_vim
+  au!
+  au FileType vim setlocal foldmethod=marker shiftwidth=2 tabstop=2 softtabstop=2
 augroup END
 
-augroup py_filetype
-    au!
-    au BufRead,BufNewFile *.py setlocal textwidth=79 colorcolumn=80 foldlevel=20
-
-    " Fold and unfold using enter
-    au BufEnter *.py nnoremap <buffer> <Enter> @=(foldlevel('.')?'za':"\r")<CR>
-
-    " Sometimes necessary for SimpylFold
-    au BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
-    au BufWinLeave *.py setlocal foldexpr< foldmethod<
+augroup filetype_css
+  au!
+  au FileType css setlocal suffixesadd+=.js,.jsx,.html,.css,.scss
 augroup END
 
-augroup md_filetype
-    au!
-    au BufRead,BufNewFile *.md setlocal textwidth=100 colorcolumn=101
+augroup filetype_js
+  au!
+  au FileType javascript setlocal suffixesadd+=.js,.jsx,.html,.css,.scss
+        \ commentstring=//\ %s
 augroup END
 
-augroup rst_filetype
-    au!
-    au BufRead,BufNewFile *.rst setlocal textwidth=79 colorcolumn=80
+augroup filetype_html
+  au!
+  au FileType html setlocal suffixesadd+=.js,.jsx,.html,.css,.scss
 augroup END
 
-augroup make_filetype
-    au!
-    au FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
+augroup filetype_make
+  au!
+  au FileType make setlocal noexpandtab colorcolumn=0 shiftwidth=8 softtabstop=0
 augroup END
 
-augroup json_filetype
-    au!
-    au BufRead,BufNewFile *.json setlocal shiftwidth=2 tabstop=2 softtabstop=2
+augroup filetype_md
+  au!
+  au BufRead,BufNewFile markdown setlocal wrap
 augroup END
 
-augroup yml_filetype
-    au!
-    au BufRead,BufNewFile *.yml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+augroup filetype_py
+  au!
+  au FileType python setlocal textwidth=79 colorcolumn=80 foldlevel=20
 augroup END
 
-" Don't conceal json syntax
-let g:vim_json_syntax_conceal = 0
+augroup filetype_rst
+  au!
+  au FileType rst setlocal textwidth=79 colorcolumn=80 wrap
+augroup END
 
-" Allow JSX syntax in .js files
-let g:jsx_ext_required = 0
+augroup filetype_solidity
+  au!
+  au FileType solidity setlocal shiftwidth=4 tabstop=4 softtabstop=4
+        \ commentstring=//\ %s
+augroup END
+" }}}
 
-" Signify config
-let g:signify_vcs_list= [ 'git' ]
-
-" Folding config
-" Python
-let g:SimpylFold_docstring_level = 20
-let g:SimpylFold_docstring_preview = 1
-let g:SimpylFold_fold_import = 0
-
-" Syntastic configs
-command Syncheck SyntasticCheck
-command Synreset SyntasticReset
-command Synclose lclose
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_loc_list_height = 5
-
-" Use validator for HTML syntastic
-let g:syntastic_html_checkers = ['htmlhint']
-
-" Use ESLint for JS syntastic
-let g:syntastic_javascript_checkers = ['eslint']
-
-" Use Flake8 for Python syntastic
-let g:syntastic_python_checkers = ['flake8']
-
-" Use Solhint, Solium for Solidity syntastic
-let g:syntastic_solidity_checkers = ['solhint', 'solium']
-
-" Toggle SyntasticErrors
-function! ToggleErrors()
-    let old_last_winnr = winnr('$')
-    lclose
-    if old_last_winnr == winnr('$')
-        " Nothing was closed, open syntastic error location panel
-        Errors
-    endif
-endfunction
-
-" Editorconfig excludes files over git and scp
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-
+" Load custom settings for nvim
 if has('nvim')
-    let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1 " Let cursor shape change on insert
-    " Will probably be useful to look at https://github.com/neovim/neovim/issues/2048#issuecomment-98307896
+	let s:neovim_config = fnamemodify(expand('<sfile>'), ':h').'/nvimrc'
+	if filereadable(s:neovim_config)
+    execute 'source '.fnameescape(s:neovim_config)
+	endif
 endif
+
+" Load terminal-specific settings
+if !has('gui_running')
+	let s:term_config = fnamemodify(expand('<sfile>'), ':h').'/term.vim'
+	if filereadable(s:term_config)
+    execute 'source '.fnameescape(s:term_config)
+	endif
+endif
+
+" Add security to vimrc; should be at bottom
+set secure

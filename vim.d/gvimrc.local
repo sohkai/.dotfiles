@@ -1,4 +1,4 @@
 let s:config_loc = expand('$DOTFILES/vim.d/gvimrc')
 if filereadable(s:config_loc)
-    execute 'source '.fnameescape(s:config_loc)
+  execute 'source '.fnameescape(s:config_loc)
 endif

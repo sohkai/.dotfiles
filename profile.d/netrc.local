@@ -1,0 +1,2 @@
+# Set up github api tokens (e.g. vim-rhubarb)
+machine api.github.com login <user> password <token>
