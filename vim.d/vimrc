@@ -298,7 +298,7 @@ augroup END
 
 augroup filetype_md
   au!
-  au BufRead,BufNewFile markdown setlocal wrap
+  au FileType markdown setlocal wrap linebreak
 augroup END
 
 augroup filetype_py

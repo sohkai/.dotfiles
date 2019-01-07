@@ -3,5 +3,8 @@
 ##########
 
 # Load Pyenv and accessories
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+pyenv() {
+    eval "$(command pyenv init -)"
+    eval "$(command pyenv virtualenv-init -)"
+    pyenv "$@"
+}

@@ -20,6 +20,7 @@ fi
 npm install -g \
     commitizen \
     htmlhint \
+    http-server \
     jsonlint \
     local-npm \
     ndb \
@@ -28,6 +29,7 @@ npm install -g \
     npm-check-updates \
     nps \
     react-devtools \
+    wscat \
     @storybook/cli
 
 # Install OSX-only npm packages
