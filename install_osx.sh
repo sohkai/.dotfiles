@@ -21,9 +21,6 @@ sudo -v
 # General UI/UX #
 #################
 
-# Disable transparency in the menu bar and elsewhere on Yosemite
-defaults write com.apple.universalaccess reduceTransparency -bool true
-
 # Always show scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 
@@ -233,12 +230,9 @@ brew install \
     go \
     grc \
     gzip \
-    heroku \
-    heroku-toolbelt \
     htop \
     hub \
     imagemagick \
-    iina \
     locateme \
     mercurial \
     mongodb \
@@ -272,7 +266,7 @@ brew cask install \
     bartender \
     bettertouchtool \
     beyond-compare \
-    brave \
+    brave-browser \
     charles \
     cheatsheet \
     chrome-devtools \
@@ -286,8 +280,6 @@ brew cask install \
     flow \
     flux \
     forklift \
-    font-office-code-pro \
-    font-sourcecodepro-nerd-font-mono \
     franz \
     ganache \
     gimp \
@@ -296,6 +288,7 @@ brew cask install \
     gpg-suite \
     grandperspective \
     haptic-touch-bar \
+    iina \
     iterm2 \
     karabiner-elements \
     keybase \
@@ -333,7 +326,12 @@ brew cask install \
 brew tap dteoh/sqa
 brew cask install slowquitapps
 
-brew tap ValeLint/eale
+brew tap caskroom/fonts
+brew cask install \
+    font-office-code-pro \
+    font-sourcecodepro-nerd-font-mono
+
+brew tap ValeLint/vale
 brew install vale
 
 defaults write com.dteoh.SlowQuitApps delay -int 1000

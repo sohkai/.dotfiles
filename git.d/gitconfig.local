@@ -1,4 +1,4 @@
 [user]
     signingkey =
 [include]
-    path = $DOTFILES/git.d/gitconfig
+    path = ~/.gitconfig_global
