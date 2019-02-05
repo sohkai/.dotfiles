@@ -17,10 +17,10 @@ case "$SHELL_NAME" in
         echo "install.sh must be run under either bash or zsh."
         exit 1
 esac
-DOTFILES_DIR=$(dirname $SCRIPT_LOC)
+export DOTFILES=$(dirname $SCRIPT_LOC)
 
 # Move to the root location of where the dotfiles repo was cloned to
-cd $DOTFILES_DIR
+cd $DOTFILES
 
 # Source utilities
 if [[ -d ./utility.d ]]; then
@@ -68,8 +68,6 @@ source ./install_language.sh
 ##################
 # Dotfiles setup #
 ##################
-
-export DOTFILES=$(dirname $0)
 
 echo "------------------------------"
 echo "| Installing local dotfiles |"
