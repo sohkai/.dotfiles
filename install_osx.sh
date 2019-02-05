@@ -190,7 +190,8 @@ echo
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Get some nice brews
-brew install --with-default-names \
+brew install \
+    coreutils \
     findutils \
     gnu-sed \
     gnu-which \
@@ -258,6 +259,7 @@ brew install \
     wget
 
 brew cask install \
+    1password
     aegisub \
     alfred \
     anki \
@@ -319,8 +321,7 @@ brew cask install \
     vlc \
     virtualbox \
     xquartz \
-    zoomus \
-    1password
+    zoomus
 
 # Install custom taps
 brew tap dteoh/sqa
