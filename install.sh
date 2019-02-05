@@ -33,6 +33,14 @@ fi
 touch $HOME/.bash_profile
 touch $HOME/.bashrc
 
+# Ask for the administrator password upfront
+echo "---------------------------------------------"
+echo "| Some parts require admin access to install|"
+echo "---------------------------------------------"
+echo
+sudo -v
+
+
 ############
 # OS setup #
 ############
