@@ -22,7 +22,6 @@ npm install -g \
     htmlhint \
     http-server \
     jsonlint \
-    local-npm \
     ndb \
     np \
     npmrc \
