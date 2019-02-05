@@ -61,7 +61,7 @@ source ./install_language.sh
 # Dotfiles setup #
 ##################
 
-export DOTFILES=$(pwd)
+export DOTFILES=$(dirname $0)
 
 echo "------------------------------"
 echo "| Installing local dotfiles |"
