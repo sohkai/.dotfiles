@@ -424,9 +424,13 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>356 235 796 486 0 0 1440 877 </string>
+	<string>465 196 918 514 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>155 125 572 406 0 0 1440 877 </string>
+	<string>0 0 1440 877 0 0 1440 877 </string>
+	<key>NeverWarnAboutShortLivedSessions_E324E03E-E5F8-4CB8-BF78-DE16EAAB9C06</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_E324E03E-E5F8-4CB8-BF78-DE16EAAB9C06_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -758,7 +762,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>OfficeCodePro-Light 12</string>
+			<string>OfficeCodePro-Regular 12</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Place Prompt at First Column</key>
@@ -833,18 +837,22 @@
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>0</integer>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>23B74728-D884-4BA4-81E5-766A13001C91</string>
+	<string>340D2DD0-9D4C-4DFC-950D-72D6029D6567</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>571084183.97476804</real>
+	<real>572265908.53445697</real>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -865,11 +873,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=80</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=85</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-02-05T19:25:56Z</date>
+	<date>2019-02-19T10:45:28Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
