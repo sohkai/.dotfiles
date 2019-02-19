@@ -177,6 +177,13 @@ defaults write com.apple.commerce AutoUpdate -bool true
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 
+###################
+# XCode utilities #
+###################
+
+sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
+
+
 ############
 # Homebrew #
 ############
