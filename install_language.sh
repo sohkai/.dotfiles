@@ -14,7 +14,7 @@ nvm install stable
 if is_osx; then
     echo "Installing yarn through brew..."
     echo
-    brew install yarn --without-node # Install yarn and use NVM's version
+    brew install yarn --ignore-dependencies # Install yarn and use NVM's version
 fi
 
 npm install -g \

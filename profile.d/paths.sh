@@ -16,11 +16,6 @@ local homebrew_gnuman_path=/usr/local/opt/coreutils/libexec/gnuman
 [[ :$PATH: != *:"$homebrew_gnubin_path":* ]] && [[ -d "$homebrew_gnubin_path" ]] && export PATH="$homebrew_gnubin_path":$PATH
 [[ :$PATH: != *:"$homebrew_gnuman_path":* ]] && [[ -d "$homebrew_gnuman_path" ]] && export PATH="$homebrew_gnuman_path":$PATH
 
-# Yarn (JS)
-local yarn_global_path=`yarn global bin`
-[[ :$PATH: != *:"$yarn_global_path":* ]] && export PATH="$yarn_global_path":$PATH
-
-
 # RVM
 # Add RVM to PATH for scripting
 local rvm_bin_path=$HOME/.rvm/bin
