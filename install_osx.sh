@@ -246,6 +246,7 @@ brew install \
     pyenv \
     pyenv-virtualenv \
     ranger \
+    readline \
     rename \
     ripgrep \
     rmtrash \
@@ -253,10 +254,11 @@ brew install \
     watch \
     wdiff \
     wifi-password \
-    wget
+    wget \
+    xz
 
 brew cask install \
-    1password
+    1password \
     aegisub \
     alfred \
     anki \
