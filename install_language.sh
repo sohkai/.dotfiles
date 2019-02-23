@@ -14,6 +14,7 @@ nvm install stable
 if is_osx; then
     echo "Installing yarn through brew..."
     echo
+    brew install node # Still needed when using /bin/zsh -c (e.g. for Ale)
     brew install yarn --ignore-dependencies # Install yarn and use NVM's version
 fi
 
