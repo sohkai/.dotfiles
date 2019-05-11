@@ -9,6 +9,9 @@ repo = 'Shougo/dein.vim'
 repo = 'wsdjeg/dein-ui.vim'
 
 [[plugins]]
+repo = 'andymass/vim-matchup' # Must be loaded before vim-sensible
+
+[[plugins]]
 repo = 'tpope/vim-sensible'
 on_if = '!has("nvim")' # NVIM already supplies these settings as defaults
 
