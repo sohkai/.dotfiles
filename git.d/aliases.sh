@@ -62,16 +62,13 @@ alias gfc='git clone'
 alias gfm='git pull'
 alias gfr='git pull --rebase'
 
-# Grep (G)
-alias gG='git grep'
-alias gGs='git grep -niEI --color=auto' # Search string respective to git
-
 # Index (i)
 alias gia='git add'
 alias giai='gia --interactive'
 alias giA='git add --patch'
 alias giu='git add --update'
 alias gid='git diff --no-ext-diff --cached'
+alias gidj="gid ':(exclude)*lock.json'"
 alias giD='git diff --no-ext-diff --cached --word-diff'
 alias gir='git reset'
 alias giR='git reset --patch'
@@ -152,6 +149,7 @@ alias gSu='git submodule foreach git pull origin master'
 alias gws='git status --ignore-submodules=all --short'
 alias gwS='git status --ignore-submodules=all'
 alias gwd='git diff --no-ext-diff'
+alias gwdj="gwd ':(exclude)package-lock.json'"
 alias gwD='git diff --no-ext-diff --word-diff'
 alias gwr='git reset --soft'
 alias gwR='git reset --hard'

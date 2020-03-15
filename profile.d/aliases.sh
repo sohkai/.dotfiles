@@ -39,7 +39,6 @@ alias ffa='fd -HI' # Find all files, including hidden and ignored
 
 alias sd=fasd_fzf_sd # Select file via fasd + fzf
 alias sf=fasd_fzf_sf # select directory via fasd + fzf
-alias ggs='git grep -niEI --color=auto ' # Search string, respecting gitignore files
 alias ss='rg -S --sort-files --pretty --color=auto --no-ignore-vcs' # Search string ignoring VCS ignore files
 
 # Resources

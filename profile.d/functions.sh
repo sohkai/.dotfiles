@@ -29,6 +29,13 @@ gifify() {
   fi
 }
 
+# Search string, respecting gitignore and ignoring lock files
+ggs() {
+    local search="$1"
+    shift
+    git grep -niEI --color=auto "$search" ':!*.lock' "$@"
+}
+
 # Make a directory and cd into it
 mkcd() {
     mkdir -p $1;
