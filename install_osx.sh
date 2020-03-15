@@ -194,6 +194,8 @@ echo
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Get some nice brews
+echo "Installing brews..."
+echo
 brew install \
     coreutils \
     findutils \
@@ -297,6 +299,7 @@ brew cask install \
     grandperspective \
     haptic-touch-bar \
     iina \
+    imageoptim \
     iterm2 \
     karabiner-elements \
     keybase \
