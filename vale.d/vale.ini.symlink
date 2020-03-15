@@ -1,16 +1,7 @@
-StylesPath = $DOTFILES/vale.d/
-MinAlertLevel = warning
+StylesPath = .dotfiles/vale.d/
+MinAlertLevel = suggestion
 
 [*]
-BasedOnStyles = vale, proselint
-vale.Annotations    = suggestion
-vale.ComplexWords   = NO
-vale.Editorializing = warning
-vale.GenderBias     = suggestion
-vale.Hedging        = NO
-vale.Litotes        = suggestion
-vale.PassiveVoice   = NO
-vale.Redundancy     = error
-vale.Repetition     = error
-vale.Uncomparables  = error
-vale.Wordiness      = warning
+BasedOnStyles = Vale, proselint
+Vale.Spelling       = suggestion
+proselint.Very      = no
