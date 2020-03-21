@@ -29,11 +29,11 @@ gifify() {
   fi
 }
 
-# Search string, respecting gitignore and ignoring lock files
+# Search string, respecting gitignore and ignoring svg and lock files
 ggs() {
     local search="$1"
     shift
-    git grep -niEI --color=auto "$search" ':!*.lock' "$@"
+    git grep -niEI --color=auto "$search" ':!*.lock' ':!*.svg' "$@"
 }
 
 # Make a directory and cd into it
