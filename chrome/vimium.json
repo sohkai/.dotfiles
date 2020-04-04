@@ -1,0 +1,26 @@
+{
+  "settingsVersion": "1.66",
+  "exclusionRules": [
+    {
+      "pattern": "https?://github.com/*",
+      "passKeys": "HLrR"
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "# Remap most actions that affect the current page to be on a new tab\nunmap B\nmap b Vomnibar.activateBookmarksInNewTab\n\nmap f LinkHints.activateModeToOpenInNewForegroundTab\n\nunmap O\nmap o Vomnibar.activateInNewTab\n\nunmap P\nmap p openCopiedUrlInNewTab\n\nunmap T\nmap t Vomnibar.activateTabSelection\n\nunmap X\n\n# Ignore insert mode\nunmap i",
+  "linkHintCharacters": "sadfjklewcmpgh",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "about:newtab",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 60,
+  "smoothScroll": false,
+  "grabBackFocus": false,
+  "searchEngines": "gaa: https://github.com/aragon/%s\ngao: https://github.com/aragon/%s\ngm: https://www.google.com/maps?q=%s Google maps\nw: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia",
+  "searchUrl": "https://www.google.com/search?q=",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
+}
