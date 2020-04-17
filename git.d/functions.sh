@@ -3,6 +3,13 @@
 # Adapted from https://github.com/sorin-ionescu/prezto/tree/master/modules/git #
 ################################################################################
 
+# Search string, respecting gitignore and ignoring svg and lock files
+ggs() {
+    local search="$1"
+    shift
+    git grep -niEI --color=auto "$search" ':!*.lock' ':!*.svg' "$@"
+}
+
 # Displays the current Git branch.
 git-branch-current() {
     if ! git rev-parse 2> /dev/null; then
