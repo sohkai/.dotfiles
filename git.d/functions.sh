@@ -7,7 +7,7 @@
 ggs() {
     local search="$1"
     shift
-    git grep -niEI --color=auto "$search" ':!*.lock' ':!*.svg' "$@"
+    git grep -niEI --color=auto "$search" ':!*.lock' ':!*.svg' ':!*yarn*.js' "$@"
 }
 
 # Displays the current Git branch.
