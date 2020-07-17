@@ -194,11 +194,10 @@ hook_add = '''
   autocmd  FileType fzf set laststatus=0 noshowmode noruler
     \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
-	" Customize Ag command
-	command! -bang -nargs=* Ag
-	\  call fzf#vim#ag(
-	\  	 <q-args>,
-	\    '--workers=1',
+	" Customize Rg command
+	command! -bang -nargs=* Rg
+	\  call fzf#vim#grep(
+  \    'rg --column --line-number --no-heading --color=always --smart-case -g "!*.svg" -- '.shellescape(<q-args>), 1,
 	\    <bang>0 ? fzf#vim#with_preview({'options': '--no-sort --delimiter : --nth 4..'}, 'up:60%')
 	\            : fzf#vim#with_preview({'options': '--no-sort --delimiter : --nth 4..'}, 'right:50%', '?'),
 	\    <bang>0
@@ -214,7 +213,7 @@ hook_add = '''
 
 	" Mappings
  	nmap <silent> <leader>ff :call FZFOpen(':Files')<CR>
- 	nmap <silent> <leader>fa :call FZFOpen(':Ag')<CR>
+ 	nmap <silent> <leader>fa :call FZFOpen(':Rg')<CR>
  	nmap <silent> <leader>fb :call FZFOpen(':Buffers')<CR>
  	nmap <silent> <leader>fl :call FZFOpen(':Lines')<CR>
 '''
