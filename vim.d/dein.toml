@@ -89,8 +89,8 @@ depends = 'lightline'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
-	let NERDTreeIgnore=['\.git','\.hg']
-  let NERDTreeShowLineNumbers=1
+  let g:NERDTreeIgnore=['\.git$','\.hg$']
+  let g:NERDTreeShowLineNumbers=1
 
   nnoremap <silent> <F2> :NERDTreeToggle<CR>
   nnoremap <Leader>tf :NERDTreeFind<CR>
