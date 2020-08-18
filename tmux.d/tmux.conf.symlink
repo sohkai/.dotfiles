@@ -57,12 +57,12 @@ setw -g mode-keys vi
 
 # Remap vi-mode copy
 bind -T copy-mode-vi v send -X begin-selection # 'v' to select
-bind -T copy-mode-vi y send -X copy-pipe "pbcopy" # 'y' to copy
+bind -T copy-mode-vi y send -X copy-pipe-and-cancel "pbcopy" # 'y' to copy
 unbind -T copy-mode-vi Enter
-bind -T copy-mode-vi Enter send -X copy-pipe "pbcopy" # Enter is same as 'y'
+bind -T copy-mode-vi Enter send -X copy-pipe-and-cancel "pbcopy" # Enter is same as 'y'
 
 # Enable mouse copy
-bind -T copy-mode-vi MouseDragEnd1Pane send -X copy-pipe "pbcopy"
+bind -T copy-mode-vi MouseDragEnd1Pane send -X copy-pipe-and-cancel "pbcopy"
 
 
 ##### Plugins #####
