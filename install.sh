@@ -114,10 +114,10 @@ echo
 source ./install_shell.sh
 
 if [ -x /bin/zsh ]; then
-    echo "Setting zsh as the default shell..."
+    echo "Setting homebrewed zsh as the default shell..."
     echo
 
-    chsh -s /bin/zsh
+    dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
 fi
 
 

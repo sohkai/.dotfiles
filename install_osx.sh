@@ -59,6 +59,11 @@ defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
 
+
+##########
+# Finder #
+##########
+
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
@@ -106,6 +111,9 @@ defaults write com.apple.dock autohide -bool true
 # Safari & WebKit #
 ###################
 
+# Security: disable captive portal (Wifi)
+defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control.plist Active -bool false
+
 # Privacy: don’t send search queries to Apple
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
 defaults write com.apple.Safari SuppressSearchSuggestions -bool true
@@ -137,6 +145,14 @@ defaults write com.apple.Safari AutoFillMiscellaneousForms -bool false
 defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
 
 
+##########
+# iCloud #
+##########
+
+# Disable saving to iCloud
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+
 ####################
 # Activity Monitor #
 ####################
@@ -162,7 +178,7 @@ defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
 # Download newly available updates in background
 defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
 
-# Install System data files & security updates
+# Install system data files & security updates
 defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
 
 # Turn on app auto-update
@@ -181,7 +197,8 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 # XCode utilities #
 ###################
 
-sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
+# If on Mojave, you may need to also install these include headers
+# sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
 
 
 ############
@@ -259,12 +276,14 @@ brew install \
     rename \
     ripgrep \
     rmtrash \
+    sqlite3 \
     tree \
     watch \
     wdiff \
     wifi-password \
     wget \
-    xz
+    xz \
+    zlib
 
 brew cask install \
     1password \
