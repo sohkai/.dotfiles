@@ -306,11 +306,8 @@ brew cask install \
     dropbox \
     fantastical \
     firefox \
-    flow \
     flux \
-    forklift \
     franz \
-    ganache \
     gimp \
     gitter \
     google-chrome \
@@ -329,25 +326,24 @@ brew cask install \
     mountain-duck \
     namebench \
     notion \
-    numi \
+    obs \
     omnifocus \
     onyx \
     opera \
     paragon-ntfs \
     private-internet-access \
+    rectangle \
     rescuetime \
-    rocket-chat \
     signal \
     skype \
-    spectacle \
     steam \
     telegram \
     the-unarchiver \
     time-out \
     transmission \
-    vimr \
     vlc \
     virtualbox \
+    wechat \
     xquartz \
     zoomus
 
@@ -364,6 +360,3 @@ brew tap ValeLint/vale
 brew install vale
 
 defaults write com.dteoh.SlowQuitApps delay -int 1000
-
-# Install iTerm shell integration
-curl -L https://iterm2.com/misc/bash_startup.in -o $HOME/.iterm2_shell_integration.bash
