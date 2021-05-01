@@ -1,1 +1,5 @@
-globalconfig=${DOTFILES}/.npmrc
+editor=vim
+init-license=MIT
+init-version=0.0.1
+python=python2.7
+sign-git-tag=true

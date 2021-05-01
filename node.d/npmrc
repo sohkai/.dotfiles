@@ -1,5 +1,0 @@
-editor=vim
-init-license=Apache-2.0
-init-version=0.0.1
-python=python2.7
-sign-git-tag=true
