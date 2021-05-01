@@ -13,6 +13,10 @@ echo
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
+# Fix default zsh complaining about shared access to configuration folders
+chmod g-w /usr/local/share/zsh
+chmod g-w /usr/local/share/zsh/site-functions
+
 
 #################
 # General UI/UX #
@@ -111,9 +115,6 @@ defaults write com.apple.dock autohide -bool true
 # Safari & WebKit #
 ###################
 
-# Security: disable captive portal (Wifi)
-defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control.plist Active -bool false
-
 # Privacy: don’t send search queries to Apple
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
 defaults write com.apple.Safari SuppressSearchSuggestions -bool true
@@ -208,7 +209,7 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 # Make me some homebrew!
 echo "Installing homebrew..."
 echo
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Get some nice brews
 echo "Installing brews..."
@@ -285,7 +286,7 @@ brew install \
     xz \
     zlib
 
-brew cask install \
+brew install --cask \
     1password \
     aegisub \
     alfred \
@@ -343,10 +344,10 @@ brew cask install \
 
 # Install custom taps
 brew tap dteoh/sqa
-brew cask install slowquitapps
+brew install --cask slowquitapps
 
-brew tap caskroom/fonts
-brew cask install \
+brew tap homebrew/cask-fonts
+brew install --cask \
     font-office-code-pro \
     font-sourcecodepro-nerd-font-mono
 
