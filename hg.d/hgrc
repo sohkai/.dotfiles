@@ -1,6 +1,6 @@
 [ui]
 # Name data to appear in commits
-username = Brett Sun <qisheng.brett.sun@gmail.com>
+username = Brett Sun <hi@brettsun.com>
 
 [web]
 # Dummy certificate for ssl
@@ -12,7 +12,6 @@ ssh = ssh -C
 [extensions]
 # Show progress
 progress =
-
 
 [tortoisehg]
 editor = vim

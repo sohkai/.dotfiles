@@ -15,8 +15,3 @@ fasd_cd() {
     [ -d "$_fasd_ret" ] && cd "$_fasd_ret" || printf %s\n "$_fasd_ret"
   fi
 }
-
-# macOS plugins
-if is_osx; then
-    source_file $DOTFILES/profile.d/external/tab.sh # OSX new tab
-fi

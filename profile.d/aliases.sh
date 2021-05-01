@@ -3,7 +3,6 @@
 ###########
 
 # List directory
-alias ls='ls -CF'
 alias l='ls -1A'
 alias ll='ls -lh'
 alias lr='ll -R'
@@ -52,6 +51,8 @@ alias killps='sudo kill -9'
 alias _='sudo'
 alias e='$EDITOR'
 alias cp='cp -i'
+alias f='fg'
+alias j='jobs'
 alias ln='ln -i'
 alias mkdir='mkdir -pv'
 alias mv='mv -i'
