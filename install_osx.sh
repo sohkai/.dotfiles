@@ -215,76 +215,84 @@ echo
 echo "Installing brews..."
 echo
 brew install \
+    # Core utils
     coreutils \
     findutils \
     gnu-sed \
     gnu-which \
     gnutls \
-    grep
+    gnupg2 \
+    gnu-tar \
 
 brew install \
-    ack \
-    ag \
-    ansifilter \
-    ansiweather \
+    # System utils
     bash \
     binutils \
+    bzip2 \
+    curl \
+    diffutils \
+    grep
+    git \
+    git-extras \
+    git-lfs \
+    gpg \
+    gzip \
+    mercurial \
+    openssl \
+    parallel \
+    pstree \
+    readline \
+    tree \
+    watch \
+    wdiff \
+    wget \
+    xz \
+    zlib \
+    zsh
+
+    # Languages
+    erlang \
+    go \
+    perl \
+
+    # Dev utils
+    ack \
+    ag \
     colordiff \
     colormake \
-    coreutils \
-    curl \
     diff-so-fancy \
-    diffutils \
     direnv \
-    docker-compose \
-    docker-machine \
     editorconfig \
-    erlang \
     emojify \
     fasd \
     fd \
     ffmpeg \
-    fortune \
     gifsicle \
-    git \
-    git-extras \
-    git-lfs \
-    gnupg2 \
-    gnu-tar \
-    gpg \
-    go \
     grc \
-    gzip \
     htop \
     hub \
     imagemagick \
-    locateme \
-    mercurial \
-    mongodb \
     mtr \
     nmap \
-    openssl \
-    parallel \
-    perl \
-    pinentry-mac \
     pgcli \
     postgresql \
-    pstree \
     pyenv \
     pyenv-virtualenv \
     ranger \
-    readline \
     rename \
     ripgrep \
-    rmtrash \
     sqlite3 \
-    tree \
-    watch \
-    wdiff \
+    tmux \
+    vale \
+    yarn \
+    zsh-completions
+
+    # Fun
+    ansiweather \
+    fortune \
+    locateme \
+    pinentry-mac \
     wifi-password \
-    wget \
-    xz \
-    zlib
 
 brew install --cask \
     1password \
@@ -342,16 +350,12 @@ brew install --cask \
     xquartz \
     zoom
 
-# Install custom taps
+# Custom taps
 brew tap dteoh/sqa
 brew install --cask slowquitapps
+defaults write com.dteoh.SlowQuitApps delay -int 1000
 
 brew tap homebrew/cask-fonts
 brew install --cask \
     font-office-code-pro \
-    font-sourcecodepro-nerd-font-mono
-
-brew tap ValeLint/vale
-brew install vale
-
-defaults write com.dteoh.SlowQuitApps delay -int 1000
+    font-sauce-code-pro-nerd-font
