@@ -20,7 +20,7 @@
   "scrollStepSize": 60,
   "smoothScroll": false,
   "grabBackFocus": false,
-  "searchEngines": "gaa: https://github.com/aragon/%s\ngao: https://github.com/aragon/%s\ngm: https://www.google.com/maps?q=%s Google maps\nw: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia",
+  "searchEngines": "gm: https://www.google.com/maps?q=%s Google maps\nw: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia",
   "searchUrl": "https://www.google.com/search?q=",
   "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
 }
