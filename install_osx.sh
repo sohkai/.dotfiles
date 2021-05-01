@@ -297,10 +297,8 @@ brew cask install \
     beyond-compare \
     brave-browser \
     charles \
-    cheatsheet \
     chrome-devtools \
     chromium \
-    cyberduck \
     discord \
     docker \
     dropbox \
@@ -321,10 +319,7 @@ brew cask install \
     keybase \
     linphone \
     little-snitch \
-    macdown \
     macs-fan-control \
-    mountain-duck \
-    namebench \
     notion \
     obs \
     omnifocus \
@@ -337,7 +332,6 @@ brew cask install \
     signal \
     skype \
     steam \
-    telegram \
     the-unarchiver \
     time-out \
     transmission \
@@ -345,7 +339,7 @@ brew cask install \
     virtualbox \
     wechat \
     xquartz \
-    zoomus
+    zoom
 
 # Install custom taps
 brew tap dteoh/sqa
