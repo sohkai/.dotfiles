@@ -7,45 +7,19 @@
 # Node.js (and NVM)
 echo "Installing node through NVM..."
 echo
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-source $HOME/.bash_profile
-nvm install stable
-
-if is_osx; then
-    echo "Installing yarn through brew..."
-    echo
-    brew install node # Still needed when using /bin/zsh -c (e.g. for Ale)
-    brew install yarn --ignore-dependencies # Install yarn and use NVM's version
-fi
-
-npm install -g \
-    commitizen \
-    htmlhint \
-    http-server \
-    jsonlint \
-    ndb \
-    np \
-    npmrc \
-    npm-check-updates \
-    nps \
-    react-devtools \
-    wscat \
-    @storybook/cli
-
-# Install OSX-only npm packages
-if is_osx; then
-    npm install -g \
-        alfred-npms
-fi
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+source $HOME/.bashrc # This will be overwritten later, but we source it immediately to load nvm for this session
 
 # Python (and Pyenv)
 echo "Installing python through pyenv..."
 echo
-echo 'eval "$(pyenv init -)"' >> $HOME/.bash_profile # This will be overwritten after, just do it now to install global python packages
+echo 'eval "$(pyenv init -)"' >> $HOME/.bash_profile # This will be overwritten later, just update it now to install global python packages
 source $HOME/.bash_profile
-pyenv install 2.7.12
-pyenv install 3.5.2
-pyenv global 3.5.2 2.7.12
+# On newer macOS versions, you may need to include these flags on install:
+#   CFLAGS="-L$(brew --prefix zlib)/include -L$(brew --prefix bzip2)/include" LDFLAGS="-L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib"
+pyenv install 2.7.17
+pyenv install 3.9.0
+pyenv global 3.9.0 2.7.17
 
 pip install --upgrade pip setuptools
 pip2 install --upgrade pip setuptools
@@ -68,5 +42,4 @@ gem install \
     ghi \
     lolcat \
     pry \
-    screengif \
-    travis
+    screengif
