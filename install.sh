@@ -5,19 +5,7 @@
 ################
 
 # Get directory of where this install script is located
-SHELL_NAME=$(ps -p $$ -ocomm=)
-case "$SHELL_NAME" in
-    *bash)
-        SCRIPT_LOC=${BASH_SOURCE[0]}
-        ;;
-    *zsh)
-        SCRIPT_LOC=${(%):-%N}
-        ;;
-    *)
-        echo "install.sh must be run under either bash or zsh."
-        exit 1
-esac
-export DOTFILES=$(dirname $SCRIPT_LOC)
+export DOTFILES=$(dirname ${BASH_SOURCE[0]})
 
 # Move to the root location of where the dotfiles repo was cloned to
 cd $DOTFILES
