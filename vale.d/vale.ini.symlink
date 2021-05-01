@@ -1,4 +1,4 @@
-StylesPath = .dotfiles/vale.d/
+StylesPath = ${DOTFILES}/vale.d/
 MinAlertLevel = suggestion
 
 [*]
