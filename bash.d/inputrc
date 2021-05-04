@@ -21,5 +21,5 @@ menu-complete-display-prefix on
 # Case insensitive tab complete
 set completion-ignore-case on
 
-# Treat underscoes and hypens the same
+# Treat underscores and hypens the same
 set completion-map-case on
