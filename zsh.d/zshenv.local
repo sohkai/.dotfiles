@@ -1,12 +1,7 @@
+# zshenv is *always* loaded, so it's as lightweight as possible and doesn't source the utilities
+
 # Load initializing environment
 [[ -r $HOME/.init_env ]] && source $HOME/.init_env
 
-# Load utilities first
-if [[ -d $DOTFILES/utility.d ]]; then
-    for file in $DOTFILES/utility.d/*.sh; do
-        source $file
-    done
-fi
-
 # Load synced .zshenv
-source_file $DOTFILES/zsh.d/zshenv
+[[ -r $DOTFILES/zsh.d/zshenv ]] && source $DOTFILES/zsh.d/zshenv

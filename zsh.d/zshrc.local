@@ -1,2 +1,9 @@
+# Load utilities first
+if [[ -d $DOTFILES/utility.d ]]; then
+    for file in $DOTFILES/utility.d/*.sh; do
+        source $file
+    done
+fi
+
 # Load synced .zshrc
 source_file $DOTFILES/zsh.d/zshrc

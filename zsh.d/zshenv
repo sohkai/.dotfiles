@@ -1,6 +1,8 @@
+# zshenv is *always* loaded, so it's as lightweight as possible and doesn't source the utilities
+
 # Source path environment settings
-source_file $DOTFILES/profile.d/paths.sh
-source_file $DOTFILES/profile.d/env.sh
+[[ -r $DOTFILES/profile.d/paths.sh ]] && source $DOTFILES/profile.d/paths.sh
+[[ -r $DOTFILES/profile.d/env.sh ]] && source $DOTFILES/profile.d/env.sh
 
 # Add .fpath to $FPATH
 local local_fpath_loc="$HOME/.fpath"
