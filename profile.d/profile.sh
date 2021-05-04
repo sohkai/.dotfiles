@@ -29,3 +29,6 @@ source_dir $DOTFILES/vim.d
 if is_osx; then
     source_dir $DOTFILES/osx.d
 fi
+
+# Load local profile override
+source_file $HOME/.profilerc

@@ -10,6 +10,3 @@ fi
 
 # Load synced .bashrc
 source_file $DOTFILES/bash.d/bashrc
-
-# Load local profile
-source_file $HOME/.profilerc
