@@ -4,8 +4,8 @@
 [[ -r $DOTFILES/profile.d/paths.sh ]] && source $DOTFILES/profile.d/paths.sh
 [[ -r $DOTFILES/profile.d/env.sh ]] && source $DOTFILES/profile.d/env.sh
 
-# Add .fpath to $FPATH
+# Add to FPATH
 local local_fpath_loc="$HOME/.fpath"
 local synced_fpath_loc="$DOTFILES/zsh.d/fpath"
-[[ :$PATH: != *:"$local_fpath_loc":* ]] && [[ -d "$local_fpath_loc" ]] && export FPATH=$FPATH:"$local_fpath_loc"
-[[ :$PATH: != *:"$synced_fpath_loc":* ]] && [[ -d "$synced_fpath_loc" ]] && export FPATH=$FPATH:"$synced_fpath_loc"
+[[ -d "$local_fpath_loc" ]] && fpath+="$local_fpath_loc"
+[[ -d "$synced_fpath_loc" ]] && fpath+="$synced_fpath_loc"
