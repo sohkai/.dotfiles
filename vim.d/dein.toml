@@ -160,7 +160,7 @@ hook_add = '''
 repo = 'Konfekt/FastFold'
 
 [[plugins]]
-repo = 'junegunn/fzf.vim'
+repo = 'junegunn/fzf'
 on_if = "executable('fzf')"
 hook_add = '''
   " Set actions
@@ -186,9 +186,6 @@ hook_add = '''
   \ 'header':  ['fg', 'Comment']
 	\}
 
-	" Jump to the existing window if possible
-	let g:fzf_buffers_jump = 1
-
   " Remove status line in fzf buffer
   autocmd! FileType fzf
   autocmd  FileType fzf set laststatus=0 noshowmode noruler
@@ -203,13 +200,38 @@ hook_add = '''
 	\    <bang>0
 	\  )
 
-	" Don't open files in NERDTree
-	function! FZFOpen(command_str)
-		if (expand('%') =~# 'NERD_tree' && winnr('$') > 1)
-			exe "normal! \<c-w>\<c-w>"
-		endif
-		exe 'normal! ' . a:command_str . "\<cr>"
-	endfunction
+  let g:fzf_layout = { 'down': '~40%' }
+'''
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+hook_add = '''
+	" Jump to the existing window if possible
+	let g:fzf_buffers_jump = 1
+
+	" Don't open files in non-functional buffers (eg. NERDTree)
+  " See https://github.com/junegunn/fzf/issues/453
+  function! FZFOpen(cmd)
+    " Define the functional buffer types that we want to not clobber
+    let functional_buf_types = ['quickfix', 'help', 'nofile', 'terminal']
+
+    " If more than 1 window, and buffer type is not one of the functional types
+    if winnr('$') > 1 && (index(functional_buf_types, &bt) >= 0)
+        " Find all 'normal' (not functional) buffer windows
+        let norm_wins = filter(range(1, winnr('$')),
+                    \ 'index(functional_buf_types, getbufvar(winbufnr(v:val), "&bt")) == -1')
+
+        " Grab the first one that we can use
+        let norm_win = !empty(norm_wins) ? norm_wins[0] : 0
+
+        " Move to that window
+        exe norm_win . 'winc w'
+    endif
+
+    " Execute the passed command
+    exe a:cmd
+  endfunction
 
 	" Mappings
  	nmap <silent> <leader>ff :call FZFOpen(':Files')<CR>
@@ -255,6 +277,9 @@ hook_add = '''
   " Disable custom graphql and markdown plugin
   let g:polyglot_disabled = ['graphql', 'markdown']
 '''
+
+[[plugins]]
+repo = 'rajasegar/vim-astro'
 
 [[plugins]]
 repo = 'tpope/vim-repeat'
