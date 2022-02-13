@@ -113,7 +113,7 @@ hook_add = '''
 #############
 
 [[plugins]]
-repo = 'w0rp/ale'
+repo = 'dense-analysis/ale'
 hook_add = '''
 	let g:ale_linters = {
   \  'css': ['stylelint'],
